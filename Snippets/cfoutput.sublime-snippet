@@ -1,0 +1,5 @@
+<snippet>
+    <content><![CDATA[<cfoutput>${0:$SELECTION}</cfoutput>]]></content>
+    <scope>text.html.cfm</scope>
+    <description>cfoutput Tag</description>
+</snippet>

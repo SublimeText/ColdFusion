@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+
+	<key>fileTypes</key>
+	<array>
+		<string>cfm</string>
+		<string>cfml</string>
+	</array>
+
+	<key>firstLineMatch</key>
+	<string>&lt;!DOCTYPE|doctype|&lt;(?i:html)</string>
+
+	<key>foldingStartMarker</key>
+	<string>(?x)
+		(&lt;(?i:a|article|aside|audio|blockquote|body|canvas|datalist|details|div|dl|fieldset|figcaption|figure|footer|form|head|header|hgroup|li|mark|meter|nav|ol|output|p|progress|rp|rt|ruby|script|section|select|small|style|summary|table|tbody|tfoot|thead|time|tr|ul|video|cfloop|cfif|cfswitch|cfcomponent|cffunction|cfcase|cfdefaultcase|cfsavecontent|cfscript)\b.*?&gt;
+		|&lt;!--(?!.*--\s*&gt;)
+		|&lt;!---(?!.*---\s*&gt;)|function\s*|if
+		)</string>
+
+	<key>foldingStopMarker</key>
+	<string>(?x)
+		(&lt;/(?i:a|article|aside|audio|blockquote|body|canvas|datalist|details|div|dl|fieldset|figcaption|figure|footer|form|head|header|hgroup|li|mark|meter|nav|ol|output|p|progress|rp|rt|ruby|script|section|select|small|style|summary|table|tbody|tfoot|thead|time|tr|ul|video|cfloop|cfif|cfswitch|cfcomponent|cffunction|cfcase|cfdefaultcase|cfsavecontent|cfscript)&gt;
+		|^(?!.*?&lt;!--).*?--\s*&gt;
+		|^(?!.*?&lt;!---).*?---\s*&gt;|\}
+		|^[^{]*\}
+		)</string>
+
+	<key>keyEquivalent</key>
+	<string>^~@c</string>
+
+	<key>name</key>
+	<string>Coldfusion</string>
+
+	<key>patterns</key>
+
+	<array>
+
+
+
+
+
+
+
+
+		<!-- STARTED CFSCRIPT -->
+		<dict>
+			<key>begin</key>
+			<!-- <string>(?:^\s+)?(&lt;)((?i:cfscript))\b(?![^&gt;]*/&gt;)</string> -->
+			<string>(?:^\s+)?(&lt;)((?i:cfscript))\b(?![^&gt;]*/&gt;)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.begin.cfml</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.cfml</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.cfml</string>
+				</dict>
+			</dict>
+
+			<key>end</key>
+			<!-- <string>(?&lt;=&lt;/(cfscript|CFSCRIPT))(&gt;)(?:\s*\n)?</string> -->
+			<string>(&lt;/)(cfscript|CFSCRIPT)(&gt;)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.cfml</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.cfml</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.cfml</string>
+				</dict>
+			</dict>
+
+			<key>name</key>
+			<string>source.cfscript.embedded.html</string>
+
+			<key>patterns</key>
+
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.cfscript</string>
+				</dict>
+			</array>
+		</dict>
+		<!-- /end STARTED CFSCRIPT -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- CFQUERY SHIT -->
+		<dict>
+			<key>begin</key>
+			<string>(?:^\s+)?&lt;((?i:cfquery))\b(?![^&gt;]*/&gt;)</string>
+
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.cfml</string>
+					<!-- <string>entity.name.tag.cfquery.html</string> -->
+				</dict>
+			</dict>
+
+			<key>end</key>
+			<string>&lt;/((?i:cfquery))&gt;(?:\s*\n)?</string>
+
+			<key>name</key>
+			<string>source.sql.embedded.cfml</string>
+
+			<key>patterns</key>
+			<array>
+				<!-- this is here to colour the cfquery tag's attributes -->
+				<dict>
+					<key>include</key>
+					<string>#tag-stuff</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>&gt;</string>
+					<key>end</key>
+					<string>(?=&lt;/(?i:cfquery))</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>source.sql</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<!-- END CFQUERY SHIT -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<dict>
+			<key>include</key>
+			<string>#cfcomment</string>
+		</dict>
+
+		<dict>
+			<key>include</key>
+			<string>text.html.basic</string>
+		</dict>
+	</array>
+
+
+<!--  *****************************
+	REPOSITORY
+ -->
+
+	<key>repository</key>
+	<dict>
+
+		<key>embedded-code</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+<!-- 				<dict>
+					<key>include</key>
+					<string>#ruby</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#php</string>
+				</dict> -->
+				<!--
+				<dict>
+					<key>include</key>
+					<string>#smarty</string>
+				</dict>
+				-->
+<!-- 				<dict>
+					<key>include</key>
+					<string>#python</string>
+				</dict> -->
+			</array>
+		</dict>
+
+
+		<key>entities</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.entity.html</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.entity.html</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(&amp;)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)</string>
+					<key>name</key>
+					<string>constant.character.entity.html</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>&amp;</string>
+					<key>name</key>
+					<string>invalid.illegal.bad-ampersand.html</string>
+				</dict>
+			</array>
+		</dict>
+
+
+		<key>string-double-quoted</key>
+		<dict>
+			<key>begin</key>
+			<string>"</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>"</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.html</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.double.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#embedded-code</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#entities</string>
+				</dict>
+			</array>
+		</dict>
+		<key>string-single-quoted</key>
+		<dict>
+			<key>begin</key>
+			<string>'</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.begin.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>'</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.string.end.html</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>string.quoted.single.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#embedded-code</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#entities</string>
+				</dict>
+			</array>
+		</dict>
+		<key>tag-generic-attribute</key>
+		<dict>
+			<key>match</key>
+			<string>\b([a-zA-Z\-:]+)</string>
+			<key>name</key>
+			<string>entity.other.attribute-name.html</string>
+		</dict>
+		<key>tag-id-attribute</key>
+		<dict>
+			<key>begin</key>
+			<string>\b(id)\b\s*(=)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.attribute-name.id.html</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.key-value.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?&lt;='|")</string>
+			<key>name</key>
+			<string>meta.attribute-with-value.id.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>"</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.html</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
+					<string>meta.toc-list.id.html</string>
+					<key>end</key>
+					<string>"</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.double.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#embedded-code</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#entities</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>'</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.html</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
+					<string>meta.toc-list.id.html</string>
+					<key>end</key>
+					<string>'</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.single.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#embedded-code</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#entities</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+
+
+
+
+		<key>tag-stuff</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#tag-id-attribute</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#tag-generic-attribute</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string-double-quoted</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string-single-quoted</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#embedded-code</string>
+				</dict>
+			</array>
+		</dict>
+
+
+
+
+
+
+		<key>cfcomment</key>
+		<dict>
+			<key>begin</key>
+			<string>&lt;!---</string>
+			<key>end</key>
+			<string>---\s*&gt;</string>
+			<key>name</key>
+			<!-- <string>comment.block.html</string> -->
+			<!-- this is set to line to differentiate htmlcomment/cfcomment -->
+			<string>comment.line.cfml</string>
+		</dict>
+	</dict>
+
+
+
+
+	<key>scopeName</key>
+	<string>text.html.cfm</string>
+
+
+	<key>uuid</key>
+	<string>ZD34E6DA-6B1C-11D9-8CC2-000D93589EDF</string>
+</dict>
+</plist>

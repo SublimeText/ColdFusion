@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[<cfscript>${0:$SELECTION}</cfscript>]]></content>
+    <tabTrigger>&lt;</tabTrigger>
+    <scope>text.html.cfm</scope>
+    <description>cfscript Tag</description>
+</snippet>
