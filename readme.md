@@ -7,10 +7,10 @@
 
 ### Keyboard Shortcuts
 
-* ctrl+shift+o <cfoutput></cfoutput>
-* ctrl+alt+r <cfscript></cfscript>
-* ctrl+alt+d  <cfdump var="##">
-* ctrl+shift+m  <!--- --->
+* ctrl+shift+o `<cfoutput></cfoutput>`
+* ctrl+alt+r `<cfscript></cfscript>`
+* ctrl+alt+d  `<cfdump var="##">`
+* ctrl+shift+m  `<!--- --->`
 
 ## Installation
 
