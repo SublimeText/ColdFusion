@@ -6,11 +6,11 @@
 * Keyboard Shortcuts
 
 ### Keyboard Shortcuts
-
-* ctrl+shift+o `<cfoutput></cfoutput>`
-* ctrl+alt+r `<cfscript></cfscript>`
-* ctrl+alt+d  `<cfdump var="##">`
-* ctrl+shift+m  `<!--- --->`
+* ctrl+shift+3 '<cfoutput>#SELECTION#</cfoutput>'
+* ctrl+shift+o `<cfoutput>SELECTION</cfoutput>`
+* ctrl+alt+r `<cfscript>SELECTION</cfscript>`
+* ctrl+alt+d  `<cfdump var="#SELECTION#">`
+* ctrl+shift+m  `<!--- SELECTION --->`
 
 ## Installation
 
