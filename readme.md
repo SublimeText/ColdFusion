@@ -6,7 +6,7 @@
 * Keyboard Shortcuts
 
 ### Keyboard Shortcuts
-* ctrl+shift+3 '<cfoutput>#SELECTION#</cfoutput>'
+* ctrl+shift+3 `<cfoutput>#SELECTION#</cfoutput>`
 * ctrl+shift+o `<cfoutput>SELECTION</cfoutput>`
 * ctrl+alt+r `<cfscript>SELECTION</cfscript>`
 * ctrl+alt+d  `<cfdump var="#SELECTION#">`
