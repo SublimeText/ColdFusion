@@ -20,13 +20,18 @@ If you are a git user, the best way to install this bundle and keep up to date i
 
 Go to your Sublime Text 2 `Packages` directory and clone the repository using the command below:
 
-    git clone https://github.com/SublimeText/Coldfusion "Coldfusion"
+    git clone https://github.com/SublimeText/ColdFusion "ColdFusion"
 
 ### Download Manually
 
 * Download the files using the GitHub .zip download option
 * Unzip the files and rename the folder to `Coldfusion`
 * Copy the folder to your Sublime Text 2 `Packages` directory
+
+### Package Control
+
+* Follow instructions on http://wbond.net/sublime_packages/package_control
+* Install using Package Control: Install > ColdFusion package
 
 ##Notes
 * CFSCript highlighting is a work in progress for CFCs (trying to make GoTo Symbol (Ctrl+Shift+R) work)
