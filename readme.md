@@ -28,3 +28,7 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 * Unzip the files and rename the folder to `Coldfusion`
 * Copy the folder to your Sublime Text 2 `Packages` directory
 
+##Notes
+* CFSCript highlighting is a work in progress for CFCs (trying to make GoTo Symbol (Ctrl+Shift+R) work)
+* cfml_completions.py Auto Complete will only work with Sublime Text 2 Build 2151 or greater
+* Not all tag and function snippets have been ported
