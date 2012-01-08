@@ -2,19 +2,19 @@
     // Ctrl+Shift+O <cfoutput></cfoutput>
     {
     "keys": ["ctrl+shift+o"], "command": "insert_snippet",
-    "args": { "name": "Packages/Coldfusion/cfoutput.sublime-snippet" },
+    "args": { "contents": "<cfoutput>${0:$SELECTION}</cfoutput>" },
     "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
     // Ctrl+Alt+R <cfscript></cfscript>
     {
     "keys": ["ctrl+alt+r"], "command": "insert_snippet",
-    "args": { "name": "Packages/Coldfusion/cfscript.sublime-snippet" },
+    "args": { "contents": "<cfscript>${0:$SELECTION}</cfscript>" },
     "context": [{ "key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
     // Ctrl+Alt+D  <cfdump var="##">
     {
     "keys": ["ctrl+alt+d"], "command": "insert_snippet",
-    "args": { "name": "Packages/Coldfusion/cfdump.sublime-snippet" },
+    "args": { "contents": "<cfdump var=\"#${1:$SELECTION}#\" />" },
     "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
     // Ctrl+Shift+M  ColdFusion Comment <!--- --->
