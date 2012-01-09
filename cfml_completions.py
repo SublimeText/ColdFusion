@@ -28,11 +28,36 @@ class TagCompletions(sublime_plugin.EventListener):
             ("cfchartdata\tCfml", "cfchartdata ${1:${2:item=\"$3\" }${4:value=\"$5\"}} />"),
             ("cfchartseries\tCfml", "cfchartseries ${1:${2:type=\"$3\" }${4:query=\"$5\" }${6:itemcolumn=\"$7\" }${8:valuecolumn=\"$9\" }${10:serieslabel=\"$11\" }${12:seriescolor=\"$13\" }${14:paintstyle=\"$15\" }${16:markerstyle=\"$17\" }${18:colorlist=\"$19\" }${20:datalabelstyle=\"$21\"}}>\n\t\$0\n</cfchartseries>"),
             ("cfcol\tCfml", "cfcol ${1:${2:header=\"$3\" }${4:width=\"$5\" }${6:align=\"$7\" }${8:text=\"$9\"}} />"),
+            ("cfcollection\tCfml", "cfcollection ${1:${2:action=\"$3\" }${4:collection=\"$5\" }${6:path=\"$7\" }${8:language=\"$9\" }${10:name=\"$11\" }${12:categories=\"$13\"}} />"),
+            ("cfcomponent\tCfml", "cfcomponent ${1:${2:extends=\"$3\" }${4:output=\"$5\" }${6:displayname=\"$7\" }${8:hint=\"$9\" }${10:name=\"$11\" }${12:style=\"$13\" }${14:namespace=\"$15\" }${16:serviceportname=\"$17\" }${18:porttypename=\"$19\" }${20:bindingname=\"$21\" }${22:wsdlfile=\"$23\"}}>\n\t$0\n</cfcomponent>"),
+            ("cfcontent\tCfml", "cfcontent ${1:${2:type=\"$3\" }${4:deletefile=\"$5\" }${6:file=\"$7\" }${8:reset=\"$9\"}} />"),
+            ("cfcookie\tCfml", "cfcookie ${1:${2:name=\"$3\" }${4:value=\"$5\" }${6:expires=\"$7\" }${8:secure=\"$9\" }${10:path=\"$11\" }${12:domain=\"$13\"}} />"),
+            ("cfdefaultcase\tCfml", "cfdefaultcase>\n\t$0\n</cfdefaultcase>"),
+            ("cfdirectory\tCfml", "cfdirectory ${1:${2:action=\"$3\" }${4:directory=\"$5\" }${6:name=\"$7\" }${8:filter=\"$9\" }${10:mode=\"$11\" }${12:sort=\"$13\" }${14:newdirectory=\"$15\" }${16:recurse=\"$17\"}} />"),
+            ("cfdocument\tCfml", "cfdocument ${1:${2:format=\"$3\" }${4:filename=\"$5\" }${6:overwrite=\"$7\" }${8:name=\"$9\" }${10:pagetype=\"$11\" }${12:pageheight=\"$13\" }${14:pagewidth=\"$15\" }${16:orientation=\"$17\" }${18:margintop=\"$19\" }${20:marginbottom=\"$21\" }${22:marginleft=\"$23\" }${24:marginright=\"$25\" }${26:unit=\"$27\" }${28:encryption=\"$29\" }${30:ownerpassword=\"$31\" }${32:userpassword=\"$33\" }${34:permissions=\"$35\" }${36:fontembed=\"$37\" }${38:backgroundvisible=\"$39\" }${40:scale=\"$41\"}}>\n\t$0\n</cfdocument>"),
+            ("cfdocumentitem\tCfml", "cfdocumentitem ${1:${2:type=\"$3\"}}>\n\t$0\n</cfdocumentitem>"),
+            ("cfdocumentsection\tCfml", "cfdocumentsection ${1:${2:margintop=\"$3\" }${4:marginbottom=\"$5\" }${6:marginleft=\"$7\" }${8:marginright=\"$9\"}}>\n\t$0\n<cfdocumentsection>"),
+            ("cfdump\tCfml", "cfdump ${1:${2:var=\"$3\" }${4:expand=\"$5\" }${6:label=\"$7\"}} />"),
+            ("cfelse\tCfml", "cfelse>"),
+            ("cfelseif\tCfml", "cfelseif ${1:} />"),
+            ("cferror\tCfml", "cferror ${1:${2:type=\"$3\" }${4:template=\"$5\" }${6:mailto=\"$7\" }${8:exception=\"$9\"}} />"),
+            ("cfexecute\tCfml", "cfexecute ${1:${2:name=\"$3\" }${4:arguments=\"$5\" }${6:outputfile=\"$7\" }${8:variable=\"$9\" }${10:timeout=\"$11\"}}>\n\t$0\n</cfexecute>"),
+            ("cfexit\tCfml", "cfexit ${1:${2:method=\"$3\"}} />"),
+            ("cfexit\tCfml", "cfexit ${1:${2:method=\"$3\"}} />"),
+            ("cffile\tCfml", "cffile ${1:${2:action=\"$3\" }${4:file=\"$5\" }${6:mode=\"$7\" }${8:output=\"$9\" }${10:addnewline=\"$11\" }${12:attributes=\"$13\" }${14:charset=\"$15\" }${16:source=\"$17\" }${18:destination=\"$19\" }${20:variable=\"$21\" }${22:filefield=\"$23\" }${24:nameconflict=\"$25\" }${26:accept=\"$27\" }${28:result=\"$29\"}} />"),
+            ("cfflush\tCfml", "cfflush ${1:${2:interval=\"$3\"}} />"),
+            ("cfform\tCfml", "cfform ${1:${2:name=\"$3\" }${4:action=\"$5\" }${6:method=\"$7\" }${8:format=\"$9\" }${10:skin=\"$11\" }${12:style=\"$13\" }${14:preservedata=\"$15\" }${16:onload=\"$17\" }${18:onreset=\"$19\" }${20:onsubmit=\"$21\" }${22:codebase=\"$23\" }${24:archive=\"$25\" }${26:height=\"$27\" }${28:width=\"$29\" }${30:onerror=\"$31\" }${32:wmode=\"$33\" }${34:accessible=\"$35\" }${36:preloader=\"$37\" }${38:timeout=\"$39\" }${40:enctype=\"$41\" }${42:id=\"$43\" }${44:scriptsrc=\"$45\" }${46:target=\"$47\" }${48:class=\"$49\" }${50:passthrough=\"$51\"}}>\n\t$0\n</cfform>"),
+            ("cfformgroup\tCfml", "cfformgroup ${1:${2:type=\"$3\" }${4:query=\"$5\" }${6:startrow=\"$7\" }${8:maxrows=\"$9\" }${10:label=\"$11\" }${12:style=\"$13\" }${14:selectedindex=\"$15\" }${16:width=\"$17\" }${18:height=\"$19\" }${20:enabled=\"$21\" }${22:visible=\"$23\" }${24:onchange=\"$25\" }${26:tooltip=\"$27\"}}>\n\t$0\n</cfformgroup>"),
+            ("cfformitem\tCfml", "cfformitem ${1:${2:type=\"$3\" }${4:style=\"$5\" }${6:width=\"$7\" }${8:height=\"$9\" }${10:enabled=\"$11\" }${12:visible=\"$13\" }${14:tooltip=\"$15\" }${16:bind=\"$17\"}}>\n\t$0\n</cfformitem>"),
+
+
+
+
+
 
 
 
 
             ("cfset\tCfml", "cfset $1 />"),
-            ("cfdump\tCfml", "cfdump var=\"#${1:selection}#\" >"),
 
         ], sublime.INHIBIT_WORD_COMPLETIONS | sublime.INHIBIT_EXPLICIT_COMPLETIONS)
