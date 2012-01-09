@@ -2,25 +2,25 @@
     // ctrl+shift+3 <cfoutput>#SELECTION#</cfoutput>
     {
     "keys": ["ctrl+shift+3"], "command": "insert_snippet",
-    "args": { "contents": "<cfoutput>#${0:$selection}#</cfoutput>" },
+    "args": { "contents": "<cfoutput>#${0:$SELECTION}#</cfoutput>" },
     "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
     // Ctrl+Shift+O <cfoutput></cfoutput>
     {
     "keys": ["ctrl+shift+o"], "command": "insert_snippet",
-    "args": { "contents": "<cfoutput>${0:$selection}</cfoutput>" },
+    "args": { "contents": "<cfoutput>${0:$SELECTION}</cfoutput>" },
     "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
     // Ctrl+Alt+R <cfscript></cfscript>
     {
     "keys": ["ctrl+alt+r"], "command": "insert_snippet",
-    "args": { "contents": "<cfscript>${0:$selection}</cfscript>" },
+    "args": { "contents": "<cfscript>${0:$SELECTION}</cfscript>" },
     "context": [{ "key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
     // Ctrl+Alt+D  <cfdump var="##">
     {
     "keys": ["ctrl+alt+d"], "command": "insert_snippet",
-    "args": { "contents": "<cfdump var=\"#${1:$selection}#\" />" },
+    "args": { "contents": "<cfdump var=\"#${1:$SELECTION}#\" />" },
     "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
     // Ctrl+Shift+M  ColdFusion Comment <!--- --->
