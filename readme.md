@@ -26,7 +26,7 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 ### Download Manually
 
 * Download the files using the GitHub .zip download option
-* Unzip the files and rename the folder to `Coldfusion`
+* Unzip the files and rename the folder to `ColdFusion`
 * Copy the folder to your Sublime Text 2 `Packages` directory
 
 ### Package Control
