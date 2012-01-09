@@ -1,8 +1,9 @@
 # Coldfusion package for Sublime Text 2
 
 * Coldfusion syntax highlight.
-* Auto Inserts closing hash #
-* Less than  (<) triggers cfml auto complete
+* Auto Inserts closing hash # (see Default.sublime-keymap)
+* Provides completions that match just after typing an opening angle bracket (see cfml_completions.py)
+* Exhaustive library of snippet bindings (see ColdFusion.sublime-completions)
 * Keyboard Shortcuts
 
 ### Keyboard Shortcuts
@@ -34,6 +35,5 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 * Install using Package Control: Install > ColdFusion package
 
 ##Notes
-* CFSCript highlighting is a work in progress for CFCs (trying to make GoTo Symbol (Ctrl+Shift+R) work)
+* CFScript highlighting is a work in progress for CFCs (trying to get GoTo Symbol (Ctrl+Shift+R) work)
 * cfml_completions.py Auto Complete will only work with Sublime Text 2 Build 2151 or greater
-* Not all tag and function snippets have been ported
