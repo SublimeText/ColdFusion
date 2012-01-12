@@ -50,7 +50,7 @@
 			<key>begin</key>
 			<!-- <string>(?:^\s+)?(&lt;)((?i:cfscript))\b(?![^&gt;]*/&gt;)</string> -->
 			<string>(?:^\s+)?(&lt;)((?i:cfscript))\b(?![^&gt;]*/&gt;)</string>
-			<key>captures</key>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
