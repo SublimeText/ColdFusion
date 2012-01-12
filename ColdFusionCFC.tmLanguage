@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>comment</key>
+    <string>Coldfusion Component</string>
+    <key>fileTypes</key>
+    <array>
+        <string>cfc</string>
+    </array>
+
+    <!-- if the first line of any doc matches this, this syntax will be used -->
+    <key>firstLineMatch</key>
+    <string></string>
+
+    <!-- /not currently used by ST2 afaik -->
+    <!-- this will fold '{}' for cfscript -->
+    <!-- TODO: add tag matching for cfcomponent -->
+    <key>foldingStartMarker</key>
+    <string>\{\s*$</string>
+
+    <key>foldingStopMarker</key>
+    <string>^\s*\}</string>
+
+    <!-- ?textmate specific key binding for syntax change? -->
+    <key>keyEquivalent</key>
+    <string></string>
+
+    <key>name</key>
+    <string>Coldfusion Component</string>
+
+
+
+    <key>patterns</key>
+    <array>
+
+
+        <dict>
+            <key>begin</key>
+            <string>(?:^\s+)?&lt;((?i:cfcomponent))\b(?![^&gt;]*/&gt;)</string>
+
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>entity.name.tag.cfml</string>
+                    <!-- <string>entity.name.tag.cfquery.html</string> -->
+                </dict>
+            </dict>
+
+            <key>end</key>
+            <string>&lt;/((?i:cfcomponent))&gt;(?:\s*\n)?</string>
+
+            <key>name</key>
+            <string>text.html.cfm</string>
+
+            <key>patterns</key>
+            <array>
+<!--
+                <dict>
+                    <key>include</key>
+                    <string>#tag-stuff</string>
+                </dict>
+ -->
+                <dict>
+                    <key>begin</key>
+                    <string>&gt;</string>
+                    <key>end</key>
+                    <string>(?=&lt;/(?i:cfcomponent))</string>
+                    <key>patterns</key>
+                    <array>
+                        <dict>
+                            <key>include</key>
+                            <string>text.html.cfm</string>
+                        </dict>
+                    </array>
+                </dict>
+            </array>
+        </dict>
+
+
+
+
+
+
+    </array>
+
+    <key>scopeName</key>
+    <string>text.html.cfc</string>
+    <key>uuid</key>
+    <string>93E017CC-6F27-11D9-90EB-000D93589AF6</string>
+</dict>
+</plist>

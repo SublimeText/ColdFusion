@@ -6,7 +6,6 @@
     <string>Coldfusion Cfscript Language</string>
     <key>fileTypes</key>
     <array>
-        <string>cfc</string>
     </array>
     <key>firstLineMatch</key>
     <string></string>
