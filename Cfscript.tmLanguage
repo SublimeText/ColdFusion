@@ -155,7 +155,7 @@
         <!-- TODO: THESE NEXT 2 DICT DEFINITIONS NEED TO BE PORTED TO CFSCRIPT -->
         <dict>
             <key>match</key>
-            <string>!|\$|%|&amp;|\*|\-\-|\-|\+\+|\+|~|===|==|=|!=|!==|&lt;=|&gt;=|&lt;&lt;=|&gt;&gt;=|&gt;&gt;&gt;=|&lt;&gt;|&lt;|&gt;|!|&amp;&amp;|\|\||\?\:|\*=|(?&lt;!\()/=|%=|\+=|\-=|&amp;=|\^=|\b(in|instanceof|new|delete|typeof|void)\b</string>
+            <string>!|\$|%|&amp;|\*|\-\-|\-|\+\+|\+|~|===|==|=|!=|!==|&lt;=|&gt;=|&lt;&lt;=|&gt;&gt;=|&gt;&gt;&gt;=|&lt;&gt;|&lt;|&gt;|!|&amp;&amp;|\|\||\?\:|\*=|(?&lt;!\()/=|%=|\+=|\-=|&amp;=|\^=|\b(in|instanceof|new|delete|typeof|void|AND|N?EQ|GT|LT|NOT)\b</string>
             <key>name</key>
             <string>keyword.operator.cfscript</string>
         </dict>
@@ -171,12 +171,67 @@
 
         <!-- TODO: more cfscript shit here I guess -->
 
-
+        <dict>
+            <key>match</key>
+            <string>\b(component|property|function|break|if|else|switch|case|catch|continue|default|do|for|in|return|try|var|while)\b</string>
+            <key>name</key>
+            <string>keyword.control.cfscript</string>
+        </dict>
+        <dict>
+            <key>begin</key>
+            <string>"</string>
+            <key>beginCaptures</key>
+            <dict>
+                <key>0</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.string.begin.cfscript</string>
+                </dict>
+            </dict>
+            <key>end</key>
+            <string>"</string>
+            <key>endCaptures</key>
+            <dict>
+                <key>0</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.string.end.cfscript</string>
+                </dict>
+            </dict>
+            <key>name</key>
+            <string>string.quoted.double.cfscript</string>
+        </dict>
+        <dict>
+            <key>begin</key>
+            <string>'</string>
+            <key>beginCaptures</key>
+            <dict>
+                <key>0</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.string.begin.cfscript</string>
+                </dict>
+            </dict>
+            <key>end</key>
+            <string>'</string>
+            <key>endCaptures</key>
+            <dict>
+                <key>0</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.string.end.cfscript</string>
+                </dict>
+            </dict>
+            <key>name</key>
+            <string>string.quoted.single.cfscript</string>
+        </dict>
     </array>
 
     <key>scopeName</key>
     <string>source.cfscript</string>
     <key>uuid</key>
     <string>93E017CC-6F27-11D9-90EB-000D93589AF6</string>
+
+
 </dict>
 </plist>
