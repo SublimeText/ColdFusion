@@ -1,5 +1,5 @@
 {
-	"scope": "text.html.cfm - source - meta.tag, punctuation.definition.tag.begin" ,
+	"scope": "text.html.cfm" ,
 
 	"completions":
 	[
