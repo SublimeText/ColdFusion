@@ -28,10 +28,9 @@
 	<string>ColdFusion</string>
 	<key>patterns</key>
 	<array>
-		<!-- STARTED CFSCRIPT -->
+		<!-- CFSCRIPT -->
 		<dict>
 			<key>begin</key>
-			<!-- <string>(?:^\s+)?(&lt;)((?i:cfscript))\b(?![^&gt;]*/&gt;)</string> -->
 			<string>(?:^\s+)?(&lt;)((?i:cfscript))\b(?![^&gt;]*/&gt;)</string>
 			<key>beginCaptures</key>
 			<dict>
@@ -53,7 +52,6 @@
 			</dict>
 
 			<key>end</key>
-			<!-- <string>(?&lt;=&lt;/(cfscript|CFSCRIPT))(&gt;)(?:\s*\n)?</string> -->
 			<string>(&lt;/)(cfscript|CFSCRIPT)(&gt;)</string>
 			<key>endCaptures</key>
 			<dict>
@@ -86,61 +84,8 @@
 				</dict>
 			</array>
 		</dict>
-		<!-- /end STARTED CFSCRIPT -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		<!-- CFQUERY SHIT -->
+		<!-- CFQUERY -->
 		<dict>
 			<key>begin</key>
 			<string>(?:^\s+)?&lt;((?i:cfquery))\b(?![^&gt;]*/&gt;)</string>
@@ -163,7 +108,6 @@
 
 			<key>patterns</key>
 			<array>
-				<!-- this is here to colour the cfquery tag's attributes -->
 				<dict>
 					<key>include</key>
 					<string>#tag-stuff</string>
@@ -183,62 +127,8 @@
 				</dict>
 			</array>
 		</dict>
-		<!-- END CFQUERY SHIT -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		<!-- TODO: CFSET -->
 
 		<dict>
 			<key>include</key>
