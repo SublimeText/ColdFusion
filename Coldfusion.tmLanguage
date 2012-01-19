@@ -140,73 +140,46 @@
 		</dict>
 	</array>
 
-
-<!--  *****************************
-	REPOSITORY
- -->
-
 	<key>repository</key>
 	<dict>
-
-		<key>embedded-code</key>
+		<key>cfcomment</key>
 		<dict>
-			<key>patterns</key>
-			<array>
-<!-- 				<dict>
-					<key>include</key>
-					<string>#ruby</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#php</string>
-				</dict> -->
-				<!--
-				<dict>
-					<key>include</key>
-					<string>#smarty</string>
-				</dict>
-				-->
-<!-- 				<dict>
-					<key>include</key>
-					<string>#python</string>
-				</dict> -->
-			</array>
+			<key>begin</key>
+			<string>&lt;!---</string>
+			<key>end</key>
+			<string>---\s*&gt;</string>
+			<key>name</key>
+			<!-- <string>comment.block.html</string> -->
+			<!-- this is set to line to differentiate htmlcomment/cfcomment -->
+			<string>comment.line.cfml</string>
 		</dict>
 
-
-		<key>entities</key>
+		<key>tag-stuff</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.entity.html</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.entity.html</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>(&amp;)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)</string>
-					<key>name</key>
-					<string>constant.character.entity.html</string>
+					<key>include</key>
+					<string>#tag-generic-attribute</string>
 				</dict>
 				<dict>
-					<key>match</key>
-					<string>&amp;</string>
-					<key>name</key>
-					<string>invalid.illegal.bad-ampersand.html</string>
+					<key>include</key>
+					<string>#string-double-quoted</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string-single-quoted</string>
 				</dict>
 			</array>
 		</dict>
 
-
+		<key>tag-generic-attribute</key>
+		<dict>
+			<key>match</key>
+			<string>\b([a-zA-Z\-:]+)</string>
+			<key>name</key>
+			<string>entity.other.attribute-name.html</string>
+		</dict>
 		<key>string-double-quoted</key>
 		<dict>
 			<key>begin</key>
@@ -233,10 +206,6 @@
 			<string>string.quoted.double.html</string>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>include</key>
-					<string>#embedded-code</string>
-				</dict>
 				<dict>
 					<key>include</key>
 					<string>#entities</string>
@@ -271,175 +240,46 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#embedded-code</string>
-				</dict>
-				<dict>
-					<key>include</key>
 					<string>#entities</string>
 				</dict>
 			</array>
 		</dict>
-		<key>tag-generic-attribute</key>
-		<dict>
-			<key>match</key>
-			<string>\b([a-zA-Z\-:]+)</string>
-			<key>name</key>
-			<string>entity.other.attribute-name.html</string>
-		</dict>
-		<key>tag-id-attribute</key>
-		<dict>
-			<key>begin</key>
-			<string>\b(id)\b\s*(=)</string>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>entity.other.attribute-name.id.html</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.separator.key-value.html</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(?&lt;='|")</string>
-			<key>name</key>
-			<string>meta.attribute-with-value.id.html</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>"</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.begin.html</string>
-						</dict>
-					</dict>
-					<key>contentName</key>
-					<string>meta.toc-list.id.html</string>
-					<key>end</key>
-					<string>"</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.end.html</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>string.quoted.double.html</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#embedded-code</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#entities</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>'</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.begin.html</string>
-						</dict>
-					</dict>
-					<key>contentName</key>
-					<string>meta.toc-list.id.html</string>
-					<key>end</key>
-					<string>'</string>
-					<key>endCaptures</key>
-					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.string.end.html</string>
-						</dict>
-					</dict>
-					<key>name</key>
-					<string>string.quoted.single.html</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#embedded-code</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#entities</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-		</dict>
 
-
-
-
-		<key>tag-stuff</key>
+		<key>entities</key>
 		<dict>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>#tag-id-attribute</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.entity.html</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.entity.html</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>(&amp;)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)</string>
+					<key>name</key>
+					<string>constant.character.entity.html</string>
 				</dict>
 				<dict>
-					<key>include</key>
-					<string>#tag-generic-attribute</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#string-double-quoted</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#string-single-quoted</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#embedded-code</string>
+					<key>match</key>
+					<string>&amp;</string>
+					<key>name</key>
+					<string>invalid.illegal.bad-ampersand.html</string>
 				</dict>
 			</array>
-		</dict>
-
-
-
-
-
-
-		<key>cfcomment</key>
-		<dict>
-			<key>begin</key>
-			<string>&lt;!---</string>
-			<key>end</key>
-			<string>---\s*&gt;</string>
-			<key>name</key>
-			<!-- <string>comment.block.html</string> -->
-			<!-- this is set to line to differentiate htmlcomment/cfcomment -->
-			<string>comment.line.cfml</string>
 		</dict>
 	</dict>
 
-
-
-
 	<key>scopeName</key>
 	<string>text.html.cfm</string>
-
 
 	<key>uuid</key>
 	<string>C48DE6D0-4226-11E1-B86C-0800200C9A66</string>
