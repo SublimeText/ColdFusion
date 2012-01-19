@@ -3,8 +3,7 @@
 
     "completions":
     [
-      // functions
-
+        // functions
         { "trigger": "abs", "contents": "abs(${1:${2:number}})"},
         { "trigger": "acos", "contents": "acos(${1:${2:number}})"},
         { "trigger": "arrayAppend", "contents": "arrayAppend(${1:${2:array}, ${3:value}})"},
@@ -290,7 +289,5 @@
         { "trigger": "xmlValidate", "contents": "xmlValidate(${1:${2:xmlDoc}${3:, [validator]}})"},
         { "trigger": "year", "contents": "year(${1:${2:date}})"},
         { "trigger": "yesNoFormat", "contents": "yesNoFormat(${1:${2:value}})"}
-
     ]
-
 }
