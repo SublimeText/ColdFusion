@@ -108,7 +108,7 @@
         { "trigger": "cfupdate", "contents": "<cfupdate ${1:${2:datasource=\"$3\" }${4:tablename=\"$5\" }${6:tableowner=\"$7\" }${8:tablequalifier=\"$9\" }${10:username=\"$11\" }${12:password=\"$13\" }${14:formfields=\"$15\"}} />$0"},
         { "trigger": "cfwddx", "contents": "<cfwddx ${1:${2:action=\"$3\" }${4:input=\"$5\" }${6:output=\"$7\" }${8:toplevelvariable=\"$9\" }${10:usetimezoneinfo=\"$11\" }${12:validate=\"$13\"}} />$0"},
         { "trigger": "cfxml", "contents": "<cfxml ${1:${2:variable=\"$3\" }${4:casesensitive=\"$5\"}}>\n\t$0\n</cfxml>"},
-        { "trigger": "abort", "contents": "<cfabort />$0"}
+        { "trigger": "abort", "contents": "<cfabort />$0"},
 
 
         // UPPERCASE TAGS
