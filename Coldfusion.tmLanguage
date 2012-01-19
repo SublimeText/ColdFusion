@@ -95,8 +95,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.cfml</string>
-					<!-- <string>entity.name.tag.cfquery.html</string> -->
+					<string>entity.name.tag.cfquery.cfml</string>
 				</dict>
 			</dict>
 
