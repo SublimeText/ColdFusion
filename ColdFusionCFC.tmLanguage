@@ -8,33 +8,20 @@
     <array>
         <string>cfc</string>
     </array>
-
-    <!-- if the first line of any doc matches this, this syntax will be used -->
     <key>firstLineMatch</key>
     <string></string>
-
-    <!-- /not currently used by ST2 afaik -->
-    <!-- this will fold '{}' for cfscript -->
-    <!-- TODO: add tag matching for cfcomponent -->
     <key>foldingStartMarker</key>
     <string>\{\s*$</string>
-
     <key>foldingStopMarker</key>
     <string>^\s*\}</string>
-
-    <!-- ?textmate specific key binding for syntax change? -->
     <key>keyEquivalent</key>
     <string></string>
-
     <key>name</key>
     <string>Coldfusion Component</string>
 
-
-
     <key>patterns</key>
     <array>
-
-
+        <!-- TAG BASED CFCOMPONENT -->
         <dict>
             <key>begin</key>
             <string>(?:^\s+)?&lt;((?i:cfcomponent))\b(?![^&gt;]*/&gt;)</string>
@@ -44,8 +31,7 @@
                 <key>1</key>
                 <dict>
                     <key>name</key>
-                    <string>entity.name.tag.cfml</string>
-                    <!-- <string>entity.name.tag.cfquery.html</string> -->
+                    <string>entity.name.tag.cfcomponent.cfml</string>
                 </dict>
             </dict>
 
@@ -53,16 +39,14 @@
             <string>&lt;/((?i:cfcomponent))&gt;(?:\s*\n)?</string>
 
             <key>name</key>
-            <string>text.html.cfm</string>
+            <string>text.html.cfm.embedded.cfml</string>
 
             <key>patterns</key>
             <array>
-<!--
                 <dict>
                     <key>include</key>
                     <string>#tag-stuff</string>
                 </dict>
- -->
                 <dict>
                     <key>begin</key>
                     <string>&gt;</string>
@@ -79,15 +63,142 @@
             </array>
         </dict>
 
-
-
-
-
-
+        <dict>
+            <key>include</key>
+            <string>source.cfscript</string>
+        </dict>
     </array>
+
+    <key>repository</key>
+    <dict>
+        <key>tag-stuff</key>
+        <dict>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>include</key>
+                    <string>#tag-generic-attribute</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#string-double-quoted</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#string-single-quoted</string>
+                </dict>
+            </array>
+        </dict>
+
+        <key>tag-generic-attribute</key>
+        <dict>
+            <key>match</key>
+            <string>\b([a-zA-Z\-:]+)</string>
+            <key>name</key>
+            <string>entity.other.attribute-name.html</string>
+        </dict>
+        <key>string-double-quoted</key>
+        <dict>
+            <key>begin</key>
+            <string>"</string>
+            <key>beginCaptures</key>
+            <dict>
+                <key>0</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.string.begin.html</string>
+                </dict>
+            </dict>
+            <key>end</key>
+            <string>"</string>
+            <key>endCaptures</key>
+            <dict>
+                <key>0</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.string.end.html</string>
+                </dict>
+            </dict>
+            <key>name</key>
+            <string>string.quoted.double.html</string>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>include</key>
+                    <string>#entities</string>
+                </dict>
+            </array>
+        </dict>
+        <key>string-single-quoted</key>
+        <dict>
+            <key>begin</key>
+            <string>'</string>
+            <key>beginCaptures</key>
+            <dict>
+                <key>0</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.string.begin.html</string>
+                </dict>
+            </dict>
+            <key>end</key>
+            <string>'</string>
+            <key>endCaptures</key>
+            <dict>
+                <key>0</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.string.end.html</string>
+                </dict>
+            </dict>
+            <key>name</key>
+            <string>string.quoted.single.html</string>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>include</key>
+                    <string>#entities</string>
+                </dict>
+            </array>
+        </dict>
+
+        <key>entities</key>
+        <dict>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>captures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.definition.entity.html</string>
+                        </dict>
+                        <key>3</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.definition.entity.html</string>
+                        </dict>
+                    </dict>
+                    <key>match</key>
+                    <string>(&amp;)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)</string>
+                    <key>name</key>
+                    <string>constant.character.entity.html</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>&amp;</string>
+                    <key>name</key>
+                    <string>invalid.illegal.bad-ampersand.html</string>
+                </dict>
+            </array>
+        </dict>
+    </dict>
+
 
     <key>scopeName</key>
     <string>source.cfscript.cfc</string>
+
     <key>uuid</key>
     <string>B7AC5320-4226-11E1-B86C-0800200C9A66</string>
 </dict>
