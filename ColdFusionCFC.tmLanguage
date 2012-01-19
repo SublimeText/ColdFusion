@@ -87,7 +87,7 @@
     </array>
 
     <key>scopeName</key>
-    <string>text.html.cfc</string>
+    <string>source.cfscript.cfc</string>
     <key>uuid</key>
     <string>B7AC5320-4226-11E1-B86C-0800200C9A66</string>
 </dict>
