@@ -117,26 +117,33 @@
 			</array>
 		</dict>
 
+
 		<!-- CFQUERY -->
 		<dict>
 			<key>begin</key>
-			<string>(?:^\s+)?&lt;((?i:cfquery))\b(?![^&gt;]*/&gt;)</string>
-
+			<string>(?:^\s+)?(&lt;)((?i:cfquery))\b(?![^&gt;]*/&gt;)</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
+					<string>punctuation.definition.tag.start.cfml</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
 					<string>entity.name.tag.cfquery.cfml</string>
 				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.cfml</string>
+				</dict>
 			</dict>
-
 			<key>end</key>
-			<string>&lt;/((?i:cfquery))&gt;(?:\s*\n)?</string>
-
+			<string>(&lt;/)((?i:cfquery))(&gt;)(?:\s*\n)?</string>
 			<key>name</key>
 			<string>source.sql.embedded.cfml</string>
-
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -145,7 +152,15 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>&gt;</string>
+					<string>(&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.cfml</string>
+						</dict>
+					</dict>
 					<key>end</key>
 					<string>(?=&lt;/(?i:cfquery))</string>
 					<key>patterns</key>
