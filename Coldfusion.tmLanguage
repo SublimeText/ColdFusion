@@ -28,6 +28,7 @@
 	<string>ColdFusion</string>
 	<key>patterns</key>
 	<array>
+
 		<!-- CFSCRIPT -->
 		<dict>
 			<key>begin</key>
@@ -81,6 +82,54 @@
 				<dict>
 					<key>include</key>
 					<string>source.cfscript</string>
+				</dict>
+			</array>
+		</dict>
+
+
+		<!-- CFFUNCTION -->
+		<dict>
+			<key>begin</key>
+			<string>(?:^\s+)?&lt;((?i:cffunction))\b(?![^&gt;]*/&gt;)</string>
+
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.cffunction.cfml</string>
+				</dict>
+			</dict>
+
+			<key>end</key>
+			<string>&lt;/((?i:cffunction))&gt;(?:\s*\n)?</string>
+
+			<key>name</key>
+			<string>text.html.cfm</string>
+
+			<key>patterns</key>
+			<array>
+				<!-- for symbol list Symbol List - name -->
+				<dict>
+					<key>include</key>
+					<string>#tag-name-attribute</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#tag-stuff</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>&gt;</string>
+					<key>end</key>
+					<string>(?=&lt;/(?i:cffunction))</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>text.html.cfm</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -142,6 +191,106 @@
 
 	<key>repository</key>
 	<dict>
+
+
+
+
+
+		<!-- for Symbol List cffunction -->
+		<key>tag-name-attribute</key>
+		<dict>
+			<key>begin</key>
+			<string>\b(name)\b\s*(=)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.attribute-name.name.cfml</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.key-value.cfml</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?&lt;='|")</string>
+			<key>name</key>
+			<string>meta.attribute-with-value.name.cfml</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>"</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.cfml</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
+					<string>meta.toc-list.name.cfml</string>
+					<key>end</key>
+					<string>"</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.cfml</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.double.cfml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#entities</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>'</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.cfml</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
+					<string>meta.toc-list.name.cfml</string>
+					<key>end</key>
+					<string>'</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.cfml</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.single.cfml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#entities</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+
+
+
 		<key>cfcomment</key>
 		<dict>
 			<key>begin</key>
@@ -161,6 +310,7 @@
 			</array>
 		</dict>
 
+		<!-- this tag-stuff is just for coloring tag attributes -->
 		<key>tag-stuff</key>
 		<dict>
 			<key>patterns</key>
