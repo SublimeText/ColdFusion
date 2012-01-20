@@ -23,8 +23,8 @@
 		<!-- CFSCRIPT -->
 		<dict>
 			<key>begin</key>
-			<string>(?:^\s+)?(&lt;)((?i:cfscript))\b(?![^&gt;]*/&gt;)</string>
-			<key>beginCaptures</key>
+			<string>(?:^\s+)?(&lt;)((?i:cfscript))(?![^&gt;]*/&gt;)</string>
+			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -34,7 +34,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.cfml</string>
+					<string>entity.name.tag.cfscript.cfml</string>
 				</dict>
 				<key>3</key>
 				<dict>
@@ -44,31 +44,10 @@
 			</dict>
 
 			<key>end</key>
-			<string>(&lt;/)(cfscript|CFSCRIPT)(&gt;)</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.end.cfml</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.cfml</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.end.cfml</string>
-				</dict>
-			</dict>
-
+			<string>(&lt;/)((?i:cfscript))(&gt;)(?:\s*\n)?</string>
 			<key>name</key>
-			<string>source.cfscript.embedded.html</string>
-
+			<string>source.cfscript.embedded.cfml</string>
 			<key>patterns</key>
-
 			<array>
 				<dict>
 					<key>include</key>
