@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>comment</key>
-    <string>Coldfusion Component</string>
+    <string>ColdFusion Component</string>
     <key>fileTypes</key>
     <array>
         <string>cfc</string>
@@ -17,7 +17,7 @@
     <key>keyEquivalent</key>
     <string></string>
     <key>name</key>
-    <string>Coldfusion Component</string>
+    <string>ColdFusion Component</string>
 
     <key>patterns</key>
     <array>
