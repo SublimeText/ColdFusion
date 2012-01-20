@@ -10,18 +10,9 @@
 	<key>firstLineMatch</key>
 	<string></string>
 	<key>foldingStartMarker</key>
-	<string>(?x)
-		(&lt;(?i:a|article|aside|audio|blockquote|body|canvas|datalist|details|div|dl|fieldset|figcaption|figure|footer|form|head|header|hgroup|li|mark|meter|nav|ol|output|p|progress|rp|rt|ruby|script|section|select|small|style|summary|table|tbody|tfoot|thead|time|tr|ul|video|cfloop|cfif|cfswitch|cfcomponent|cffunction|cfcase|cfdefaultcase|cfsavecontent|cfscript)\b.*?&gt;
-		|&lt;!--(?!.*--\s*&gt;)
-		|&lt;!---(?!.*---\s*&gt;)|function\s*|if
-		)</string>
+	<string></string>
 	<key>foldingStopMarker</key>
-	<string>(?x)
-		(&lt;/(?i:a|article|aside|audio|blockquote|body|canvas|datalist|details|div|dl|fieldset|figcaption|figure|footer|form|head|header|hgroup|li|mark|meter|nav|ol|output|p|progress|rp|rt|ruby|script|section|select|small|style|summary|table|tbody|tfoot|thead|time|tr|ul|video|cfloop|cfif|cfswitch|cfcomponent|cffunction|cfcase|cfdefaultcase|cfsavecontent|cfscript)&gt;
-		|^(?!.*?&lt;!--).*?--\s*&gt;
-		|^(?!.*?&lt;!---).*?---\s*&gt;|\}
-		|^[^{]*\}
-		)</string>
+	<string></string>
 	<key>keyEquivalent</key>
 	<string></string>
 	<key>name</key>
