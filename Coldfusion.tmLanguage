@@ -174,7 +174,45 @@
 			</array>
 		</dict>
 
-		<!-- TODO: CFSET -->
+		<!-- CFSET  -->
+		<dict>
+			<key>begin</key>
+			<string>(?:^\s+)?(&lt;)((?i:cfset))\b</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.start.cfml</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.cfset.cfml</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?=/?&gt;)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.cfml</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>source.cfscript</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.cfscript</string>
+				</dict>
+			</array>
+		</dict>
+
+
 
 		<dict>
 			<key>include</key>
