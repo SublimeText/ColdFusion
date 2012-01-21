@@ -301,17 +301,17 @@
                     <key>name</key>
                     <string>keyword.operator.logical.cfscript</string>
                 </dict>
-                <dict>
+                <!-- <dict>
                     <key>match</key>
                     <string>(?&lt;=\S)\.(?=\S)</string>
                     <key>name</key>
-                    <string>keyword.operator.dereference.java</string>
-                </dict>
+                    <string>keyword.operator.dereference.cfscript</string>
+                </dict> -->
                 <dict>
                     <key>match</key>
                     <string>;</string>
                     <key>name</key>
-                    <string>punctuation.terminator.java</string>
+                    <string>punctuation.terminator.cfscript</string>
                 </dict>
             </array>
         </dict>
