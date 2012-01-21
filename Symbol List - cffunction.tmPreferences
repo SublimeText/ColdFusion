@@ -9,7 +9,7 @@
     <key>settings</key>
     <dict>
         <key>symbolTransformation</key>
-        <string>s/^/cffunction> /</string>
+        <string>s/^/func: /</string>
     </dict>
     <key>uuid</key>
     <string>CBE8F340-437D-11E1-B86C-0800200C9A66</string>
