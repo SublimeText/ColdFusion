@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>comment</key>
-    <string>ColdFusion Component</string>
     <key>fileTypes</key>
     <array>
         <string>cfc</string>
@@ -11,36 +9,42 @@
     <key>firstLineMatch</key>
     <string></string>
     <key>foldingStartMarker</key>
-    <string>\{\s*$</string>
+    <string></string>
     <key>foldingStopMarker</key>
-    <string>^\s*\}</string>
+    <string></string>
     <key>keyEquivalent</key>
     <string></string>
     <key>name</key>
     <string>ColdFusion Component</string>
-
     <key>patterns</key>
     <array>
+
         <!-- TAG BASED CFCOMPONENT -->
         <dict>
             <key>begin</key>
-            <string>(?:^\s+)?&lt;((?i:cfcomponent))\b(?![^&gt;]*/&gt;)</string>
-
+            <string>(?:^\s+)?(&lt;)((?i:cfcomponent))(?![^&gt;]*/&gt;)</string>
             <key>captures</key>
             <dict>
                 <key>1</key>
                 <dict>
                     <key>name</key>
+                    <string>punctuation.definition.tag.begin.cfml</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
                     <string>entity.name.tag.cfcomponent.cfml</string>
                 </dict>
+                <key>3</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.tag.end.cfml</string>
+                </dict>
             </dict>
-
             <key>end</key>
-            <string>&lt;/((?i:cfcomponent))&gt;(?:\s*\n)?</string>
-
+            <string>(&lt;/)((?i:cfcomponent))(&gt;)(?:\s*\n)?</string>
             <key>name</key>
             <string>text.html.cfm.embedded.cfml</string>
-
             <key>patterns</key>
             <array>
                 <dict>
@@ -49,7 +53,15 @@
                 </dict>
                 <dict>
                     <key>begin</key>
-                    <string>&gt;</string>
+                    <string>(&gt;)</string>
+                    <key>beginCaptures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.definition.tag.end.cfml</string>
+                        </dict>
+                    </dict>
                     <key>end</key>
                     <string>(?=&lt;/(?i:cfcomponent))</string>
                     <key>patterns</key>
