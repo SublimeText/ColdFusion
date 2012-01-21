@@ -14,78 +14,150 @@
     <key>foldingStopMarker</key>
     <string>^\s*\}</string>
     <key>keyEquivalent</key>
-    <string>^~F</string>
+    <string></string>
     <key>name</key>
     <string>cfscript</string>
     <key>patterns</key>
     <array>
 
 
-        <!-- IF I'M A TAG BASED COMPONENT -->
         <dict>
-            <key>begin</key>
-            <string>(?:^\s+)?&lt;((?i:cfcomponent))\b(?![^&gt;]*/&gt;)</string>
+            <key>include</key>
+            <string>#cfscript</string>
+        </dict>
+    </array>
 
-            <key>captures</key>
-            <dict>
-                <key>1</key>
-                <dict>
-                    <key>name</key>
-                    <string>entity.name.tag.cfml</string>
-                    <!-- <string>entity.name.tag.cfquery.html</string> -->
-                </dict>
-            </dict>
+    <key>repository</key>
+    <dict>
 
-            <key>end</key>
-            <string>&lt;/((?i:cfcomponent))&gt;(?:\s*\n)?</string>
-
-            <key>name</key>
-            <string>source.cfc.embedded.cfml</string>
-
+        <key>cfscript</key>
+        <dict>
             <key>patterns</key>
             <array>
-                <!-- <dict>
-                    <key>include</key>
-                    <string>#tag-stuff</string>
-                </dict> -->
                 <dict>
-                    <key>begin</key>
-                    <string>&gt;</string>
-                    <key>end</key>
-                    <string>(?=&lt;/(?i:cfcomponent))</string>
-                    <key>patterns</key>
-                    <array>
-                        <dict>
-                            <key>include</key>
-                            <string>text.html.cfm</string>
-                        </dict>
-                    </array>
+                    <key>include</key>
+                    <string>#functions</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#cfscript-code</string>
                 </dict>
             </array>
         </dict>
-        <!-- END IF I'M A TAG BASED COMPONENT -->
 
-
-
-
+        <key>cfscript-code</key>
         <dict>
-            <key>begin</key>
-            <string>/\*\*(?!/)</string>
-            <key>captures</key>
-            <dict>
-                <key>0</key>
+            <key>patterns</key>
+            <array>
                 <dict>
-                    <key>name</key>
-                    <string>punctuation.definition.comment.cfscript</string>
+                    <key>include</key>
+                    <string>#constants</string>
                 </dict>
-            </dict>
-            <key>end</key>
-            <string>\*/</string>
-            <key>name</key>
-            <string>comment.block.documentation.cfscript</string>
+                <dict>
+                    <key>include</key>
+                    <string>#comments</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#strings</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#keywords</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#function-call</string>
+                </dict>
+            </array>
         </dict>
-
-        <!-- comment block /* */ -->
+        <!-- storage types -->
+        <key>storage-types</key>
+        <dict>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>match</key>
+                    <string>\b(var)\b</string>
+                    <key>name</key>
+                    <string>storage.type.var.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>\b(string|date|struct|array|void|binary|numeric|boolean|query|xml|uuid|any)(?:\[\s*\])*\b</string>
+                    <key>name</key>
+                    <string>storage.type.primitive.cfscript</string>
+                </dict>
+            </array>
+        </dict>
+        <!-- constants -->
+        <key>constants</key>
+        <dict>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>match</key>
+                    <string>\b([A-Z][A-Z0-9_]+)\b</string>
+                    <key>name</key>
+                    <string>constant.other.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>\b(true|false|null)\b</string>
+                    <key>name</key>
+                    <string>constant.language.cfscript</string>
+                </dict>
+            </array>
+        </dict>
+        <!-- comments -->
+        <key>comments</key>
+        <dict>
+            <key>patterns</key>
+            <array>
+                <!-- comment block /** -->
+                <dict>
+                    <key>captures</key>
+                    <dict>
+                        <key>0</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.definition.comment.cfscript</string>
+                        </dict>
+                    </dict>
+                    <key>match</key>
+                    <string>/\*\*/</string>
+                    <key>name</key>
+                    <string>comment.block.empty.cfscript</string>
+                </dict>
+                <!-- as javadoc for cfscript annotations -->
+                <dict>
+                    <key>include</key>
+                    <string>text.html.javadoc</string>
+                </dict>
+                <!-- block comments (bellow) -->
+                <dict>
+                    <key>include</key>
+                    <string>#comment-block</string>
+                </dict>
+                <!-- double-slash comment -->
+                <dict>
+                    <key>captures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.definition.comment.cfscript</string>
+                        </dict>
+                    </dict>
+                    <key>match</key>
+                    <string>(//).*$\n?</string>
+                    <key>name</key>
+                    <string>comment.line.double-slash.cfscript</string>
+                </dict>
+            </array>
+        </dict>
+        <!-- comment-block /* -->
+        <key>comment-block</key>
         <dict>
             <key>begin</key>
             <string>/\*</string>
@@ -102,81 +174,23 @@
             <key>name</key>
             <string>comment.block.cfscript</string>
         </dict>
-
-        <!-- double slash comment -->
+        <!-- /comments -->
+        <!-- strings -->
+        <key>strings</key>
         <dict>
-            <key>match</key>
-            <string>(//).*$\n?</string>
-            <key>captures</key>
-            <dict>
-                <key>1</key>
+            <key>patterns</key>
+            <array>
                 <dict>
-                    <key>name</key>
-                    <string>punctuation.definition.comment.cfscript</string>
+                    <key>include</key>
+                    <string>#string-quoted-double</string>
                 </dict>
-            </dict>
-            <key>name</key>
-            <string>comment.line.double-slash.cfscript</string>
+                <dict>
+                    <key>include</key>
+                    <string>#string-quoted-single</string>
+                </dict>
+            </array>
         </dict>
-
-
-        <!-- booleans true/false -->
-        <dict>
-            <key>match</key>
-            <string>\btrue\b</string>
-            <key>name</key>
-            <string>constant.language.boolean.true.cfscript</string>
-        </dict>
-        <dict>
-            <key>match</key>
-            <string>\bfalse\b</string>
-            <key>name</key>
-            <string>constant.language.boolean.false.cfscript</string>
-        </dict>
-
-        <!-- this isn't used just adding in case for later -->
-        <dict>
-            <key>match</key>
-            <string>\bnull\b</string>
-            <key>name</key>
-            <string>constant.language.null.cfscript</string>
-        </dict>
-
-        <!-- super/this -->
-        <dict>
-            <key>match</key>
-            <string>\b(super|this)\b</string>
-            <key>name</key>
-            <string>variable.language.cfscript</string>
-        </dict>
-
-
-
-        <!-- TODO: THESE NEXT 2 DICT DEFINITIONS NEED TO BE PORTED TO CFSCRIPT -->
-        <dict>
-            <key>match</key>
-            <string>!|\$|%|&amp;|\*|\-\-|\-|\+\+|\+|~|===|==|=|!=|!==|&lt;=|&gt;=|&lt;&lt;=|&gt;&gt;=|&gt;&gt;&gt;=|&lt;&gt;|&lt;|&gt;|!|&amp;&amp;|\|\||\?\:|\*=|(?&lt;!\()/=|%=|\+=|\-=|&amp;=|\^=|\b(in|instanceof|new|delete|typeof|void|AND|N?EQ|GT|LT|NOT)\b</string>
-            <key>name</key>
-            <string>keyword.operator.cfscript</string>
-        </dict>
-
-
-        <!-- SUPPORT FUNCTIONS (ADD ALL CFSCRIPT FUNCTIONS HERE) -->
-        <dict>
-            <key>match</key>
-            <string>\b(s(h(ift|ow(Mod(elessDialog|alDialog)|Help))|croll(X|By(Pages|Lines)?|Y|To)?|t(op|rike)|i(n|zeToContent|debar|gnText)|ort|u(p|b(str(ing)?)?)|pli(ce|t)|e(nd|t(Re(sizable|questHeader)|M(i(nutes|lliseconds)|onth)|Seconds|Ho(tKeys|urs)|Year|Cursor|Time(out)?|Interval|ZOptions|Date|UTC(M(i(nutes|lliseconds)|onth)|Seconds|Hours|Date|FullYear)|FullYear|Active)|arch)|qrt|lice|avePreferences|mall)|h(ome|andleEvent)|navigate|c(har(CodeAt|At)|o(s|n(cat|textual|firm)|mpile)|eil|lear(Timeout|Interval)?|a(ptureEvents|ll)|reate(StyleSheet|Popup|EventObject))|t(o(GMTString|S(tring|ource)|U(TCString|pperCase)|Lo(caleString|werCase))|est|a(n|int(Enabled)?))|i(s(NaN|Finite)|ndexOf|talics)|d(isableExternalCapture|ump|etachEvent)|u(n(shift|taint|escape|watch)|pdateCommands)|j(oin|avaEnabled)|p(o(p|w)|ush|lugins.refresh|a(ddings|rse(Int|Float)?)|r(int|ompt|eference))|e(scape|nableExternalCapture|val|lementFromPoint|x(p|ec(Script|Command)?))|valueOf|UTC|queryCommand(State|Indeterm|Enabled|Value)|f(i(nd|le(ModifiedDate|Size|CreatedDate|UpdatedDate)|xed)|o(nt(size|color)|rward)|loor|romCharCode)|watch|l(ink|o(ad|g)|astIndexOf)|a(sin|nchor|cos|t(tachEvent|ob|an(2)?)|pply|lert|b(s|ort))|r(ou(nd|teEvents)|e(size(By|To)|calc|turnValue|place|verse|l(oad|ease(Capture|Events)))|andom)|g(o|et(ResponseHeader|M(i(nutes|lliseconds)|onth)|Se(conds|lection)|Hours|Year|Time(zoneOffset)?|Da(y|te)|UTC(M(i(nutes|lliseconds)|onth)|Seconds|Hours|Da(y|te)|FullYear)|FullYear|A(ttention|llResponseHeaders)))|m(in|ove(B(y|elow)|To(Absolute)?|Above)|ergeAttributes|a(tch|rgins|x))|b(toa|ig|o(ld|rderWidths)|link|ack))\b(?=\()</string>
-            <key>name</key>
-            <string>support.function.cfscript</string>
-        </dict>
-
-        <!-- TODO: more cfscript shit here I guess -->
-
-        <dict>
-            <key>match</key>
-            <string>\b(component|property|function|break|if|else|switch|case|catch|continue|default|do|for|in|return|try|var|while)\b</string>
-            <key>name</key>
-            <string>keyword.control.cfscript</string>
-        </dict>
+        <key>string-quoted-double</key>
         <dict>
             <key>begin</key>
             <string>"</string>
@@ -201,6 +215,7 @@
             <key>name</key>
             <string>string.quoted.double.cfscript</string>
         </dict>
+        <key>string-quoted-single</key>
         <dict>
             <key>begin</key>
             <string>'</string>
@@ -225,13 +240,133 @@
             <key>name</key>
             <string>string.quoted.single.cfscript</string>
         </dict>
-    </array>
+        <!-- /strings -->
+
+        <!-- keywords -->
+        <key>keywords</key>
+        <dict>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>match</key>
+                    <string>\b(try|catch|throw)\b</string>
+                    <key>name</key>
+                    <string>keyword.control.catch-exception.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>\b(return|break|do|while|for|switch|case|default|if|else)\b</string>
+                    <key>name</key>
+                    <string>keyword.control.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>(==|!=|&lt;=|&gt;=|&lt;|&gt;)</string>
+                    <key>name</key>
+                    <string>keyword.operator.comparison.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>(\-=|\+=|\*=|\/=|%=)</string>
+                    <key>name</key>
+                    <string>keyword.operator.other.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>(&amp;=)</string>
+                    <key>name</key>
+                    <string>keyword.operator.concat.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>(=)</string>
+                    <key>name</key>
+                    <string>keyword.operator.assignment.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>(\-\-|\+\+)</string>
+                    <key>name</key>
+                    <string>keyword.operator.increment-decrement.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>(\-|\+|\*|\/|%)</string>
+                    <key>name</key>
+                    <string>keyword.operator.arithmetic.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>(!|&amp;&amp;|\|\|)</string>
+                    <key>name</key>
+                    <string>keyword.operator.logical.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>(?&lt;=\S)\.(?=\S)</string>
+                    <key>name</key>
+                    <string>keyword.operator.dereference.java</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>;</string>
+                    <key>name</key>
+                    <string>punctuation.terminator.java</string>
+                </dict>
+            </array>
+        </dict>
+        <!-- / keywords -->
+
+        <!-- function-call -->
+        <key>function-call</key>
+        <dict>
+            <key>begin</key>
+            <string>(\w+)(\()</string>
+            <key>beginCaptures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.function.cfscript</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.function-parameters.begin.cfscript</string>
+                </dict>
+            </dict>
+            <key>end</key>
+            <string>\)</string>
+            <key>endCaptures</key>
+            <dict>
+                <key>0</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.function-parameters.end.cfscript</string>
+                </dict>
+            </dict>
+            <key>name</key>
+            <string>meta.function-call.cfscript</string>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>match</key>
+                    <string>,</string>
+                    <key>name</key>
+                    <string>punctuation.definition.seperator.parameter.cfscript</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#cfscript-code</string>
+                </dict>
+            </array>
+        </dict>
+        <!-- /function-call -->
+    </dict>
 
     <key>scopeName</key>
     <string>source.cfscript</string>
     <key>uuid</key>
     <string>D5324EE0-4226-11E1-B86C-0800200C9A66</string>
-
-
 </dict>
 </plist>
