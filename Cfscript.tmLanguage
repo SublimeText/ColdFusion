@@ -80,7 +80,7 @@
                     <key>match</key>
                     <string>\b(var)\b</string>
                     <key>name</key>
-                    <string>storage.type.var.cfscript</string>
+                    <string>storage.modifier.var.cfscript</string>
                 </dict>
                 <dict>
                     <key>match</key>
