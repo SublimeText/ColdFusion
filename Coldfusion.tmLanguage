@@ -42,7 +42,6 @@
 					<string>punctuation.definition.tag.end.cfml</string>
 				</dict>
 			</dict>
-
 			<key>end</key>
 			<string>(&lt;/)((?i:cfscript))(&gt;)(?:\s*\n)?</string>
 			<key>name</key>
@@ -50,9 +49,27 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>source.cfscript</string>
+					<key>begin</key>
+					<string>(&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.cfml</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?=&lt;/(?i:cfscript))</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>source.cfscript</string>
+						</dict>
+					</array>
 				</dict>
+
 			</array>
 		</dict>
 
