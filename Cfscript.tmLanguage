@@ -214,6 +214,13 @@
             </dict>
             <key>name</key>
             <string>string.quoted.double.cfscript</string>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>include</key>
+                    <string>#nest_hash</string>
+                </dict>
+            </array>
         </dict>
         <key>string-quoted-single</key>
         <dict>
@@ -239,6 +246,13 @@
             </dict>
             <key>name</key>
             <string>string.quoted.single.cfscript</string>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>include</key>
+                    <string>#nest_hash</string>
+                </dict>
+            </array>
         </dict>
         <!-- /strings -->
 
@@ -356,6 +370,43 @@
             </array>
         </dict>
         <!-- /function-call -->
+
+        <key>nest_hash</key>
+        <dict>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>match</key>
+                    <string>#\w+#</string>
+                    <key>name</key>
+                    <string>variable.other.interpolated.cfscript</string>
+                </dict>
+                <dict>
+                    <key>begin</key>
+                    <string>#</string>
+                    <key>captures</key>
+                    <dict>
+                        <key>0</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.section.embedded.cfscript</string>
+                        </dict>
+                    </dict>
+                    <key>end</key>
+                    <string>#</string>
+                    <key>name</key>
+                    <string>source.cfscript.embedded.cfscript</string>
+                    <key>patterns</key>
+                    <array>
+                        <dict>
+                            <key>include</key>
+                            <string>source.cfscript</string>
+                        </dict>
+                    </array>
+                </dict>
+            </array>
+        </dict>
+
     </dict>
 
     <key>scopeName</key>
