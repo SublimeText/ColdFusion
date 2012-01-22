@@ -263,6 +263,12 @@
             <array>
                 <dict>
                     <key>match</key>
+                    <string>\b(new)\b</string>
+                    <key>name</key>
+                    <string>keyword.other.new.cfml</string>
+                </dict>
+                <dict>
+                    <key>match</key>
                     <string>\b(try|catch|throw)\b</string>
                     <key>name</key>
                     <string>keyword.control.catch-exception.cfscript</string>
