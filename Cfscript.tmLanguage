@@ -51,6 +51,14 @@
             <array>
                 <dict>
                     <key>include</key>
+                    <string>#sql-code</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#variables</string>
+                </dict>
+                <dict>
+                    <key>include</key>
                     <string>#storage-types</string>
                 </dict>
                 <dict>
@@ -431,6 +439,83 @@
             </array>
         </dict>
         <!-- /nest_hash -->
+        <!-- variables -->
+        <key>variables</key>
+        <dict>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>match</key>
+                    <string>\b(this)\b</string>
+                    <key>name</key>
+                    <string>variable.language.cfscript</string>
+                </dict>
+                <dict>
+                    <key>begin</key>
+                    <string>\b(this|super)\.</string>
+                    <key>beginCaptures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>variable.language.cfscript</string>
+                        </dict>
+                    </dict>
+                    <key>end</key>
+                    <string>(\w+)\b</string>
+                    <key>endCaptures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>variable.other.cfscript</string>
+                        </dict>
+                    </dict>
+                </dict>
+            </array>
+        </dict>
+        <!-- /variables -->
+
+        <!-- sql -->
+        <key>sql-code</key>
+        <dict>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>begin</key>
+                    <string>\.((?i:setsql))\("</string>
+                    <key>beginCaptures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>meta.function.setsql.cfscripts</string>
+                        </dict>
+                    </dict>
+                    <key>end</key>
+                    <string>("\))</string>
+                    <key>endCaptures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.parenthesis.end.cfscript</string>
+                        </dict>
+                    </dict>
+                    <key>name</key>
+                    <string>source.sql.embedded.cfscript</string>
+                    <key>patterns</key>
+                    <array>
+                        <dict>
+                            <key>include</key>
+                            <string>source.sql</string>
+                        </dict>
+                    </array>
+
+                </dict>
+            </array>
+        </dict>
+
 
     </dict>
 
