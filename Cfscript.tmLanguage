@@ -30,6 +30,55 @@
     <key>repository</key>
     <dict>
 
+        <!-- functions -->
+        <key>functions</key>
+        <dict>
+            <key>begin</key>
+            <string>function\s(\w+)(\()</string>
+            <key>beginCaptures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.function.identifier.cfscript</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.function-parameters.begin.cfscript</string>
+                </dict>
+            </dict>
+            <key>end</key>
+            <string>\)</string>
+            <key>endCaptures</key>
+            <dict>
+                <key>0</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.function-parameters.end.cfscript</string>
+                </dict>
+            </dict>
+            <key>name</key>
+            <string>meta.function-call.cfscript</string>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>match</key>
+                    <string>,</string>
+                    <key>name</key>
+                    <string>punctuation.definition.seperator.parameter.cfscript</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#cfscript-code</string>
+                </dict>
+            </array>
+        </dict>
+        <!-- /functions -->
+
+
+
+
         <key>cfscript</key>
         <dict>
             <key>patterns</key>
