@@ -380,42 +380,57 @@
             </array>
         </dict>
         <!-- /function-call -->
-
+        <!-- nest_hash -->
         <key>nest_hash</key>
         <dict>
             <key>patterns</key>
             <array>
                 <dict>
                     <key>match</key>
-                    <string>#\w+#</string>
+                    <string>##</string>
                     <key>name</key>
-                    <string>variable.other.interpolated.cfscript</string>
+                    <string>string.escaped.hash.cfscript</string>
                 </dict>
                 <dict>
                     <key>begin</key>
-                    <string>#</string>
-                    <key>captures</key>
+                    <string>(#)</string>
+                    <key>beginCaptures</key>
                     <dict>
-                        <key>0</key>
+                        <key>1</key>
                         <dict>
                             <key>name</key>
-                            <string>punctuation.section.embedded.cfscript</string>
+                            <string>punctuation.definition.hash.begin.cfscript</string>
                         </dict>
                     </dict>
                     <key>end</key>
-                    <string>#</string>
+                    <string>(#)</string>
+                    <key>endCaptures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.definition.hash.end.cfscript</string>
+                        </dict>
+                    </dict>
                     <key>name</key>
                     <string>source.cfscript.embedded.cfscript</string>
                     <key>patterns</key>
                     <array>
                         <dict>
                             <key>include</key>
-                            <string>source.cfscript</string>
+                            <string>#function-call</string>
+                        </dict>
+                        <dict>
+                            <key>match</key>
+                            <string>\w+</string>
+                            <key>name</key>
+                            <string>variable.other.interpolated.cfscript</string>
                         </dict>
                     </array>
                 </dict>
             </array>
         </dict>
+        <!-- /nest_hash -->
 
     </dict>
 
