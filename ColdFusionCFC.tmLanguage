@@ -33,7 +33,7 @@
                 <key>2</key>
                 <dict>
                     <key>name</key>
-                    <string>entity.name.tag.cfcomponent.cfml</string>
+                    <string>entity.name.tag.cf.component.cfml</string>
                 </dict>
                 <key>3</key>
                 <dict>
