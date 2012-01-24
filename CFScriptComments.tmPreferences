@@ -5,7 +5,7 @@
 	<key>name</key>
 	<string>Comments</string>
 	<key>scope</key>
-	<string>source.cfscript</string>
+	<string>source.cfscript.embedded.cfml, source.cfscript</string>
 	<key>settings</key>
 	<dict>
 		<key>shellVariables</key>
