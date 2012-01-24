@@ -5,7 +5,7 @@ class TagCompletions(sublime_plugin.EventListener):
     def on_query_completions(self, view, prefix, locations):
         # Only trigger within CFML
         if not view.match_selector(locations[0],
-                "text.html.cfm - source.sql - source.cfscript"):
+                "text.html.cfm - source, text.html.cfm.embedded.cfml - source.cfscript.embedded.cfml"):
             return []
 
         pt = locations[0] - len(prefix) - 1
