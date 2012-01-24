@@ -34,15 +34,51 @@
         <key>functions</key>
         <dict>
             <key>begin</key>
-            <string>function\s(\w+)(\()</string>
+                <string>(?x)^\s*
+                    (?:
+                        (?: # or modifier and optional type
+                            (?:(?:\b(private|package|public|remote))\b\s+)+\s* # modifier
+                            (?:\b
+                                (void)
+                                |
+                                (string|date|struct|array|binary|numeric|boolean|query|xml|uuid|any) # primitive
+                            )?
+                        )?
+                    )
+                    \s*(function) # storage.function
+                    \s+
+                    (\w+) # entity.name.function
+                    \s*
+                    (?=\() # opening parens
+                </string>
             <key>beginCaptures</key>
             <dict>
                 <key>1</key>
                 <dict>
                     <key>name</key>
-                    <string>meta.function.identifier.cfscript</string>
+                    <string>storage.modifier.access-control.cfscript</string>
                 </dict>
                 <key>2</key>
+                 <dict>
+                    <key>name</key>
+                    <string>storage.type.return-type.void.cfscript</string>
+                </dict>
+                <key>3</key>
+                <dict>
+                    <key>name</key>
+                    <string>storage.type.return-type.primitive.cfscript</string>
+                </dict>
+                <key>4</key>
+                <dict>
+                    <key>name</key>
+                    <string>storage.type.function.cfscript</string>
+                </dict>
+                <key>5</key>
+                <dict>
+                    <key>name</key>
+                    <string>entity.name.function.cfscript</string>
+                </dict>
+                <key>6</key>
                 <dict>
                     <key>name</key>
                     <string>punctuation.definition.function-parameters.begin.cfscript</string>
@@ -59,7 +95,7 @@
                 </dict>
             </dict>
             <key>name</key>
-            <string>meta.function-call.cfscript</string>
+            <string>meta.definition.function.cfscript</string>
             <key>patterns</key>
             <array>
                 <dict>

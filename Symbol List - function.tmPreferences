@@ -5,7 +5,7 @@
     <key>name</key>
     <string>Symbol List Function</string>
     <key>scope</key>
-    <string>source.cfscript meta.function.identifier</string>
+    <string>source.cfscript entity.name.function</string>
     <key>settings</key>
     <dict>
         <key>showInSymbolList</key>
