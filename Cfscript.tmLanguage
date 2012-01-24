@@ -36,16 +36,17 @@
             <key>begin</key>
                 <string>(?x)^\s*
                     (?:
-                        (?: # or modifier and optional type
-                            (?:(?:\b(private|package|public|remote))\b\s+)+\s* # modifier
+                        (?: # optional access-control modifier and return-type
+                            (?:(?:\b(private|package|public|remote))\b\s+)+\s* # access-control.modifier
                             (?:\b
                                 (void)
                                 |
-                                (string|date|struct|array|binary|numeric|boolean|query|xml|uuid|any) # primitive
+                                (any|array|binary|boolean|component|date|guid|numeric|query|string|struct|xml|uuid) # return-type.primitive
                             )?
                         )?
                     )
-                    \s*(function) # storage.function
+                    \s*
+                    (function) # storage.function
                     \s+
                     (\w+) # entity.name.function
                     \s*
