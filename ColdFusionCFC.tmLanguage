@@ -77,12 +77,38 @@
 
         <dict>
             <key>include</key>
+            <string>#cfcomment</string>
+        </dict>
+
+        <dict>
+            <key>include</key>
             <string>source.cfscript</string>
         </dict>
     </array>
 
     <key>repository</key>
     <dict>
+
+        <key>cfcomment</key>
+        <dict>
+            <key>begin</key>
+            <string>&lt;!---</string>
+            <key>end</key>
+            <string>---&gt;</string>
+            <key>name</key>
+            <!-- <string>comment.block.html</string> -->
+            <!-- this is set to line to differentiate htmlcomment/cfcomment -->
+            <string>comment.line.cfml</string>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>include</key>
+                    <string>#cfcomment</string>
+                </dict>
+            </array>
+        </dict>
+
+
         <key>tag-stuff</key>
         <dict>
             <key>patterns</key>
