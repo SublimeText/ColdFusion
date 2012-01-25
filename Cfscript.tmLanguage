@@ -42,15 +42,21 @@
                                 (void)
                                 |
                                 (any|array|binary|boolean|component|date|guid|numeric|query|string|struct|xml|uuid) # return-type.primitive
+                                |
+                                ([A-Za-z0-9_\.$]+) #return-type component/object (may need additional tokens)
                             )?
                         )?
                     )
                     \s*
                     (function) # storage.function
                     \s+
-                    (\w+) # entity.name.function
+                    (?:
+                        (init) # entity.name.function.contructor
+                        |
+                        (\w+) # entity.name.function
+                    )
                     \s*
-                    (?=\() # opening parens
+                    (\() # opening parens
                 </string>
             <key>beginCaptures</key>
             <dict>
@@ -70,16 +76,26 @@
                     <string>storage.type.return-type.primitive.cfscript</string>
                 </dict>
                 <key>4</key>
-                <dict>
+                 <dict>
                     <key>name</key>
-                    <string>storage.type.function.cfscript</string>
+                    <string>storage.type.return-type.object.cfscript</string>
                 </dict>
                 <key>5</key>
                 <dict>
                     <key>name</key>
-                    <string>entity.name.function.cfscript</string>
+                    <string>storage.type.function.cfscript</string>
                 </dict>
                 <key>6</key>
+                <dict>
+                    <key>name</key>
+                    <string>entity.name.function.constructor.cfscript</string>
+                </dict>
+                <key>7</key>
+                <dict>
+                    <key>name</key>
+                    <string>entity.name.function.cfscript</string>
+                </dict>
+                <key>8</key>
                 <dict>
                     <key>name</key>
                     <string>punctuation.definition.function-parameters.begin.cfscript</string>
