@@ -7,13 +7,15 @@
 * Keyboard Shortcuts (see Default (platform).sublime-keymap)
 
 ### Keyboard Shortcuts
-* shift+3 `#SELECTION#`
-* ctrl+shift+3 `<cfoutput>#SELECTION#</cfoutput>`
-* ctrl+shift+o `<cfoutput>SELECTION</cfoutput>`
-* ctrl+alt+r `<cfscript>SELECTION</cfscript>`
-* ctrl+alt+d  `<cfdump var="#SELECTION#">`
-* ctrl+shift+m  `<!--- SELECTION --->`
-* ctrl+r `Goto Symbol command`
+
+* <kbd>shift</kbd>+<kbd>3</kbd> `#SELECTION#`
+* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>3</kbd> `<cfoutput>#SELECTION#</cfoutput>`
+* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>o</kbd> `<cfoutput>SELECTION</cfoutput>`
+* <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>r</kbd> `<cfscript>SELECTION</cfscript>`
+* <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>d</kbd>  `<cfdump var="#SELECTION#">`
+* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>/</kbd>  `<!--- SELECTION --->` or `/* SELECTION */`
+* <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>shift</kbd>+<kbd>/</kbd> `/** documentation (javadoc style)`
+* <kbd>ctrl</kbd>+<kbd>r</kbd> `Goto Symbol command`
 
 ## Installation
 
