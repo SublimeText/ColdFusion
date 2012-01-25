@@ -2,5 +2,6 @@
     {"command": "expand_selection", "args": {"to": "line"}},
     {"command": "add_to_kill_ring", "args": {"forward": true}},
     {"command": "left_delete"},
+    {"command": "move", "args": {"by": "lines", "forward": false}},
     {"command": "move_to", "args": {"to": "hardeol"}}
 ]
