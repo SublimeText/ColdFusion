@@ -1,4 +1,27 @@
 [
+    // Ctrl+Alt+Shift+/ /** Java Doc style documentation
+    {
+    "keys": ["ctrl+alt+shift+/"], "command": "insert_snippet",
+    "args": { "contents": "/**\n* $0\n*/" },
+    "context": [ {"key": "selector", "operator": "equal", "operand": "source.cfscript", "match_all": true }]
+    },
+    // Java Doc auto insert asterisk
+    {
+    "keys": ["enter"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/JavaDoc Add Line.sublime-macro"},
+    "context": [ {"key": "selector", "operator": "equal", "operand": "comment.block.documentation.javadoc", "match_all": true }]
+    },
+    {
+    "keys": ["ctrl+enter"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/JavaDoc Add Line.sublime-macro"},
+    "context": [ {"key": "selector", "operator": "equal", "operand": "comment.block.documentation.javadoc", "match_all": true }]
+    },
+    {
+    "keys": ["ctrl+shift+enter"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/JavaDoc Add Line Before.sublime-macro"},
+    "context": [ {"key": "selector", "operator": "equal", "operand": "comment.block.documentation.javadoc", "match_all": true }]
+    },
+    {
+    "keys": ["ctrl+shift+k"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/JavaDoc Delete Line.sublime-macro"},
+    "context": [ {"key": "selector", "operator": "equal", "operand": "comment.block.documentation.javadoc", "match_all": true }]
+    },
     // ctrl+shift+3 <cfoutput>#SELECTION#</cfoutput>
     {
     "keys": ["ctrl+shift+3"], "command": "insert_snippet",
@@ -21,12 +44,6 @@
     {
     "keys": ["ctrl+alt+d"], "command": "insert_snippet",
     "args": { "contents": "<cfdump var=\"#${1:$SELECTION}#\" />" },
-    "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
-    },
-    // Ctrl+Shift+M  ColdFusion Comment <!--- --->
-    {
-    "keys": ["ctrl+shift+m"], "command": "toggle_comment",
-    "args": { "block": true },
     "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
     // Pound/hash marks ##

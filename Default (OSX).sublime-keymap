@@ -1,32 +1,49 @@
 [
-    // super+shift+3 <cfoutput>#SELECTION#</cfoutput>
+    // Super+Alt+Shift+/ /** Java Doc style documentation
+    {
+    "keys": ["super+alt+shift+/"], "command": "insert_snippet",
+    "args": { "contents": "/**\n* $0\n*/" },
+    "context": [ {"key": "selector", "operator": "equal", "operand": "source.cfscript", "match_all": true }]
+    },
+    // Java Doc auto insert asterisk
+    {
+    "keys": ["enter"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/JavaDoc Add Line.sublime-macro"},
+    "context": [ {"key": "selector", "operator": "equal", "operand": "comment.block.documentation.javadoc", "match_all": true }]
+    },
+    {
+    "keys": ["super+enter"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/JavaDoc Add Line.sublime-macro"},
+    "context": [ {"key": "selector", "operator": "equal", "operand": "comment.block.documentation.javadoc", "match_all": true }]
+    },
+    {
+    "keys": ["super+shift+enter"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/JavaDoc Add Line Before.sublime-macro"},
+    "context": [ {"key": "selector", "operator": "equal", "operand": "comment.block.documentation.javadoc", "match_all": true }]
+    },
+    {
+    "keys": ["super+shift+k"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/JavaDoc Delete Line.sublime-macro"},
+    "context": [ {"key": "selector", "operator": "equal", "operand": "comment.block.documentation.javadoc", "match_all": true }]
+    },
+    // Super+shift+3 <cfoutput>#SELECTION#</cfoutput>
     {
     "keys": ["super+shift+3"], "command": "insert_snippet",
     "args": { "contents": "<cfoutput>#${0:$SELECTION}#</cfoutput>" },
     "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
-    // super+Shift+O <cfoutput></cfoutput>
+    // Super+Shift+O <cfoutput></cfoutput>
     {
     "keys": ["super+shift+o"], "command": "insert_snippet",
     "args": { "contents": "<cfoutput>${0:$SELECTION}</cfoutput>" },
     "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
-    // super+Alt+R <cfscript></cfscript>
+    // Super+Alt+R <cfscript></cfscript>
     {
     "keys": ["super+alt+r"], "command": "insert_snippet",
     "args": { "contents": "<cfscript>${0:$SELECTION}</cfscript>" },
     "context": [{ "key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
-    // super+Alt+D  <cfdump var="##">
+    // Super+Alt+D  <cfdump var="##">
     {
     "keys": ["super+alt+d"], "command": "insert_snippet",
     "args": { "contents": "<cfdump var=\"#${1:$SELECTION}#\" />" },
-    "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
-    },
-    // super+Shift+M  ColdFusion Comment <!--- --->
-    {
-    "keys": ["super+shift+m"], "command": "toggle_comment",
-    "args": { "block": true },
     "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
     // Pound/hash marks ##
