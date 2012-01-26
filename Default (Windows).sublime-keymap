@@ -1,7 +1,17 @@
 [
-    // Ctrl+Alt+Shift+/ /** Java Doc style documentation
+    // Alt+Enter terminates cfscript statement
     {
-    "keys": ["ctrl+alt+shift+/"], "command": "insert_snippet",
+    "keys": ["alt+enter"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/Terminate Statement.sublime-macro"},
+    "context": [ {"key": "selector", "operator": "equal", "operand": "source.cfscript", "match_all": true }]
+    },
+    // Ctrl+Alt+/ /** Java Doc style documentation
+    {
+    "keys": ["ctrl+alt+/"], "command": "insert_snippet",
+    "args": { "contents": "/**\n* $0\n*/" },
+    "context": [ {"key": "selector", "operator": "equal", "operand": "source.cfscript", "match_all": true }]
+    },
+    {
+    "keys": ["d","o","c","tab"], "command": "insert_snippet",
     "args": { "contents": "/**\n* $0\n*/" },
     "context": [ {"key": "selector", "operator": "equal", "operand": "source.cfscript", "match_all": true }]
     },

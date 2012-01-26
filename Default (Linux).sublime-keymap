@@ -1,7 +1,17 @@
 [
-    // Ctrl+Alt+Shift+/ /** Java Doc style documentation
+    // alt+enter terminates cfscript statement
     {
-    "keys": ["ctrl+alt+shift+/"], "command": "insert_snippet",
+    "keys": ["alt+enter"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/Terminate Statement.sublime-macro"},
+    "context": [ {"key": "selector", "operator": "equal", "operand": "source.cfscript", "match_all": true }]
+    },
+    // ctrl+alt+/ /** Java Doc style documentation
+    {
+    "keys": ["ctrl+alt+/"], "command": "insert_snippet",
+    "args": { "contents": "/**\n* $0\n*/" },
+    "context": [ {"key": "selector", "operator": "equal", "operand": "source.cfscript", "match_all": true }]
+    },
+    {
+    "keys": ["d","o","c","tab"], "command": "insert_snippet",
     "args": { "contents": "/**\n* $0\n*/" },
     "context": [ {"key": "selector", "operator": "equal", "operand": "source.cfscript", "match_all": true }]
     },
@@ -26,19 +36,19 @@
     "args": { "contents": "<cfoutput>#${0:$SELECTION}#</cfoutput>" },
     "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
-    // Ctrl+Shift+O <cfoutput></cfoutput>
+    // ctrl+Shift+O <cfoutput></cfoutput>
     {
     "keys": ["ctrl+shift+o"], "command": "insert_snippet",
     "args": { "contents": "<cfoutput>${0:$SELECTION}</cfoutput>" },
     "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
-    // Ctrl+Alt+R <cfscript></cfscript>
+    // ctrl+alt+R <cfscript></cfscript>
     {
     "keys": ["ctrl+alt+r"], "command": "insert_snippet",
     "args": { "contents": "<cfscript>${0:$SELECTION}</cfscript>" },
     "context": [{ "key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
-    // Ctrl+Alt+D  <cfdump var="##">
+    // ctrl+alt+D  <cfdump var="##">
     {
     "keys": ["ctrl+alt+d"], "command": "insert_snippet",
     "args": { "contents": "<cfdump var=\"#${1:$SELECTION}#\" />" },

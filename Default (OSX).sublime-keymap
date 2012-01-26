@@ -1,7 +1,17 @@
 [
-    // Super+Alt+Shift+/ /** Java Doc style documentation
+    // Alt+Enter terminates cfscript statement
     {
-    "keys": ["super+alt+shift+/"], "command": "insert_snippet",
+    "keys": ["alt+enter"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/Terminate Statement.sublime-macro"},
+    "context": [ {"key": "selector", "operator": "equal", "operand": "source.cfscript", "match_all": true }]
+    },
+    // super+alt+/ /** Java Doc style documentation
+    {
+    "keys": ["super+alt+/"], "command": "insert_snippet",
+    "args": { "contents": "/**\n* $0\n*/" },
+    "context": [ {"key": "selector", "operator": "equal", "operand": "source.cfscript", "match_all": true }]
+    },
+    {
+    "keys": ["d","o","c","tab"], "command": "insert_snippet",
     "args": { "contents": "/**\n* $0\n*/" },
     "context": [ {"key": "selector", "operator": "equal", "operand": "source.cfscript", "match_all": true }]
     },
@@ -20,25 +30,25 @@
         { "key": "selector", "operator": "equal", "operand": "comment.block.documentation.javadoc", "match_all": true }
       ]
     },
-    // Super+shift+3 <cfoutput>#SELECTION#</cfoutput>
+    // super+shift+3 <cfoutput>#SELECTION#</cfoutput>
     {
     "keys": ["super+shift+3"], "command": "insert_snippet",
     "args": { "contents": "<cfoutput>#${0:$SELECTION}#</cfoutput>" },
     "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
-    // Super+Shift+O <cfoutput></cfoutput>
+    // super+shift+O <cfoutput></cfoutput>
     {
     "keys": ["super+shift+o"], "command": "insert_snippet",
     "args": { "contents": "<cfoutput>${0:$SELECTION}</cfoutput>" },
     "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
-    // Super+Alt+R <cfscript></cfscript>
+    // super+alt+R <cfscript></cfscript>
     {
     "keys": ["super+alt+r"], "command": "insert_snippet",
     "args": { "contents": "<cfscript>${0:$SELECTION}</cfscript>" },
     "context": [{ "key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
-    // Super+Alt+D  <cfdump var="##">
+    // super+alt+D  <cfdump var="##">
     {
     "keys": ["super+alt+d"], "command": "insert_snippet",
     "args": { "contents": "<cfdump var=\"#${1:$SELECTION}#\" />" },
