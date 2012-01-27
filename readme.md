@@ -15,13 +15,13 @@
 * <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>d</kbd>  `<cfdump var="#SELECTION#">`
 * <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>/</kbd>  `<!--- SELECTION --->` or `/* SELECTION */`
 * <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>/</kbd> `/** documentation (javadoc style)`
-* <kbd>d</kbd>+<kbd>o</kbd>+<kbd>c</kbd>+<kbd>tab</kbd> `/** documentation (javadoc style)`
-* <kbd>alt</kbd>+<kbd>enter</kbd> `terminates cfscript statement` (adds semi colon and \n)
+* <kbd>d</kbd><kbd>o</kbd><kbd>c</kbd><kbd>tab</kbd> `/** documentation (javadoc style)`
+* <kbd>alt</kbd>+<kbd>enter</kbd> `hardeol ;\n` (terminates statements and adds newline)
 * <kbd>ctrl</kbd>+<kbd>r</kbd> `Goto Symbol command`
 
 ## Installation
 
-The recommmended method of installation is via Package Control. It will download upgrade to your packages automatically.
+The recommmended method of installation is via Package Control. It will download upgrades to your packages automatically.
 
 ### Package Control
 
