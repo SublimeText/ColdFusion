@@ -351,9 +351,10 @@
 			<key>end</key>
 			<string>---&gt;</string>
 			<key>name</key>
-			<!-- <string>comment.block.html</string> -->
-			<!-- this is set to line to differentiate htmlcomment/cfcomment -->
-			<string>comment.line.cfml</string>
+			<!-- <string>comment.line.cfml</string> -->
+			<!-- this was set to line to differentiate htmlcomment/cfcomment
+				but language files should not dictate style -->
+			<string>comment.block.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
