@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Comments</string>
+	<string>ColdFusion</string>
 	<key>scope</key>
-	<string>source.cfscript.embedded.cfml, source.cfscript</string>
+	<string>text.html.cfm - source.cfscript.embedded.cfml</string>
 	<key>settings</key>
 	<dict>
 		<key>shellVariables</key>
@@ -14,17 +14,23 @@
 				<key>name</key>
 				<string>TM_COMMENT_START</string>
 				<key>value</key>
-				<string>/* </string>
+				<string>&lt;!--- </string>
 			</dict>
 			<dict>
 				<key>name</key>
 				<string>TM_COMMENT_END</string>
 				<key>value</key>
-				<string> */</string>
+				<string> ---&gt;</string>
 			</dict>
+	        <dict>
+				<key>name</key>
+				<string>TM_LINE_TERMINATOR</string>
+				<key>value</key>
+				<string></string>
+	        </dict>
 		</array>
 	</dict>
 	<key>uuid</key>
-	<string>81BFADA4-ED09-30E3-33D3-17CBBEECD012</string>
+	<string>Z79BDBCF-D0C9-468E-BE62-744074D7825Z</string>
 </dict>
 </plist>
