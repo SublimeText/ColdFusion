@@ -2,7 +2,7 @@
     // Alt+Enter terminates cfscript statement
     {
     "keys": ["alt+enter"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/Terminate Statement.sublime-macro"},
-    "context": [ {"key": "selector", "operator": "equal", "operand": "source.cfscript", "match_all": true }]
+    "context": [ {"key": "selector", "operator": "equal", "operand": "source.cfscript, text.html.cfm", "match_all": true }]
     },
     // super+alt+/ /** Java Doc style documentation
     {
