@@ -111,7 +111,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#tag-name-attribute</string>
+					<string>#func-name-attribute</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -153,6 +153,10 @@
 			<string>source.sql.embedded.cfml</string>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#qry-name-attribute</string>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#tag-stuff</string>
@@ -320,7 +324,7 @@
 
 
 		<!-- for Symbol List cffunction -->
-		<key>tag-name-attribute</key>
+		<key>func-name-attribute</key>
 		<dict>
 			<key>begin</key>
 			<string>\b(name)\b\s*(=)</string>
@@ -412,6 +416,99 @@
 			</array>
 		</dict>
 
+
+		<!-- for Symbol List cfquery -->
+		<key>qry-name-attribute</key>
+		<dict>
+			<key>begin</key>
+			<string>\b(name)\b\s*(=)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.attribute-name.name.cfml</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.key-value.cfml</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?&lt;='|")</string>
+			<key>name</key>
+			<string>meta.attribute-with-value.name.cfml</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>"</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.cfml</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
+					<string>meta.toc-list.query.cfml</string>
+					<key>end</key>
+					<string>"</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.cfml</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.double.cfml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#entities</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>'</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.cfml</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
+					<string>meta.toc-list.query.name.cfml</string>
+					<key>end</key>
+					<string>'</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.cfml</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.single.cfml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#entities</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
 
 
 		<key>cfcomments</key>
