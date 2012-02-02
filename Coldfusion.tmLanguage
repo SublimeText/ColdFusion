@@ -173,10 +173,10 @@
 			</array>
 		</dict>
 
-		<!-- CFSET/CFRETURN/CFIF  -->
+		<!-- CFSET|CFRETURN -->
 		<dict>
 			<key>begin</key>
-			<string>(?:^\s+)?(&lt;)((?i:cfset|cfreturn|cfif))\b</string>
+			<string>(?:^\s+)?(&lt;)(?i:(cfset)|(cfreturn))</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -187,7 +187,12 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.cf.cfml</string>
+					<string>entity.name.tag.declaration.cfml</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.other.cfml</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -211,6 +216,81 @@
 			</array>
 		</dict>
 
+		<!-- CFIF -->
+		<dict>
+			<key>begin</key>
+			<string>(&lt;/?)((?i:cfif))\b</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.begin.cfml</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.conditional.cfml</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(&gt;)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.cfml</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.tag.block.conditional.cfml source.cfscript.embedded.cfml</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.cfscript</string>
+				</dict>
+			</array>
+		</dict>
+		<!-- cfelseif/cfelse -->
+		<dict>
+			<key>begin</key>
+			<string>(&lt;/?)(?i:(cfelseif|cfelse))</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.start.cfml</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.conditional.cfml</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(&gt;)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.cfml</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.tag.block.conditional.cfml source.cfscript.embedded.cfml</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.cfscript</string>
+				</dict>
+			</array>
+		</dict>
+		<!-- /CFIF -->
 
 
 		<dict>
