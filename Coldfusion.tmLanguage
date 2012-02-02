@@ -206,7 +206,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>source.cfscript</string>
+			<string>meta.tag.inline.cfml source.cfscript.embedded.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
