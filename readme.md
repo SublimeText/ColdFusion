@@ -1,4 +1,4 @@
-# Official Package Control ColdFusion package for Sublime Text 2
+# Official ColdFusion Package for Sublime Text 2
 
 * ColdFusion CFML, cfscript, and script-based CFCs syntax highlighting. (see tmLanguage files)
 * Auto inserts closing hash # (see Default (platform).sublime-keymap)
