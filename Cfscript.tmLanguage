@@ -445,17 +445,23 @@
         <!-- / keywords -->
 
         <!-- function-call -->
+        <!-- TODO: add all language functions -->
         <key>function-call</key>
         <dict>
             <key>begin</key>
-            <string>(\w+)(\()</string>
+            <string>(?:(\w+))(\()</string>
             <key>beginCaptures</key>
             <dict>
                 <key>1</key>
                 <dict>
                     <key>name</key>
-                    <string>meta.function.cfscript</string>
+                    <string>support.function.cfscript</string>
                 </dict>
+                <!-- <key>3</key>
+                <dict>
+                    <key>name</key>
+                    <string>support.function.cfml</string>
+                </dict> -->
                 <key>2</key>
                 <dict>
                     <key>name</key>
