@@ -45,6 +45,10 @@
 			<key>end</key>
 			<string>(&lt;/)((?i:cfscript))(&gt;)(?:\s*\n)?</string>
 			<key>name</key>
+			<!--
+			should decorate matches but may mess up highlighting
+			meta.tag.block.cfscript.cfml
+			-->
 			<string>source.cfscript.embedded.cfml</string>
 			<key>patterns</key>
 			<array>
@@ -142,6 +146,10 @@
 			<key>end</key>
 			<string>(&lt;/)((?i:cfquery))(&gt;)(?:\s*\n)?</string>
 			<key>name</key>
+			<!--
+			should decorate matches but may mess up highlighting
+			meta.tag.block.cfquery.cfml
+			-->
 			<string>source.sql.embedded.cfml</string>
 			<key>patterns</key>
 			<array>
