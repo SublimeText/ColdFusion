@@ -343,6 +343,45 @@
 			</array>
 		</dict>
 
+		<!-- ALL OTHER BLOCK TAGS -->
+		<dict>
+			<key>begin</key>
+			<string>(&lt;/?)((?i:cf(output|savecontent)))\b</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.begin.cfml</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.other.cfml</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(&gt;)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.ctml</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.tag.block.other.cfml</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#tag-stuff</string>
+				</dict>
+			</array>
+		</dict>
+
+
 
 		<dict>
 			<key>include</key>
