@@ -1,1 +1,6 @@
-{"url": "https://github.com/SublimeText/ColdFusion", "version": "2012.01.26.18.27.46", "description": "Coldfusion Sublime Text Package"}
+{
+  "url": "https://github.com/SublimeText/ColdFusion",
+  "version": "2012.02.02.03.35.21",
+  "description": "ColdFusion package for Sublime Text 2",
+  "author": "@atomi"
+}
