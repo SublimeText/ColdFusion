@@ -344,6 +344,45 @@
 		</dict>
 
 		<dict>
+            <key>match</key>
+            <string>##</string>
+            <key>name</key>
+            <string>string.escaped.hash.cfml</string>
+        </dict>
+        <dict>
+            <key>begin</key>
+            <string>(#)</string>
+            <key>beginCaptures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.hash.begin.cfml</string>
+                </dict>
+            </dict>
+            <key>end</key>
+            <string>(#)</string>
+            <key>endCaptures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.hash.end.cfml</string>
+                </dict>
+            </dict>
+            <key>name</key>
+            <string>source.cfscript.embedded.cfscript</string>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>include</key>
+                    <string>source.cfscript</string>
+                </dict>
+            </array>
+        </dict>
+
+
+		<dict>
 			<key>include</key>
 			<string>#cfcomments</string>
 		</dict>
