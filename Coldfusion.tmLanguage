@@ -77,8 +77,8 @@
 		<!-- CFFUNCTION -->
 		<dict>
 			<key>begin</key>
-			<string>(?:^\s+)?(&lt;)((?i:cffunction))\b(?![^&gt;]*/&gt;)</string>
-			<key>captures</key>
+			<string>(&lt;/?)((?i:cffunction))\b</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -90,16 +90,19 @@
 					<key>name</key>
 					<string>entity.name.tag.cf.function.cfml</string>
 				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.end.cfml</string>
-				</dict>
 			</dict>
 			<key>end</key>
-			<string>(&lt;/)((?i:cffunction))(&gt;)(?:\s*\n)?</string>
+			<string>(&gt;)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.ctml</string>
+				</dict>
+			</dict>
 			<key>name</key>
-			<string>text.html.cfm</string>
+			<string>meta.tag.block.function.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -109,27 +112,6 @@
 				<dict>
 					<key>include</key>
 					<string>#tag-stuff</string>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>(&gt;)</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.tag.end.cfml</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(?=&lt;/(?i:cffunction))</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>text.html.cfm</string>
-						</dict>
-					</array>
 				</dict>
 			</array>
 		</dict>
