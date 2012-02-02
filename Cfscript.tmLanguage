@@ -164,10 +164,6 @@
                 </dict>
                 <dict>
                     <key>include</key>
-                    <string>#constants</string>
-                </dict>
-                <dict>
-                    <key>include</key>
                     <string>#comments</string>
                 </dict>
                 <dict>
@@ -177,6 +173,10 @@
                 <dict>
                     <key>include</key>
                     <string>#keywords</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#constants</string>
                 </dict>
                 <dict>
                     <key>include</key>
