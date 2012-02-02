@@ -400,6 +400,12 @@
                 </dict>
                 <dict>
                     <key>match</key>
+                    <string>\b(?i:EQ|NEQ|LT|LTE|GT|GTE|AND|IS|NOT)\b</string>
+                    <key>name</key>
+                    <string>keyword.operator.other.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
                     <string>(\-=|\+=|\*=|\/=|%=)</string>
                     <key>name</key>
                     <string>keyword.operator.other.cfscript</string>
