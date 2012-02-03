@@ -787,7 +787,7 @@
 		                </dict>
 		            </dict>
 		            <key>name</key>
-		            <string>source.cfscript.embedded.cfscript</string>
+		            <string>string.interpolated.hash.cfml source.cfscript.embedded.cfml</string>
 		            <key>patterns</key>
 		            <array>
 		                <dict>
