@@ -192,7 +192,7 @@
 		<!-- CFSET|CFRETURN -->
 		<dict>
 			<key>begin</key>
-			<string>(?:^\s+)?(&lt;)(?i:(cfset)|(cfreturn))</string>
+			<string>(&lt;)(?i:(cfset)|(cfreturn))</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
