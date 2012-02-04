@@ -177,6 +177,42 @@
 					<key>patterns</key>
 					<array>
 						<dict>
+							<key>begin</key>
+							<string>(&lt;/?)((?i:(?:cfqueryparam))\b)</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.tag.begin.cfml</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>entity.name.tag.inline.param.cfml</string>
+								</dict>
+							</dict>
+							<key>end</key>
+							<string>((?:\s?/)?&gt;)</string>
+							<key>endCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.definition.tag.end.cfml</string>
+								</dict>
+							</dict>
+							<key>name</key>
+							<string>meta.tag.inline.cfml</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#tag-stuff</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
 							<key>include</key>
 							<string>#nest-hash</string>
 						</dict>
