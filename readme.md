@@ -9,15 +9,17 @@
 ### Keyboard Shortcuts
 
 * <kbd>shift</kbd>+<kbd>3</kbd> `#SELECTION#`
-* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>3</kbd> `<cfoutput>#SELECTION#</cfoutput>`
 * <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>o</kbd> `<cfoutput>SELECTION</cfoutput>`
-* <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>r</kbd> `<cfscript>SELECTION</cfscript>`
-* <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>d</kbd>  `<cfdump var="#SELECTION#">`
-* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>/</kbd>  `<!--- SELECTION --->` or `/* SELECTION */`
-* <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>/</kbd> `/** documentation (javadoc style)`
-* <kbd>d</kbd><kbd>o</kbd><kbd>c</kbd><kbd>tab</kbd> `/** documentation (javadoc style)`
-* <kbd>alt</kbd>+<kbd>enter</kbd> `hardeol ;\n` (terminates statements and adds newline)
-* <kbd>ctrl</kbd>+<kbd>r</kbd> `Goto Symbol command`
+* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>3</kbd> `<cfoutput>#SELECTION#</cfoutput>`
+* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>a</kbd> `<cfabort />`
+* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>r</kbd> `<cfscript>SELECTION</cfscript>`
+* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>d</kbd> `<cfdump var="#SELECTION#">`
+* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>c</kbd> `cfml comment`
+* <kbd>ctrl</kbd>+<kbd>/</kbd> `line comment`
+* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>/</kbd> `block comment`
+* <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>shift</kbd>+<kbd>/</kbd> `javadoc comment`
+* <kbd>ctrl</kbd>+<kbd>enter</kbd> `terminates statement; adds new line`
+* <kbd>ctrl</kbd>+<kbd>r</kbd> `goto symbol command`
 
 ## Installation
 
