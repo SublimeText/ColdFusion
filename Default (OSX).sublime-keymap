@@ -76,10 +76,20 @@
       [
         { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
         { "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true },
-        { "key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }
+        { "key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }
       ]
     },
+    // shift+3 auto_match hash
     // Pound/hash marks ## move cursor forward
+    "keys": ["#"], "command": "insert_snippet",
+    "args": {"contents": "#$0#"},
+    "context":
+      [
+        { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+        { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+        { "key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }
+      ]
+    },
     {
     "keys": ["#"], "command": "move",
     "args": {"by": "characters", "forward": true},
@@ -88,7 +98,7 @@
         { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
         { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
         { "key": "following_text", "operator": "regex_contains", "operand": "^#", "match_all": true },
-        { "key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }
+        { "key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }
       ]
     },
     // Pound/hash marks ## backsapce remove both
@@ -101,7 +111,7 @@
         { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
         { "key": "preceding_text", "operator": "regex_contains", "operand": "#$", "match_all": true },
         { "key": "following_text", "operator": "regex_contains", "operand": "^#", "match_all": true },
-        { "key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }
+        { "key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }
       ]
     }
     // end
