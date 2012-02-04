@@ -59,7 +59,7 @@
         {"key": "selector", "operator": "equal", "operand": "source.cfscript,source.cfscript.embedded.cfml", "match_all": true }
       ]
     },
-    // Pound/hash marks ## wrap selection
+    // shift+3 wrap selection with hash
     {
     "keys": ["#"], "command": "insert_snippet",
     "args": {"contents": "#${0:$SELECTION}#"},
@@ -71,7 +71,7 @@
       ]
     },
     // shift+3 auto_match hash
-    // Pound/hash marks ## move cursor forward
+    {
     "keys": ["#"], "command": "insert_snippet",
     "args": {"contents": "#$0#"},
     "context":
@@ -81,6 +81,7 @@
         { "key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }
       ]
     },
+    // shift+3 move cursor forward to close hash
     {
     "keys": ["#"], "command": "move",
     "args": {"by": "characters", "forward": true},
@@ -92,7 +93,7 @@
         { "key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }
       ]
     },
-    // Pound/hash marks ## backsapce remove both
+    // backspace removes both hash marks
     {
     "keys": ["backspace"], "command": "run_macro_file",
     "args": {"file": "Packages/Default/Delete Left Right.sublime-macro"},
@@ -104,7 +105,4 @@
         { "key": "following_text", "operator": "regex_contains", "operand": "^#", "match_all": true },
         { "key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }
       ]
-    }
-    // end
-
 ]
