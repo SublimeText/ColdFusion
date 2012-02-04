@@ -21,6 +21,10 @@
 * <kbd>ctrl</kbd>+<kbd>enter</kbd> `terminates statement; adds new line`
 * <kbd>ctrl</kbd>+<kbd>r</kbd> `goto symbol command`
 
+#### Overridden Sublime Text 2 Keyboard Shortcuts
+* <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>d</kbd> `duplicate line`
+* <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>a</kbd> `expand selection to tag`
+
 ## Installation
 
 The recommmended method of installation is via Package Control. It will download upgrades to your packages automatically.
