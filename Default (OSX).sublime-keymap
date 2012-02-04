@@ -1,8 +1,8 @@
 [
-    // Alt+Enter terminates cfscript statement
+    // super+enter terminates statement and adds new line
     {
-    "keys": ["alt+enter"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/Terminate Statement.sublime-macro"},
-    "context": [ {"key": "selector", "operator": "equal", "operand": "source.cfscript, text.html.cfm", "match_all": true }]
+    "keys": ["super+enter"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/Terminate Statement.sublime-macro"},
+    "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }]
     },
     // super+alt+/ /** Java Doc style documentation
     {
