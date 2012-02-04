@@ -1,0 +1,154 @@
+[
+    // ctrl+enter terminates statement and adds new line
+    {
+    "keys": ["ctrl+enter"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/Terminate Statement.sublime-macro"},
+    "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }]
+    },
+    // javadoc add line
+    {
+    "keys": ["enter"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/JavaDoc Add Line.sublime-macro"},
+    "context": [ {"key": "selector", "operator": "equal", "operand": "comment.block.documentation.javadoc", "match_all": true }]
+    },
+    // backspace javadoc delete line
+    {
+    "keys": ["backspace"], "command": "run_macro_file",
+    "args": {"file": "Packages/ColdFusion/JavaDoc Delete Line.sublime-macro"},
+    "context":
+      [
+        { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+        { "key": "preceding_text", "operator": "regex_contains", "operand": "\\*$", "match_all": true },
+        { "key": "selector", "operator": "equal", "operand": "comment.block.documentation.javadoc", "match_all": true }
+      ]
+    },
+    // ctrl+shift+3 <cfoutput>#SELECTION#</cfoutput>
+    {
+    "keys": ["ctrl+shift+3"], "command": "insert_snippet",
+    "args": { "contents": "<cfoutput>#${0:$SELECTION}#</cfoutput>" },
+    "context":
+    [
+        {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
+        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
+    ]
+    },
+    // ctrl+shift+a <cfabort />
+    {
+    "keys": ["ctrl+shift+a"], "command": "insert_snippet",
+    "args": { "contents": "<cfabort />" },
+    "context":
+    [
+        {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
+        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
+    ]
+    },
+    // ctrl+shift+o <cfoutput></cfoutput>
+    {
+    "keys": ["ctrl+shift+o"], "command": "insert_snippet",
+    "args": { "contents": "<cfoutput>${0:$SELECTION}</cfoutput>" },
+    "context":
+    [
+        {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
+        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
+    ]
+    },
+    // ctrl+shift+r <cfscript>$0</cfscript>
+    {
+    "keys": ["ctrl+shift+r"], "command": "insert_snippet",
+    "args": { "contents": "<cfscript>\n\t$0\n</cfscript>" },
+    "context":
+      [
+        { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+        { "key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
+        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
+      ]
+    },
+    // ctrl+shift+r with selection <cfscript></cfscript>
+    {
+    "keys": ["ctrl+shift+r"], "command": "insert_snippet",
+    "args": { "contents": "<cfscript>${0:$SELECTION}</cfscript>" },
+    "context":
+      [
+        { "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true },
+        { "key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
+        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
+      ]
+    },
+    // ctrl+shift+d  <cfdump var="##">
+    {
+    "keys": ["ctrl+shift+d"], "command": "insert_snippet",
+    "args": { "contents": "<cfdump var=\"#${1:$SELECTION}#\" />" },
+    "context":
+    [
+        {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
+        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
+    ]
+    },
+    // ctrl+shift+c line comment
+    { "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": false },
+    "context":
+    [
+        { "key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }
+    ]},
+    // ctrl+alt+shift+/ javadoc comment
+    {
+    "keys": ["ctrl+alt+shift+/"], "command": "insert_snippet",
+    "args": { "contents": "/**\n* $0\n*/" },
+    "context":
+      [
+        {"key": "selector", "operator": "equal", "operand": "source.cfscript,source.cfscript.embedded.cfml", "match_all": true }
+      ]
+    },
+    // shift+3 wrap selection with hash
+    {
+    "keys": ["#"], "command": "insert_snippet",
+    "args": {"contents": "#${0:$SELECTION}#"},
+    "context":
+      [
+        { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+        { "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true },
+        { "key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }
+      ]
+    },
+    // shift+3 auto_match hash
+    {
+    "keys": ["#"], "command": "insert_snippet",
+    "args": {"contents": "#$0#"},
+    "context":
+      [
+        { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+        { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+        { "key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }
+      ]
+    },
+    // shift+3 move cursor forward to close hash
+    {
+    "keys": ["#"], "command": "move",
+    "args": {"by": "characters", "forward": true},
+    "context":
+      [
+        { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+        { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+        { "key": "following_text", "operator": "regex_contains", "operand": "^#", "match_all": true },
+        { "key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }
+      ]
+    },
+    // backspace removes both hash marks
+    {
+    "keys": ["backspace"], "command": "run_macro_file",
+    "args": {"file": "Packages/Default/Delete Left Right.sublime-macro"},
+    "context":
+      [
+        { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+        { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
+        { "key": "preceding_text", "operator": "regex_contains", "operand": "#$", "match_all": true },
+        { "key": "following_text", "operator": "regex_contains", "operand": "^#", "match_all": true },
+        { "key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }
+      ]
+    },
+    /***************
+    overridden sublime keyboard shortcuts
+    */
+    // ctrl+alt+d
+    { "keys": ["ctrl+alt+d"], "command": "duplicate_line"},
+    // ctrl+alt+a
+    { "keys": ["ctrl+alt+a"], "command": "expand_selection", "args": {"to": "tag"}}
+]
