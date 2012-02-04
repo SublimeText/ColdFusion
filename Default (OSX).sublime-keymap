@@ -44,7 +44,12 @@
     "args": { "contents": "<cfdump var=\"#${1:$SELECTION}#\" />" },
     "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }]
     },
-    // Pound/hash marks ##
+    // super+shift+c line comment
+    { "keys": ["super+shift+c"], "command": "toggle_comment", "args": { "block": false },
+    "context":
+    [
+        { "key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }
+    ]},
     // super+alt+shift+/ javadoc comment
     {
     "keys": ["super+alt+shift+/"], "command": "insert_snippet",
