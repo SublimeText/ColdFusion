@@ -1,6 +1,5 @@
 {
-	"scope": "text.html.cfm - source, text.html.cfm.embedded.cfml - source.cfscript.embedded.cfml" ,
-
+	"scope": "text.html.cfm - source, text.html.cfm.embedded.cfml - source.cfscript.embedded.cfml",
 	"completions":
 	[
         // lowercase tags
@@ -111,8 +110,6 @@
 
 
         // UPPERCASE TAGS
-
-
         { "trigger": "CFABORT", "contents": "<CFABORT ${1:${2:SHOWERROR=\"$3\"}} />$0"},
         { "trigger": "CFAPPLET", "contents": "<CFAPPLET ${1:${2:APPLETSOURCE=\"$3\" }${4:NAME=\"$5\" }${6:HEIGHT=\"$7\" }${8:WIDTH=\"$9\" }${10:VSPACE=\"$11\" }${12:HSPACE=\"$13\" }${14:ALIGN=\"$15\" }${16:NOTSUPPORTED=\"$17\"}} />$0"},
         { "trigger": "CFAPPLICATION", "contents": "<CFAPPLICATION ${1:${2:NAME=\"$3\" }${4:LOGINSTORAGE=\"$5\" }${6:CLIENTMANAGEMENT=\"$7\" }${8:CLIENTSTORAGE=\"$9\" }${10:SETCLIENTCOOKIES=\"$11\" }${12:SESSIONMANAGEMENT=\"$13\" }${14:SESSIONTIMEOUT=\"$15\" }${16:APPLICATIONTIMEOUT=\"$17\" }${18:SETDOMAINCOOKIES=\"$19\" }${20:SCRIPTPROTECT=\"$21\"}} />$0"},
@@ -217,15 +214,5 @@
         { "trigger": "CFWDDX", "contents": "<CFWDDX ${1:${2:ACTION=\"$3\" }${4:INPUT=\"$5\" }${6:OUTPUT=\"$7\" }${8:TOPLEVELVARIABLE=\"$9\" }${10:USETIMEZONEINFO=\"$11\" }${12:VALIDATE=\"$13\"}} />$0"},
         { "trigger": "CFXML", "contents": "<CFXML ${1:${2:VARIABLE=\"$3\" }${4:CASESENSITIVE=\"$5\"}}>\n\t$0\n</CFXML>"},
         { "trigger": "ABORT", "contents": "<CFABORT />$0"}
-
-
-        // deprecated textmate shortcuts
-        /*{ "trigger": "^D", "contents": "<cfdump var=\"#${SELECTED}$1#\" />$0"},
-        { "trigger": "^F", "contents": "#${1:trim}(form.$2)#"},
-        { "trigger": "^I", "contents": "isDefined(\"$1\")$2"},
-        { "trigger": "^O,^>", "contents": "<cfoutput>${SELECTED}$0</cfoutput>"},
-        { "trigger": "^U", "contents": "#${1:trim}(url.$2)#"}*/
 	]
 }
-
-
