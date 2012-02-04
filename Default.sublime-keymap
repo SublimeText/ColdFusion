@@ -86,7 +86,7 @@
     { "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": false },
     "context":
     [
-        { "key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true }
+        { "key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }
     ]},
     // ctrl+alt+shift+/ javadoc comment
     {
