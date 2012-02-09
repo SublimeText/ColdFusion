@@ -596,7 +596,7 @@
             <array>
                 <dict>
                     <key>begin</key>
-                    <string>\.((?i:setsql))\("</string>
+                    <string>\.((?i:setsql))\(\s*["|']</string>
                     <key>beginCaptures</key>
                     <dict>
                         <key>1</key>
@@ -606,7 +606,7 @@
                         </dict>
                     </dict>
                     <key>end</key>
-                    <string>("\))</string>
+                    <string>(["|']\s*\))</string>
                     <key>endCaptures</key>
                     <dict>
                         <key>1</key>
