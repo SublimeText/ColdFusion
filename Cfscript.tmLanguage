@@ -596,13 +596,18 @@
             <array>
                 <dict>
                     <key>begin</key>
-                    <string>\.((?i:setsql))\(\s*["|']</string>
+                    <string>([\w+\.]+)\.((?i:setsql))\(\s*["|']</string>
                     <key>beginCaptures</key>
                     <dict>
                         <key>1</key>
                         <dict>
                             <key>name</key>
-                            <string>meta.function.setsql.cfscripts</string>
+                            <string>entity.name.function.query.cfscript, meta.toc-list.query.cfscript</string>
+                        </dict>
+                        <key>2</key>
+                        <dict>
+                            <key>name</key>
+                            <string>support.function.query.cfscript</string>
                         </dict>
                     </dict>
                     <key>end</key>

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
     <key>name</key>
-    <string>Symbol List: cfquery</string>
+    <string>Symbol List Query</string>
     <key>scope</key>
-    <string>text.html.cfm meta.toc-list.query.cfml</string>
+    <string>text.html.cfm meta.toc-list.query, source.cfscript meta.toc-list.query</string>
     <key>settings</key>
     <dict>
         <key>symbolTransformation</key>
