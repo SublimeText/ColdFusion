@@ -621,6 +621,8 @@
                         </dict>
                     </dict>
                     <key>name</key>
+                    <!-- could add meta block (optional)
+                        meta.block.function.query.cfscript -->
                     <string>source.sql.embedded.cfscript</string>
                     <key>patterns</key>
                     <array>
