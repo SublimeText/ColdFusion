@@ -446,7 +446,8 @@
 
 
 
-		<!-- for Symbol List cffunction -->
+		<!-- for Symbol List
+		meta.toc-list.function.name -->
 		<key>func-name-attribute</key>
 		<dict>
 			<key>begin</key>
@@ -482,7 +483,7 @@
 						</dict>
 					</dict>
 					<key>contentName</key>
-					<string>meta.toc-list.name.cfml</string>
+					<string>meta.toc-list.function.cfml</string>
 					<key>end</key>
 					<string>"</string>
 					<key>endCaptures</key>
@@ -515,7 +516,7 @@
 						</dict>
 					</dict>
 					<key>contentName</key>
-					<string>meta.toc-list.name.cfml</string>
+					<string>meta.toc-list.function.cfml</string>
 					<key>end</key>
 					<string>'</string>
 					<key>endCaptures</key>

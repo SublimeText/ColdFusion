@@ -5,7 +5,7 @@
     <key>name</key>
     <string>Symbol List: cffunction</string>
     <key>scope</key>
-    <string>text.html.cfm meta.toc-list.name.cfml</string>
+    <string>source.cfscript meta.toc-list.function, text.html.cfm meta.toc-list.function</string>
     <key>settings</key>
     <dict>
         <key>symbolTransformation</key>
