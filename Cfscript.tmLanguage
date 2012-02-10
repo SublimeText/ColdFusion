@@ -621,6 +621,10 @@
                     <array>
                         <dict>
                             <key>include</key>
+                            <string>#nest_hash</string>
+                        </dict>
+                        <dict>
+                            <key>include</key>
                             <string>source.sql</string>
                         </dict>
                     </array>
