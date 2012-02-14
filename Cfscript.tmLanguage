@@ -210,15 +210,15 @@
             <array>
                 <dict>
                     <key>match</key>
-                    <string>\b([A-Z][A-Z0-9_\.]+)\b</string>
+                    <string>\b(?i:(true|false|null))\b</string>
                     <key>name</key>
-                    <string>constant.other.cfscript</string>
+                    <string>constant.language.cfscript</string>
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(true|false|null)\b</string>
+                    <string>\b([A-Z][A-Z0-9_]+)\b</string>
                     <key>name</key>
-                    <string>constant.language.cfscript</string>
+                    <string>constant.other.cfscript</string>
                 </dict>
             </array>
         </dict>
