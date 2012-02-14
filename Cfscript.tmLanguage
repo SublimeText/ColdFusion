@@ -37,7 +37,7 @@
                 <string>(?x)^\s*
                     (?:
                         (?: # optional access-control modifier and return-type
-                            (?:(?:\b(private|package|public|remote))\b\s+)+\s* # access-control.modifier
+                            (?:(?:\b(private|package|public|remote))\s+)+\s* # access-control.modifier
                             (?:\b
                                 (void)
                                 |
