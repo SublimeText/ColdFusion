@@ -2,6 +2,11 @@
     "scope": "source.cfscript - source.sql - text.html.cfml, source.sql source.cfscript",
     "completions":
     [
+        // misc completions
+        { "trigger": "true", "contents": "true"},
+        { "trigger": "false", "contents": "false"},
+        { "trigger": "TRUE", "contents": "TRUE"},
+        { "trigger": "FALSE", "contents": "FALSE"},
         // functions
         { "trigger": "abs", "contents": "abs(${1:${2:number}})"},
         { "trigger": "acos", "contents": "acos(${1:${2:number}})"},
