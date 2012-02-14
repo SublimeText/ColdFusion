@@ -18,7 +18,7 @@
 * <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>d</kbd> `<cfdump var="#SELECTION#">`
 * <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>c</kbd> `cfml comment`
 * <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>shift</kbd>+<kbd>/</kbd> `javadoc comment`
-* <kbd>ctrl</kbd>+<kbd>enter</kbd> `terminates statement; adds new line`
+* <kbd>alt</kbd>+<kbd>enter</kbd> `terminates statement; adds new line`
 
 #### Other Keybindings
 
