@@ -210,7 +210,16 @@
             <array>
                 <dict>
                     <key>match</key>
-                    <string>\b([0-9]+)\b</string>
+                    <string>(?x)(
+                            (\b[0-9]+)
+                            |
+                            (\.[0-9]+[0-9\.]*) # decimals
+                            |
+                            (0(x|X)[0-9a-fA-F]+) # hex
+                            # matches really large double/floats
+                            |(\.[0-9]+)((e|E)(\+|-)?[0-9]+)?([LlFfUuDd]|UL|ul)?
+                            )\b
+                        </string>
                     <key>name</key>
                     <string>constant.numeric.cfscript</string>
                 </dict>
