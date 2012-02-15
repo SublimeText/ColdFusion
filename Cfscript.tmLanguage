@@ -210,6 +210,12 @@
             <array>
                 <dict>
                     <key>match</key>
+                    <string>\b([0-9]+)\b</string>
+                    <key>name</key>
+                    <string>constant.numeric.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
                     <string>\b(?i:(true|false|null))\b</string>
                     <key>name</key>
                     <string>constant.language.cfscript</string>
