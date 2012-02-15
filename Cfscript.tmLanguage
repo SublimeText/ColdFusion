@@ -448,6 +448,12 @@
                 </dict>
                 <dict>
                     <key>match</key>
+                    <string>\?|:</string>
+                    <key>name</key>
+                    <string>keyword.operator.conditional.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
                     <string>;</string>
                     <key>name</key>
                     <string>punctuation.terminator.cfscript</string>
