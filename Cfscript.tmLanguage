@@ -20,6 +20,10 @@
     <key>patterns</key>
     <array>
 
+        <dict>
+            <key>include</key>
+            <string>#comments</string>
+        </dict>
 
         <dict>
             <key>include</key>
@@ -161,10 +165,6 @@
                 <dict>
                     <key>include</key>
                     <string>#storage-types</string>
-                </dict>
-                <dict>
-                    <key>include</key>
-                    <string>#comments</string>
                 </dict>
                 <dict>
                     <key>include</key>
