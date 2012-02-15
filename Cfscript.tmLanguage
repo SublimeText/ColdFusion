@@ -384,7 +384,7 @@
                     <key>match</key>
                     <string>\b(new)\b</string>
                     <key>name</key>
-                    <string>keyword.other.new.cfml</string>
+                    <string>keyword.other.new.cfscript</string>
                 </dict>
                 <dict>
                     <key>match</key>
