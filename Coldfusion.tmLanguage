@@ -213,10 +213,6 @@
 							<array>
 								<dict>
 									<key>include</key>
-									<string>#cfcomments</string>
-								</dict>
-								<dict>
-									<key>include</key>
 									<string>#tag-stuff</string>
 								</dict>
 							</array>
