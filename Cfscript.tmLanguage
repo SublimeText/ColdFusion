@@ -231,7 +231,7 @@
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b([A-Z][A-Z0-9_]+)\b</string>
+                    <string>\b_?([A-Z][A-Z0-9_]+)\b</string>
                     <key>name</key>
                     <string>constant.other.cfscript</string>
                 </dict>
@@ -660,6 +660,7 @@
                 </dict>
             </array>
         </dict>
+        <!-- /sql-code -->
 
 
     </dict>
