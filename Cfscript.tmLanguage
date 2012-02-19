@@ -597,7 +597,18 @@
                 </dict>
                 <dict>
                     <key>begin</key>
+                    <string>(?x)
+                    (?i:
+                        \b
                     <string>\b(this|super)\.</string>
+                        (application|arguments|attributes|caller|cgi|client|
+                            cookie|flash|form|local|request|server|session|
+                            this|thistag|thread|thread local|url|variables|
+                            super|self)
+                        \b
+                        |
+                        (\w+)
+                    )</string>
                     <key>beginCaptures</key>
                     <dict>
                         <key>1</key>
@@ -605,15 +616,20 @@
                             <key>name</key>
                             <string>variable.language.cfscript</string>
                         </dict>
+                        <key>2</key>
+                        <dict>
+                            <key>name</key>
+                            <string>variable.other.cfscript</string>
+                        </dict>
                     </dict>
                     <key>end</key>
-                    <string>(\w+)\b</string>
+                    <string></string>
                     <key>endCaptures</key>
                     <dict>
                         <key>1</key>
                         <dict>
                             <key>name</key>
-                            <string>variable.other.cfscript</string>
+                            <string>punctuation.parenthesis.end.cfscript</string>
                         </dict>
                     </dict>
                 </dict>
