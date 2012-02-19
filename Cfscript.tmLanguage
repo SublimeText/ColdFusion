@@ -590,6 +590,12 @@
                     <string>storage.language.cfscript</string>
                 </dict>
                 <dict>
+                    <key>match</key>
+                    <string>(\.)</string>
+                    <key>name</key>
+                    <string>punctuation.period.delimiter.cfscript</string>
+                </dict>
+                <dict>
                     <key>begin</key>
                     <string>\b(this|super)\.</string>
                     <key>beginCaptures</key>
