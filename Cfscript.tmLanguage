@@ -397,13 +397,17 @@
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(try|catch|throw)\b</string>
+                    <string>\b(try|catch|rethrow|throw)\b</string>
                     <key>name</key>
                     <string>keyword.control.catch-exception.cfscript</string>
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(return|break|do|while|for|switch|case|default|if|else)\b</string>
+                    <string>(?x)
+                        \b(abort|break|case|continue|default|else|elseif|exit
+                            |finally|if|import|include|interface|location
+                            |lock|for|do|while|return|switch|thread|trace
+                            |in|transaction)\b</string>
                     <key>name</key>
                     <string>keyword.control.cfscript</string>
                 </dict>
