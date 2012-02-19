@@ -239,12 +239,12 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.cf.declaration.cfml</string>
+					<string>entity.name.tag.cf.inline.declaration.cfml</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.cf.other.cfml</string>
+					<string>entity.name.tag.cf.inline.other.cfml</string>
 				</dict>
 			</dict>
 			<key>end</key>
