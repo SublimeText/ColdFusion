@@ -300,12 +300,6 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>match</key>
-					<string>\w+</string>
-					<key>name</key>
-					<string>variable.any.cfscript</string>
-				</dict>
-				<dict>
 					<key>include</key>
 					<string>source.cfscript</string>
 				</dict>
