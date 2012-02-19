@@ -31,7 +31,7 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 
 - - -
 
-### Keybindings
+## Keybindings
 
 <table>
     <tr>
