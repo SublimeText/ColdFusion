@@ -600,7 +600,6 @@
                     <string>(?x)
                     (?i:
                         \b
-                    <string>\b(this|super)\.</string>
                         (application|arguments|attributes|caller|cgi|client|
                             cookie|flash|form|local|request|server|session|
                             this|thistag|thread|thread local|url|variables|
