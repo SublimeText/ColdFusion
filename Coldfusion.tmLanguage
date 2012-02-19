@@ -350,11 +350,18 @@
 		</dict>
 		<!-- /CFIF -->
 
-
-		<!-- inline tags (TODO: need to add the rest) -->
+		<!-- inline tags (TODO: need to add the rest)
+		these tags do not have a closing tag -->
 		<dict>
 			<key>begin</key>
-			<string>(&lt;/?)((?i:(?:cf(import|param|break|abort|flush)))\b)</string>
+			<string>(?x)
+				(&lt;)
+					(?i:
+						(cf((location)|(forward)|(import)|(param)|(break)
+							|(abort)|(flush)|(setting)))
+						\b
+					)
+			</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
