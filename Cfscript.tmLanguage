@@ -633,6 +633,12 @@
                         </dict>
                     </dict>
                 </dict>
+                <dict>
+                    <key>match</key>
+                    <string>\b(?i:this)\b[^\.]</string>
+                    <key>name</key>
+                    <string>variable.language.cfscript</string>
+                </dict>
             </array>
         </dict>
         <!-- /variables -->
