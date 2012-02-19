@@ -399,7 +399,13 @@
 		<!-- ALL OTHER BLOCK TAGS -->
 		<dict>
 			<key>begin</key>
-			<string>(&lt;/?)((?i:cf(output|savecontent)))\b</string>
+			<string>(?x)
+				(&lt;/?)
+				(?i:
+					(cf((output)|(savecontent)|(\w+)))
+				)
+				\b
+			</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -410,7 +416,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.cf.other.cfml</string>
+					<string>entity.name.tag.cf.block.other.cfml</string>
 				</dict>
 			</dict>
 			<key>end</key>
