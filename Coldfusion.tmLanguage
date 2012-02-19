@@ -248,7 +248,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>(/?&gt;)</string>
+			<string>((?:\s?/)?&gt;)</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
