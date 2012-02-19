@@ -2,40 +2,15 @@
 
 ### Features
 
-* ColdFusion CFML, cfscript, and script-based CFCs syntax highlighting. (see tmLanguage files)
+* ColdFusion cfml, and script-based CFCs syntax highlighting. (see tmLanguage files)
 * Auto inserts closing hash # (see Default (platform).sublime-keymap)
 * Provides completions that match just after typing an opening angle bracket (see cfml_completions.py)
 * Exhaustive library of snippet bindings (see ColdFusion.sublime-completions)
-* Keyboard Shortcuts (see Default (platform).sublime-keymap)
-
-### ColdFusion Keybindings
-
-* <kbd>shift</kbd>+<kbd>3</kbd> `#SELECTION#`
-* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>o</kbd> `<cfoutput>SELECTION</cfoutput>`
-* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>3</kbd> `<cfoutput>#SELECTION#</cfoutput>`
-* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>a</kbd> `<cfabort />`
-* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>r</kbd> `<cfscript>SELECTION</cfscript>`
-* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>d</kbd> `<cfdump var="#SELECTION#">`
-* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>c</kbd> `cfml comment`
-* <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>shift</kbd>+<kbd>/</kbd> `javadoc comment`
-* <kbd>alt</kbd>+<kbd>enter</kbd> `terminates statement; adds new line`
-
-#### Other Keybindings
-
-* <kbd>ctrl</kbd>+<kbd>r</kbd> `goto symbol command`
-* <kbd>alt</kbd>+<kbd>shift</kbd>+<kbd>w</kbd> `wrap selection in tag`
-* <kbd>ctrl</kbd>+<kbd>/</kbd> `line comment`
-* <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>/</kbd> `block comment`
-* To see all keybindings select `Preferences > Keybindings - Default` from the menu
-
-#### Overridden Sublime Text 2 Keyboard Shortcuts
-
-* <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>d</kbd> `duplicate line`
-* <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>a</kbd> `expand selection to tag`
+* ColdFusion specific keybindings (see Default (platform).sublime-keymap)
 
 ## Installation
 
-The recommmended method of installation is via Package Control. It will download upgrades to your packages automatically.
+The recommmended method of installation is via Package Control.
 
 ### Package Control
 
@@ -46,7 +21,7 @@ The recommmended method of installation is via Package Control. It will download
 
 Go to your Sublime Text 2 `Packages` directory and clone the repository using the command below:
 
-    git clone https://github.com/SublimeText/ColdFusion "ColdFusion"
+    git clone https://github.com/SublimeText/ColdFusion
 
 ### Download Manually
 
@@ -54,5 +29,62 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 * Unzip the files and rename the folder to `ColdFusion`
 * Copy the folder to your Sublime Text 2 `Packages` directory
 
-##Notes
-* cfml_completions.py auto complete will only work with Sublime Text 2 Build 2151 or greater
+- - -
+
+### Keybindings
+
+<table>
+    <tr>
+        <td>
+<kbd>shift</kbd>+<kbd>3</kbd> <code>#SELECTION#</code>
+        </td>
+        <td>
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>o</kbd> <code>&lt;cfoutput&gt;SELECTION&lt;/cfoutput&gt;</code>
+        </td>
+    </tr>
+    <tr>
+        <td>
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>3</kbd> <code>&lt;cfoutput&gt;#SELECTION#&lt;/cfoutput&gt;</code>
+        </td>
+        <td>
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>a</kbd> <code>&lt;cfabort /&gt;</code>
+        </td>
+    </tr>
+    <tr>
+        <td>
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>r</kbd> <code>&lt;cfscript&gt;SELECTION&lt;/cfscript&gt;</code>
+        </td>
+        <td>
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>d</kbd> <code>&lt;cfdump var=&quot;#SELECTION#&quot;&gt;</code>
+        </td>
+    </tr>
+    <tr>
+        <td>
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>c</kbd> <code>cfml comment</code>
+        </td>
+        <td>
+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>shift</kbd>+<kbd>/</kbd> <code>javadoc comment</code>
+        </td>
+    </tr>
+    <tr>
+        <td>
+<kbd>alt</kbd>+<kbd>enter</kbd> <code>terminates statement; adds new line</code>
+        </td>
+        <td>
+&nbsp;
+        </td>
+    </tr>
+</table>
+
+###### Overidden Sublime Keybindings
+
+<table>
+    <tr>
+        <td>
+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>d</kbd> <code>duplicate line</code>
+        </td>
+        <td>
+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>a</kbd> <code>expand selection to tag</code>
+        </td>
+    </tr>
+</table>
