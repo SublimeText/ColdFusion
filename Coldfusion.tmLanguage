@@ -189,7 +189,7 @@
 								<key>2</key>
 								<dict>
 									<key>name</key>
-									<string>entity.name.tag.inline.param.cfml</string>
+									<string>entity.name.tag.cf.inline.param.cfml</string>
 								</dict>
 							</dict>
 							<key>end</key>
@@ -239,12 +239,12 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.declaration.cfml</string>
+					<string>entity.name.tag.cf.declaration.cfml</string>
 				</dict>
 				<key>3</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.other.cfml</string>
+					<string>entity.name.tag.cf.other.cfml</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -282,7 +282,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.conditional.cfml</string>
+					<string>entity.name.tag.cf.conditional.cfml</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -319,7 +319,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.conditional.cfml</string>
+					<string>entity.name.tag.cf.conditional.cfml</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -359,7 +359,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.inline.other.cfml</string>
+					<string>entity.name.tag.cf.inline.other.cfml</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -397,7 +397,7 @@
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.tag.other.cfml</string>
+					<string>entity.name.tag.cf.other.cfml</string>
 				</dict>
 			</dict>
 			<key>end</key>
