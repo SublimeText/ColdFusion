@@ -480,7 +480,7 @@
         <key>function-call</key>
         <dict>
             <key>begin</key>
-            <string>(?:(\w+))(\()</string>
+            <string>(?i:(\w+))\s*(\()</string>
             <key>beginCaptures</key>
             <dict>
                 <key>1</key>
