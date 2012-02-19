@@ -582,11 +582,12 @@
         <dict>
             <key>patterns</key>
             <array>
+                <!-- matches single character // this should be improved it's lazy -->
                 <dict>
                     <key>match</key>
-                    <string>\b(this)\b</string>
+                    <string>\b(\w)\b</string>
                     <key>name</key>
-                    <string>variable.language.cfscript</string>
+                    <string>storage.language.cfscript</string>
                 </dict>
                 <dict>
                     <key>begin</key>
