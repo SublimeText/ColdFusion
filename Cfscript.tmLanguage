@@ -611,15 +611,7 @@
                         </dict>
                     </dict>
                     <key>end</key>
-                    <string></string>
-                    <key>endCaptures</key>
-                    <dict>
-                        <key>1</key>
-                        <dict>
-                            <key>name</key>
-                            <string>punctuation.parenthesis.end.cfscript</string>
-                        </dict>
-                    </dict>
+                    <string />
                 </dict>
                 <dict>
                     <key>match</key>
