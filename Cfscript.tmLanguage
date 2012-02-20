@@ -582,7 +582,7 @@
                     <key>match</key>
                     <string>(\.)</string>
                     <key>name</key>
-                    <string>punctuation.period.delimiter.cfscript</string>
+                    <string>punctuation.definition.seperator.variable.cfscript</string>
                 </dict>
                 <dict>
                     <key>begin</key>
