@@ -3,20 +3,15 @@
 <plist version="1.0">
 <dict>
     <key>comment</key>
-    <string>Coldfusion Cfscript Language</string>
+    <string>This tmLanguage file is used internally by ColdFusion and Component tmLanguage files</string>
     <key>fileTypes</key>
-    <array>
-    </array>
-    <key>firstLineMatch</key>
-    <string></string>
+    <array/>
     <key>foldingStartMarker</key>
     <string>^.*\bfunction\s*(\w+\s*)?\([^\)]*\)(\s*\{[^\}]*)?\s*$</string>
     <key>foldingStopMarker</key>
     <string>^\s*\}</string>
-    <key>keyEquivalent</key>
-    <string></string>
     <key>name</key>
-    <string>cfscript</string>
+    <string>CFScript (do not use)</string>
     <key>patterns</key>
     <array>
 
