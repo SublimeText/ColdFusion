@@ -420,6 +420,12 @@
                 </dict>
                 <dict>
                     <key>match</key>
+                    <string>(\-\-|\+\+)</string>
+                    <key>name</key>
+                    <string>keyword.operator.increment-decrement.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
                     <string>(?i:(\^|\-|\+|\*|\/|\\|%|\-=|\+=|\*=|\/=|%=|\bMOD\b))</string>
                     <key>name</key>
                     <string>keyword.operator.arithmetic.cfscript</string>
@@ -435,12 +441,6 @@
                     <string>(=)</string>
                     <key>name</key>
                     <string>keyword.operator.assignment.cfscript</string>
-                </dict>
-                <dict>
-                    <key>match</key>
-                    <string>(\-\-|\+\+)</string>
-                    <key>name</key>
-                    <string>keyword.operator.increment-decrement.cfscript</string>
                 </dict>
                 <dict>
                     <key>match</key>
