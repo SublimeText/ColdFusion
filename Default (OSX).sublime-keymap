@@ -33,7 +33,7 @@
     // super+shift+= <cfset />
     {
     "keys": ["super+shift+="], "command": "insert_snippet",
-    "args": { "contents": "<cfset $1 />" },
+    "args": { "contents": "<cfset ${0:$SELECTION} />" },
     "context":
     [
         {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
