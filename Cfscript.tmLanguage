@@ -404,10 +404,10 @@
                 <dict>
                     <key>match</key>
                     <string>(?x)
-                        \b(abort|break|case|continue|default|else|elseif|exit
+                        \b(?i:(abort|break|case|continue|default|else|elseif|exit
                             |finally|if|import|include|interface|location
                             |lock|for|do|while|return|switch|thread|trace
-                            |in|transaction)\b</string>
+                            |in|transaction))\b</string>
                     <key>name</key>
                     <string>keyword.control.cfscript</string>
                 </dict>
