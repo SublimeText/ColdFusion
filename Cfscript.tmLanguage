@@ -386,13 +386,13 @@
             <array>
                 <dict>
                     <key>match</key>
-                    <string>\b(new)\b</string>
+                    <string>\b(?i:new)\b</string>
                     <key>name</key>
                     <string>keyword.other.new.cfscript</string>
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(try|catch|rethrow|throw)\b</string>
+                    <string>\b(?i:(try|catch|rethrow|throw))\b</string>
                     <key>name</key>
                     <string>keyword.control.catch-exception.cfscript</string>
                 </dict>
