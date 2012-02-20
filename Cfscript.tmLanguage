@@ -414,7 +414,7 @@
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(?i:EQ|NEQ|LT|LTE|GT|GTE|AND|IS|NOT|OR)\b</string>
+                    <string>\b(?i:EQ|NEQ|LT|LTE|GT|GTE|AND|IS|NOT|OR|MOD)\b</string>
                     <key>name</key>
                     <string>keyword.operator.other.cfscript</string>
                 </dict>
