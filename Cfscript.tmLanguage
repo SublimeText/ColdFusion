@@ -414,15 +414,15 @@
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(?i:EQ|NEQ|LT|LTE|GT|GTE|AND|IS|NOT|OR|MOD)\b</string>
+                    <string>\b(?i:(GREATER|LESS|THAN|EQUAL\s+TO|DOES|CONTAINS|EQUAL|EQ|NEQ|LT|LTE|GT|GTE|AND|IS))\b</string>
                     <key>name</key>
-                    <string>keyword.operator.other.cfscript</string>
+                    <string>keyword.operator.decision.cfscript</string>
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>(\-=|\+=|\*=|\/=|%=)</string>
+                    <string>(?i:(\^|\-|\+|\*|\/|\\|%|\-=|\+=|\*=|\/=|%=|\bMOD\b))</string>
                     <key>name</key>
-                    <string>keyword.operator.other.cfscript</string>
+                    <string>keyword.operator.arithmetic.cfscript</string>
                 </dict>
                 <dict>
                     <key>match</key>
@@ -444,13 +444,7 @@
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>(\-|\+|\*|\/|%)</string>
-                    <key>name</key>
-                    <string>keyword.operator.arithmetic.cfscript</string>
-                </dict>
-                <dict>
-                    <key>match</key>
-                    <string>(!|&amp;&amp;|\|\|)</string>
+                    <string>(?i:(NOT|!|AND|&amp;&amp;|OR|\|\||XOR|EQV|IMP))</string>
                     <key>name</key>
                     <string>keyword.operator.logical.cfscript</string>
                 </dict>
