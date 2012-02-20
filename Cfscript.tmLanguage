@@ -426,7 +426,7 @@
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>(&amp;)</string>
+                    <string>(&amp;|&amp;=)</string>
                     <key>name</key>
                     <string>keyword.operator.concat.cfscript</string>
                 </dict>
