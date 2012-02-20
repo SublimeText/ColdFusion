@@ -1,5 +1,5 @@
 [
-    // ctrl+enter terminates statement and adds new line
+    // alt+enter terminates statement and adds new line
     {
     "keys": ["alt+enter"], "command": "run_macro_file", "args": {"file": "Packages/ColdFusion/Terminate Statement.sublime-macro"},
     "context": [ {"key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }]
@@ -24,6 +24,16 @@
     {
     "keys": ["ctrl+shift+3"], "command": "insert_snippet",
     "args": { "contents": "<cfoutput>#${0:$SELECTION}#</cfoutput>" },
+    "context":
+    [
+        {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
+        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
+    ]
+    },
+    // ctrl+shift+= <cfset />
+    {
+    "keys": ["ctrl+shift+="], "command": "insert_snippet",
+    "args": { "contents": "<cfset $1 />" },
     "context":
     [
         {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },

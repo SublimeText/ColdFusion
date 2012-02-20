@@ -71,7 +71,7 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 <kbd>alt</kbd>+<kbd>enter</kbd> <code>terminates statement; adds new line</code>
         </td>
         <td>
-&nbsp;
+<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>=</kbd> <code>&lt;cfset SELECTION /&gt;</code>
         </td>
     </tr>
 </table>
