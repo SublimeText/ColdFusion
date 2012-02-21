@@ -580,12 +580,18 @@
                 </dict>
                 <dict>
                     <key>match</key>
+                    <string>\b(?i:(this|key))(?!\.)</string>
+                    <key>name</key>
+                    <string>variable.language.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
                     <string>(\.)</string>
                     <key>name</key>
                     <string>punctuation.definition.seperator.variable-component.cfscript</string>
                 </dict>
                 <dict>
-                    <key>begin</key>
+                    <key>match</key>
                     <string>(?x)
                     (?i:
                         \b
@@ -597,7 +603,7 @@
                         |
                         (\w+)
                     )</string>
-                    <key>beginCaptures</key>
+                    <key>captures</key>
                     <dict>
                         <key>1</key>
                         <dict>
@@ -610,14 +616,6 @@
                             <string>variable.other.cfscript</string>
                         </dict>
                     </dict>
-                    <key>end</key>
-                    <string />
-                </dict>
-                <dict>
-                    <key>match</key>
-                    <string>\b(?i:this)\b[^\.]</string>
-                    <key>name</key>
-                    <string>variable.language.cfscript</string>
                 </dict>
             </array>
         </dict>
