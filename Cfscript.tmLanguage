@@ -192,7 +192,7 @@
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(string|date|struct|array|void|binary|numeric|boolean|query|xml|uuid|any)(?:\[\s*\])*\b</string>
+                    <string>\b(?i:(string|date|struct|array|void|binary|numeric|boolean|query|xml|uuid|any))\b</string>
                     <key>name</key>
                     <string>storage.type.primitive.cfscript</string>
                 </dict>
