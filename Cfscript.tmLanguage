@@ -326,7 +326,7 @@
                 </dict>
             </dict>
             <key>end</key>
-            <string>"</string>
+            <string>"(?!")</string>
             <key>endCaptures</key>
             <dict>
                 <key>0</key>
@@ -339,6 +339,12 @@
             <string>string.quoted.double.cfscript</string>
             <key>patterns</key>
             <array>
+                <dict>
+                    <key>match</key>
+                    <string>("")</string>
+                    <key>name</key>
+                    <string>constant.character.escape.quoted.double.cfscript</string>
+                </dict>
                 <dict>
                     <key>include</key>
                     <string>#nest_hash</string>
@@ -358,7 +364,7 @@
                 </dict>
             </dict>
             <key>end</key>
-            <string>'</string>
+            <string>'(?!')</string>
             <key>endCaptures</key>
             <dict>
                 <key>0</key>
@@ -371,6 +377,12 @@
             <string>string.quoted.single.cfscript</string>
             <key>patterns</key>
             <array>
+                <dict>
+                    <key>match</key>
+                    <string>('')</string>
+                    <key>name</key>
+                    <string>constant.character.escape.quoted.single.cfscript</string>
+                </dict>
                 <dict>
                     <key>include</key>
                     <string>#nest_hash</string>
