@@ -72,7 +72,7 @@
         { "trigger": "daysInYear", "contents": "daysInYear(${1:${2:date}})"},
         { "trigger": "de", "contents": "de(${1:\"${2:string}\"})"},
         { "trigger": "decimalFormat", "contents": "decimalFormat(${1:${2:number}})"},
-        { "trigger": "decrementValue", "contents": "decrementvalue(${1:${2:number}})"},
+        { "trigger": "decrementValue", "contents": "decrementValue(${1:${2:number}})"},
         { "trigger": "decrypt", "contents": "decrypt(${1:\"${2:encrypted_string}\", \"${3:seed}\"})"},
         { "trigger": "deleteClientVariable", "contents": "deleteClientVariable(${1:\"${2:name}\"})"},
         { "trigger": "directoryExists", "contents": "directoryExists(${1:\"${2:absolute_path}\"})"},
