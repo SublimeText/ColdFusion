@@ -486,7 +486,15 @@
         <key>function-call</key>
         <dict>
             <key>begin</key>
-            <string>(?i:(\w+))\s*(\()</string>
+            <string>(?x)
+                (?i:
+                    (directoryExists|structKeyExists)
+                    |
+                    (\w+)
+                )
+                \s*
+                (\()
+            </string>
             <key>beginCaptures</key>
             <dict>
                 <key>1</key>
@@ -494,12 +502,13 @@
                     <key>name</key>
                     <string>support.function.cfscript</string>
                 </dict>
-                <!-- <key>3</key>
+                <key>2</key>
                 <dict>
                     <key>name</key>
-                    <string>support.function.cfml</string>
-                </dict> -->
-                <key>2</key>
+                    <!-- may possibly need renaming -->
+                    <string>support.function.cfscript</string>
+                </dict>
+                <key>3</key>
                 <dict>
                     <key>name</key>
                     <string>punctuation.definition.function-parameters.begin.cfscript</string>
