@@ -574,7 +574,7 @@
                         </dict>
                     </dict>
                     <key>name</key>
-                    <string>source.cfscript.embedded.cfscript</string>
+                    <string>source.cfscript.embedded.cfscript, meta.inline.hash.cfscript</string>
                     <key>patterns</key>
                     <array>
                         <dict>
