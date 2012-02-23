@@ -54,7 +54,6 @@
                         |
                         (\w+) # entity.name.function
                     )
-                    \s*
                 </string>
             <key>beginCaptures</key>
             <dict>
