@@ -608,7 +608,7 @@
                     <key>match</key>
                     <string>(\.)</string>
                     <key>name</key>
-                    <string>punctuation.definition.seperator.variable-component.cfscript</string>
+                    <string>punctuation.definition.seperator.variable.cfscript</string>
                 </dict>
                 <dict>
                     <key>match</key>
