@@ -403,7 +403,13 @@
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(?i:(try|catch|rethrow|throw))\b</string>
+                    <string>\b(?i:required)\b</string>
+                    <key>name</key>
+                    <string>keyword.other.required.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>\b(?i:(try|catch))\b</string>
                     <key>name</key>
                     <string>keyword.control.catch-exception.cfscript</string>
                 </dict>
