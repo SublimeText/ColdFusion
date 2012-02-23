@@ -47,7 +47,7 @@
                         )?
                     )
                     \s*
-                    (function) # storage.function
+                    (?i:(function)) # storage.function
                     \s+
                     (?:
                         (init) # entity.name.function.contructor
