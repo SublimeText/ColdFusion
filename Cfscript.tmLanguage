@@ -86,12 +86,12 @@
                 <key>6</key>
                 <dict>
                     <key>name</key>
-                    <string>entity.name.function.constructor.cfscript, meta.toc-list.function.cfscript</string>
+                    <string>entity.name.function.constructor.cfscript</string>
                 </dict>
                 <key>7</key>
                 <dict>
                     <key>name</key>
-                    <string>entity.name.function.cfscript, meta.toc-list.function.cfscript</string>
+                    <string>entity.name.function.cfscript</string>
                 </dict>
                 <!-- <key>8</key>
                 <dict>
