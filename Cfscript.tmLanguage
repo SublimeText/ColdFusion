@@ -659,7 +659,7 @@
                         <key>2</key>
                         <dict>
                             <key>name</key>
-                            <string>support.function.query.cfscript</string>
+                            <string>support.function.cfscript</string>
                         </dict>
                     </dict>
                     <key>end</key>
