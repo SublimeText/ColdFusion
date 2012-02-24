@@ -461,7 +461,7 @@
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>(?i:(NOT|!|AND|&amp;&amp;|OR|\|\||XOR|EQV|IMP))</string>
+                    <string>\b(?i:(NOT|!|AND|&amp;&amp;|OR|\|\||XOR|EQV|IMP))\b</string>
                     <key>name</key>
                     <string>keyword.operator.logical.cfscript</string>
                 </dict>
