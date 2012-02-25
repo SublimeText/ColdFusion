@@ -127,6 +127,129 @@
         <!-- /functions -->
 
 
+        <!-- tag-operators -->
+        <key>tag-operators</key>
+        <dict>
+            <key>patterns</key>
+            <array>
+                <!-- other: can also be a fn -->
+                <dict>
+                    <key>match</key>
+                    <string>\b(?i:return)\b</string>
+                    <key>name</key>
+                    <string>entity.name.tag.operator.other.cfscript</string>
+                </dict>
+                <dict>
+                    <key>begin</key>
+                    <string>(?x)
+                        \b
+                        (?i:
+                        (lock)|(transaction)|(thread)|(component)|(abort)
+                        |(exit)|(include)|(param)|(thread)|(import)
+                        |(rethrow|throw)|(property)|(interface)|(location)
+                        |(break|exit)
+                        )
+                        \b
+                    </string>
+                    <key>beginCaptures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.lock.cfscript</string>
+                        </dict>
+                        <key>2</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.transaction.cfscript</string>
+                        </dict>
+                        <key>3</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.thread.cfscript</string>
+                        </dict>
+                        <key>4</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.component.cfscript</string>
+                        </dict>
+                        <key>5</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.abort.cfscript</string>
+                        </dict>
+                        <key>6</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.exit.cfscript</string>
+                        </dict>
+                        <key>7</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.include.cfscript</string>
+                        </dict>
+                        <key>8</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.param.cfscript</string>
+                        </dict>
+                        <key>9</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.thread.cfscript</string>
+                        </dict>
+                        <key>10</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.import.cfscript</string>
+                        </dict>
+                        <key>11</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.catch-exception.cfscript</string>
+                        </dict>
+                        <key>12</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.property.cfscript</string>
+                        </dict>
+                        <key>13</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.interface.cfscript</string>
+                        </dict>
+                        <key>14</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.location.cfscript</string>
+                        </dict>
+                        <key>15</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.control.cfscript</string>
+                        </dict>
+                    </dict>
+                    <key>end</key>
+                    <string>(?=;)|(?={)</string>
+                    <key>name</key>
+                    <string>meta.tag.operator.cfscript</string>
+                    <key>patterns</key>
+                    <array>
+                        <dict>
+                            <key>match</key>
+                            <string>(?i:(\w+)\s*(?=\=))</string>
+                            <key>name</key>
+                            <string>entity.tag.name.operator-attribute.cfscript</string>
+                        </dict>
+                        <dict>
+                            <key>include</key>
+                            <string>#cfscript-code</string>
+                        </dict>
+                    </array>
+                </dict>
+            </array>
+        </dict>
+
 
 
         <key>cfscript</key>
@@ -148,6 +271,10 @@
         <dict>
             <key>patterns</key>
             <array>
+                <dict>
+                    <key>include</key>
+                    <string>#tag-operators</string>
+                </dict>
                 <dict>
                     <key>include</key>
                     <string>#sql-code</string>
@@ -416,10 +543,8 @@
                 <dict>
                     <key>match</key>
                     <string>(?x)
-                        \b(?i:(abort|break|case|continue|default|else|elseif|exit
-                            |finally|if|import|include|interface|location
-                            |lock|for|do|while|return|switch|thread|trace
-                            |in|transaction))\b</string>
+                        \b(?i:(case|default|continue|if|else|elseif|finally
+                            |for|in|do|while|switch|trace))\b</string>
                     <key>name</key>
                     <string>keyword.control.cfscript</string>
                 </dict>
