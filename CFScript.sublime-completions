@@ -241,6 +241,7 @@
         { "trigger": "second", "contents": "second(${1:${2:date}})"},
         { "trigger": "sendGatewayMessage", "contents": "sendGatewayMessage(${1:\"${2:gatewayID}\", ${3:data}})"},
         { "trigger": "serialize", "contents": "serialize(${1:variable_name})"},
+        { "trigger": "serializeJSON", "contents": "serializeJSON(${1:variable_name})"},
         { "trigger": "setEncoding", "contents": "setEncoding(${1:\"${2:scope_name}\", \"${3:charset}\"})"},
         { "trigger": "setLocale", "contents": "setLocale(${1:\"${2:new_locale}\"})"},
         { "trigger": "setProfileString", "contents": "setProfileString(${1:\"${2:inipath}\", \"${3:section}\", \"${4:entry}\", \"${5:value}\"})"},
