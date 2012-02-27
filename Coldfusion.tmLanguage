@@ -401,7 +401,7 @@
 			<string>(?x)
 				(&lt;/?)
 				(?i:
-					(cf((output)|(savecontent)|(\w+)))
+					(cf((output)|(savecontent)|([\w\-_.]+)))
 				)
 				\b
 			</string>
