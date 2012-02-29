@@ -29,6 +29,16 @@
 				<string></string>
 	        </dict>
 		</array>
+		<key>decreaseIndentPattern</key>
+		<string></string>
+		<key>increaseIndentPattern</key>
+		<string>(?x)
+	        ^\s*
+	        	&lt;(?!cfset)[^&gt;]*&gt;
+	        \s*$
+    	</string>
+    	<key>bracketIndentNextLinePattern</key>
+        <string></string>
 	</dict>
 	<key>uuid</key>
 	<string>Z79BDBCF-D0C9-468E-BE62-744074D7825Z</string>
