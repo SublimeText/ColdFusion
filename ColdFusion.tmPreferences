@@ -33,9 +33,18 @@
 		<string></string>
 		<key>increaseIndentPattern</key>
 		<string>(?x)
-	        ^\s*
-	        	&lt;(?!(/|cfset|cfparam|cfdump|area|base|br|hr|img|input|link|meta|param))[^&gt;]*&gt;
-	        \s*$
+			^\s*
+				&lt;
+				(?!
+					(?i:!---?|/|cfset|cfparam|cfdump|cfargument|cfabort
+					|cfimport|cfcontent|cfbreak|cfinclude|cfcatch|cfcontinue
+					|cflocation|cfsetting|cffile|cflog|cfobject|cfinvoke|area
+					|base|br|hr|img|input|link|meta|param
+					)
+				)
+				[^&gt;]*
+				&gt;
+			\s*$
     	</string>
     	<key>bracketIndentNextLinePattern</key>
         <string></string>
