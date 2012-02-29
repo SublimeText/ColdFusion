@@ -34,7 +34,7 @@
 		<key>increaseIndentPattern</key>
 		<string>(?x)
 	        ^\s*
-	        	&lt;(?!(/|cfset|cfparam|cfdump))[^&gt;]*&gt;
+	        	&lt;(?!(/|cfset|cfparam|cfdump|area|base|br|hr|img|input|link|meta|param))[^&gt;]*&gt;
 	        \s*$
     	</string>
     	<key>bracketIndentNextLinePattern</key>
