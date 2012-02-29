@@ -149,7 +149,8 @@
                         |(rethrow|throw)|(property)|(interface)|(location)
                         |(break|exit)
                         )
-                        \s+
+                        /b
+                        (?!(\=)|(\,))
                     </string>
                     <key>beginCaptures</key>
                     <dict>
