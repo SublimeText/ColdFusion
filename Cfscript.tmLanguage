@@ -132,13 +132,6 @@
         <dict>
             <key>patterns</key>
             <array>
-                <!-- other: can also be a fn -->
-                <dict>
-                    <key>match</key>
-                    <string>\b(?i:return)\b</string>
-                    <key>name</key>
-                    <string>entity.name.tag.operator.other.cfscript</string>
-                </dict>
                 <dict>
                     <key>begin</key>
                     <string>(?x)
@@ -147,7 +140,7 @@
                         (lock)|(transaction)|(thread)|(component)|(abort)
                         |(exit)|(include)|(param)|(thread)|(import)
                         |(rethrow|throw)|(property)|(interface)|(location)
-                        |(break|exit)
+                        |(break|exit)|(pageencoding)|(schedule)|(return)
                         )
                         \b
                         (?!\s*[=,#\)])
@@ -229,9 +222,24 @@
                             <key>name</key>
                             <string>entity.name.tag.operator.control.cfscript</string>
                         </dict>
+                        <key>16</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.pageencoding.cfscript</string>
+                        </dict>
+                        <key>17</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.schedule.cfscript</string>
+                        </dict>
+                        <key>18</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.return.cfscript</string>
+                        </dict>
                     </dict>
                     <key>end</key>
-                    <string>(?=;)|(?={)</string>
+                    <string>(?=[;{\(])</string>
                     <key>name</key>
                     <string>meta.tag.operator.cfscript</string>
                     <key>patterns</key>
