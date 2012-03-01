@@ -53,7 +53,7 @@
                         (init) # entity.name.function.contructor
                         |
                         (\w+) # entity.name.function
-                    )
+                    )\b
                 </string>
             <key>beginCaptures</key>
             <dict>
