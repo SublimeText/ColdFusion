@@ -38,8 +38,9 @@
 				(?!
 					(?i:!---?|/|cfset|cfparam|cfdump|cfargument|cfabort
 					|cfimport|cfcontent|cfbreak|cfinclude|cfcatch|cfcontinue
-					|cflocation|cfsetting|cffile|cflog|cfobject|cfinvoke|area
-					|base|br|hr|img|input|link|meta|param
+					|cflocation|cfsetting|cffile|cflog|cfobject|cfinvoke
+					|cfreturn|cfthrow|cfproperty|area|base|br|hr|img|input
+					|link|meta|param
 					)
 				)
 				[^&gt;]*
