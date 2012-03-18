@@ -223,7 +223,7 @@
         { "trigger": "rand", "contents": "rand(${1:${2:[algorithm]}})"},
         { "trigger": "randomize", "contents": "randomize(${1:${2:number}${3:, [algorithm]}})"},
         { "trigger": "randRange", "contents": "randRange(${1:${2:number1}, ${3:number2}${4:, [algorithm]}})"},
-        { "trigger": "reRind", "contents": "reRind(${1:${2:reg_expression}, \"${3:string}\"${4:, [start]}${5:, [returnsubexpressions]}})"},
+        { "trigger": "reFind", "contents": "reFind(${1:${2:reg_expression}, \"${3:string}\"${4:, [start]}${5:, [returnsubexpressions]}})"},
         { "trigger": "reFindNoCase", "contents": "reFindNoCase(${1:${2:reg_expression}, \"${3:string}\"${4:, [start]}${5:, [returnsubexpressions]}})"},
         { "trigger": "releaseComObject", "contents": "releaseComObject(${1:${2:objectName}})"},
         { "trigger": "removeChars", "contents": "removeChars(${1:\"${2:string}\", ${3:start}, ${4:count}})"},
