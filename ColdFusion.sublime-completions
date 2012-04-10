@@ -13,7 +13,7 @@
         { "trigger": "cfapplication", "contents": "<cfapplication ${1:${2:name=\"$3\" }${4:loginstorage=\"$5\" }${6:clientmanagement=\"$7\" }${8:clientstorage=\"$9\" }${10:setclientcookies=\"$11\" }${12:sessionmanagement=\"$13\" }${14:sessiontimeout=\"$15\" }${16:applicationtimeout=\"$17\" }${18:setdomaincookies=\"$19\" }${20:scriptprotect=\"$21\"}} />$0"},
         { "trigger": "cfargument", "contents": "<cfargument ${1:${2:name=\"$3\" }${4:type=\"$5\" }${6:required=\"$7\" }${8:default=\"$9\" }${10:displayname=\"$11\" }${12:hint=\"$13\"}} />$0"},
         { "trigger": "cfassociate", "contents": "<cfassociate ${1:${2:basetag=\"$3\" }${4:datacollection=\"$5\"}} />$0"},
-        { "trigger": "cfbreak", "contents": "<cfbreak />$0"},
+        { "trigger": "cfbreak", "contents": "<cfbreak ${1:} />$0"},        { "trigger": "cfbreak", "contents": "<cfbreak />$0"},
         { "trigger": "cfcache", "contents": "<cfcache ${1:${2:action=\"$3\" }${4:directory=\"$5\" }${6:timespan=\"$7\" }${8:expireurl=\"$9\" }${10:username=\"$11\" }${12:password=\"$13\" }${14:port=\"$15\" }${16:protocol=\"$17\"}} />$0"},
         { "trigger": "cfcalendar", "contents": "<cfcalendar ${1:${2:name=\"$3\" }${4:height=\"$5\" }${6:width=\"$7\" }${8:selecteddate=\"$9\" }${10:startrange=\"$11\" }${12:endrange=\"$13\" }${14:disabled=\"$15\" }${16:mask=\"$17\" }${18:firstdayofweek=\"$19\" }${20:daynames=\"$21\" }${22:monthnames=\"$23\" }${24:style=\"$25\" }${26:onchange=\"$27\"}} />$0"},
         { "trigger": "cfcase", "contents": "<cfcase ${1:${2:value=\"$3\" }${4:delimiters=\"$5\"}}>\n\t$0\n</cfcase>"},
