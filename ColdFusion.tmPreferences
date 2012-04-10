@@ -30,7 +30,13 @@
 	        </dict>
 		</array>
 		<key>decreaseIndentPattern</key>
-		<string></string>
+		<string>(?x)
+		^\s*
+		(
+		&lt;/(?!html)
+		[A-Za-z0-9]+\b[^&gt;]*&gt;
+		|--&gt;
+		)</string>
 		<key>increaseIndentPattern</key>
 		<string>(?x)
 			^\s*
