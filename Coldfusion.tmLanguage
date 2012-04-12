@@ -390,6 +390,142 @@
 	<key>repository</key>
 	<dict>
 
+		<key>embedded-tags</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#conditionals</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#flow-control</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#exception-handling</string>
+				</dict>
+			</array>
+		</dict>
+
+		<key>flow-control</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?x)
+						(&lt;/?)
+						(?i:
+							(cfloop)|(cfswitch)|(cfcase)|(cfdefaultcase)
+						)
+						\b
+					</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.cfml</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.cf.flow-control.loop.cfml</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.cf.flow-control.switch.cfml</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(&gt;)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.ctml</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.block.flow-control.cfml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#tag-stuff</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+
+		<key>exception-handling</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?x)
+						(&lt;/?)
+						(?i:
+							(cftry)|(cfcatch)|(cflock)|(cffinally)|(cferror)|(cfrethrow)|(cfthrow)
+						)
+						\b
+					</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.begin.cfml</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.cf.exception.try.cfml</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.cf.exception.catch.cfml</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.cf.lock.cfml</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.cf.exception.other.cfml</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(&gt;)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.ctml</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.tag.block.exceptions.cfml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#tag-stuff</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
 
 		<key>conditionals</key>
 		<dict>
@@ -473,6 +609,9 @@
 			</array>
 		</dict>
 		<!-- /conditionals -->
+
+<!-- /ends embedded tags -->
+<!-- ************************************************************************** -->
 
 		<!-- for Symbol List
 		meta.toc-list.function.name -->
