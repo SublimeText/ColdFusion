@@ -177,6 +177,10 @@
 					<key>patterns</key>
 					<array>
 						<dict>
+							<key>include</key>
+							<string>#embedded-tags</string>
+						</dict>
+						<dict>
 							<key>captures</key>
 							<dict>
 								<key>1</key>
@@ -272,10 +276,13 @@
 					<string>(?=&lt;/(?i:cfquery))</string>
 					<key>patterns</key>
 					<array>
-
 						<dict>
 							<key>include</key>
 							<string>#cfcomments</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#embedded-tags</string>
 						</dict>
 						<dict>
 							<key>begin</key>
