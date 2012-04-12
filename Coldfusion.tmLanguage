@@ -322,7 +322,7 @@
 
 		<dict>
 			<key>include</key>
-			<string>#conditionals</string>
+			<string>#embedded-tags</string>
 		</dict>
 
 		<!-- ALL OTHER BLOCK TAGS -->
