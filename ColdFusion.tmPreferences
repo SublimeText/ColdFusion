@@ -35,7 +35,7 @@
 		(
 		&lt;/(?!html)
 		[A-Za-z0-9]+\b[^&gt;]*&gt;
-		|--&gt;
+		|-?--&gt;
 		)</string>
 		<key>increaseIndentPattern</key>
 		<string>(?x)
