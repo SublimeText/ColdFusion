@@ -278,10 +278,6 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>#cfcomments</string>
-						</dict>
-						<dict>
-							<key>include</key>
 							<string>#embedded-tags</string>
 						</dict>
 						<dict>
@@ -481,11 +477,6 @@
 
 		<dict>
 			<key>include</key>
-			<string>#cfcomments</string>
-		</dict>
-
-		<dict>
-			<key>include</key>
 			<string>text.html.basic</string>
 		</dict>
 	</array>
@@ -497,6 +488,10 @@
 		<dict>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#cfcomments</string>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#conditionals</string>
