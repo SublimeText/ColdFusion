@@ -1,5 +1,5 @@
 {
-	"scope": "text.html.cfm - source, text.html.cfm.embedded.cfml - source.cfscript.embedded.cfml",
+	"scope": "text.html.cfm - source, text.html.cfm.embedded.cfml - source.cfscript.embedded.cfml - source",
 	"completions":
         [
         // misc completions
