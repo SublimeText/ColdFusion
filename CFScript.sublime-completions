@@ -295,6 +295,9 @@
         { "trigger": "xmlTransform", "contents": "xmlTransform(${1:\"${2:xml}\", \"${3:xsl}\"${4:, [parameters]}})"},
         { "trigger": "xmlValidate", "contents": "xmlValidate(${1:${2:xmlDoc}${3:, [validator]}})"},
         { "trigger": "year", "contents": "year(${1:${2:date}})"},
-        { "trigger": "yesNoFormat", "contents": "yesNoFormat(${1:${2:value}})"}
+        { "trigger": "yesNoFormat", "contents": "yesNoFormat(${1:${2:value}})"},
+        //Other constructs
+        { "trigger": "for-in-loop", "contents": "for(${1:item} in ${2:collection}) {\n   ${3:code};\n}"}
+
     ]
 }
