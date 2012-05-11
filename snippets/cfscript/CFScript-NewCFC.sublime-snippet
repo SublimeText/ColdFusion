@@ -1,7 +1,14 @@
 <snippet>
 	<content><![CDATA[
+/**
+*  
+* @file  $TM_FILEPATH
+* @author  $TM_FULLNAME
+* @description
+*
+*/
 
-component output="${1:false}" name="$2"  {
+component output="${1:false}" displayname="$2"  {
 	
 	public function init(){ 
 		return this;
@@ -9,7 +16,7 @@ component output="${1:false}" name="$2"  {
 }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>comp</tabTrigger>
+	<tabTrigger>component</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.cfscript</scope>
 	<description>New CFC</description>
