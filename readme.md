@@ -91,9 +91,7 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 
 ##Recommmended Packages
 
-These packages are all available through Package Control
-
-###Highly Recommended
+These following packages are all available through Package Control
 
 * https://github.com/BoundInCode/AutoFileName
 * https://github.com/weslly/ColorPicker
@@ -102,10 +100,12 @@ These packages are all available through Package Control
 * https://github.com/dz0ny/LiveReload-sublimetext2
 * https://github.com/virtix/sublime-text-2-mxunit
 
-###Color Schemes and Snippets
+These packages require manual installation
 
-By @indynagpal for ColdFusion:
-https://github.com/indynagpal/sublime-stuff/tree/master/Color%20Scheme%20-%20Default
+* https://github.com/DominicWatson/SublimeText2CfQuickDocsLauncher
+* https://github.com/indynagpal/sublime-stuff
+* https://github.com/bittersweetryan/ColdFusion-Script-Sublime-Snippets
+
 
 ##License
 Copyright (c) 2012
