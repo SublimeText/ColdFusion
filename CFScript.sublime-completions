@@ -7,6 +7,59 @@
         { "trigger": "false", "contents": "false"},
         { "trigger": "TRUE", "contents": "TRUE"},
         { "trigger": "FALSE", "contents": "FALSE"},
+
+        { "trigger": "required", "contents": "required"},
+        { "trigger": "REQUIRED", "contents": "REQUIRED"},
+
+        { "trigger": "return", "contents": "return"},
+        { "trigger": "RETURN", "contents": "RETURN"},
+
+        // scopes
+        { "trigger": "application", "contents": "application"},
+        { "trigger": "APPLICATION", "contents": "APPLICATION"},
+
+        { "trigger": "arguments", "contents": "arguments"},
+        { "trigger": "ARGUMENTS", "contents": "ARGUMENTS"},
+
+        { "trigger": "attributes", "contents": "attributes"},
+        { "trigger": "ATTRIBUTES", "contents": "ATTRIBUTES"},
+
+        { "trigger": "caller", "contents": "caller"},
+        { "trigger": "CALLER", "contents": "CALLER"},
+
+        { "trigger": "CGI", "contents": "CGI"},
+        { "trigger": "ThisTag", "contents": "ThisTag"},
+
+        { "trigger": "client", "contents": "client"},
+        { "trigger": "CLIENT", "contents": "CLIENT"},
+
+        { "trigger": "cookie", "contents": "cookie"},
+        { "trigger": "COOKIE", "contents": "COOKIE"},
+
+        { "trigger": "form", "contents": "form"},
+        { "trigger": "FORM", "contents": "FORM"},
+
+        { "trigger": "request", "contents": "request"},
+        { "trigger": "REQUEST", "contents": "REQUEST"},
+
+        { "trigger": "local", "contents": "local"},
+        { "trigger": "LOCAL", "contents": "LOCAL"},
+
+        { "trigger": "server", "contents": "server"},
+        { "trigger": "SERVER", "contents": "SERVER"},
+
+        { "trigger": "session", "contents": "session"},
+        { "trigger": "SESSION", "contents": "SESSION"},
+
+        { "trigger": "thread", "contents": "thread"},
+        { "trigger": "THREAD", "contents": "THREAD"},
+
+        { "trigger": "URL", "contents": "URL"},
+        { "trigger": "this", "contents": "this"},
+
+        { "trigger": "variables", "contents": "variables"},
+        { "trigger": "VARIABLES", "contents": "VARIABLES"},
+
         // functions
         { "trigger": "abs\tFunction (cfscript)", "contents": "abs(${1:${2:number}})"},
         { "trigger": "aCos\tFunction (cfscript)", "contents": "aCos(${1:${2:number}})"},
