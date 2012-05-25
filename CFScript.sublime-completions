@@ -2,17 +2,18 @@
     "scope": "source.cfscript - source.sql - text.html.cfm,source.cfscript.embedded.cfml, source.sql source.FFunction (cfscript)",
     "completions":
     [
+
         // misc completions
         { "trigger": "true", "contents": "true"},
         { "trigger": "false", "contents": "false"},
         { "trigger": "TRUE", "contents": "TRUE"},
         { "trigger": "FALSE", "contents": "FALSE"},
 
-        { "trigger": "required", "contents": "required"},
-        { "trigger": "REQUIRED", "contents": "REQUIRED"},
+        { "trigger": "required", "contents": "required "},
+        { "trigger": "REQUIRED", "contents": "REQUIRED "},
 
-        { "trigger": "return", "contents": "return"},
-        { "trigger": "RETURN", "contents": "RETURN"},
+        { "trigger": "return", "contents": "return "},
+        { "trigger": "RETURN", "contents": "RETURN "},
 
         // scopes
         { "trigger": "application", "contents": "application"},

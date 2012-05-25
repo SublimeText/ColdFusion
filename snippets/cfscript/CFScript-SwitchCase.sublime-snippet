@@ -2,7 +2,7 @@
 	<content><![CDATA[
 switch(${1:expression}){
 	case ${2:value}:
-		${3:code};	
+		${3:code};
 	break;
 
 	default:
@@ -13,6 +13,6 @@ switch(${1:expression}){
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>switch</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.cfscript</scope>
+	<scope>source.cfscript - string</scope>
 	<description>switch-case (cfscript)</description>
 </snippet>
