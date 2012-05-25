@@ -1,4 +1,4 @@
 [
     {"command": "move_to", "args": {"to": "hardeol"}},
-    {"command": "insert_snippet", "args": {"contents": "${TM_LINE_TERMINATOR:;}\n"} }
+    {"command": "insert_snippet", "args": {"contents": "${TM_LINE_TERMINATOR:;}"} }
 ]
