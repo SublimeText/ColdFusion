@@ -4,15 +4,15 @@ try {
 $SELECTION
 }
 catch(${1:type} ${2:variable}) {
-	$3;	
+	$3;
 } finally {
-	
+
 }
 
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>try</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.cfscript</scope>
+	<scope>source.cfscript - string</scope>
 	<description>try-catch (cfscript)</description>
 </snippet>
