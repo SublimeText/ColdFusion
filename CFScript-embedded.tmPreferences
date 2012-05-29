@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>name</key>
+    <string>CFscript - Embedded</string>
+    <key>scope</key>
+    <string>text.html.cfm meta.tag.inline.cfml source.cfscript.embedded.cfml, text.html.cfm meta.tag.block.conditional.cfml source.cfscript.embedded.cfml</string>
+    <key>settings</key>
+    <dict>
+        <key>shellVariables</key>
+        <array>
+            <dict>
+                <key>name</key>
+                <string>TM_COMMENT_START</string>
+                <key>value</key>
+                <string>&lt;!--- </string>
+            </dict>
+            <dict>
+                <key>name</key>
+                <string>TM_COMMENT_END</string>
+                <key>value</key>
+                <string> ---&gt;</string>
+            </dict>
+            <dict>
+                <key>name</key>
+                <string>TM_LINE_TERMINATOR</string>
+                <key>value</key>
+                <string></string>
+            </dict>
+        </array>
+    </dict>
+    <key>uuid</key>
+    <string>0A6EFC50-A9C6-11E1-AFA6-0800200C9A66</string>
+</dict>
+</plist>
