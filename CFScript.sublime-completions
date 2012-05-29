@@ -1,9 +1,11 @@
 {
-    "scope": "source.cfscript - source.sql - text.html.cfm,source.cfscript.embedded.cfml, source.sql source.FFunction (cfscript)",
+    "scope": "source.cfscript - source.sql - text.html.cfm - string,source.cfscript.embedded.cfml - string, source.sql",
     "completions":
     [
 
         // misc completions
+        { "trigger": "var", "contents": "var $1 = $2\n"},
+
         { "trigger": "true", "contents": "true"},
         { "trigger": "false", "contents": "false"},
         { "trigger": "TRUE", "contents": "TRUE"},
