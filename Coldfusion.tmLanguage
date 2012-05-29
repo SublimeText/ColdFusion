@@ -516,7 +516,7 @@
 					<string>(?x)
 						(&lt;/?)
 						(?i:
-							(cfloop)|(cfswitch)|(cfcase)|(cfdefaultcase)
+							(cfloop)|(cfswitch)|(cf(?:default)?case)
 						)
 						\b
 					</string>
@@ -536,6 +536,11 @@
 						<dict>
 							<key>name</key>
 							<string>entity.name.tag.cf.flow-control.switch.cfml</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.cf.flow-control.case.cfml</string>
 						</dict>
 					</dict>
 					<key>end</key>
@@ -1066,42 +1071,42 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-		            <key>match</key>
-		            <string>##</string>
-		            <key>name</key>
-		            <string>string.escaped.hash.cfml</string>
-		        </dict>
-		        <dict>
-		            <key>begin</key>
-		            <string>(#)(?=.*#)</string>
-		            <key>beginCaptures</key>
-		            <dict>
-		                <key>1</key>
-		                <dict>
-		                    <key>name</key>
-		                    <string>punctuation.definition.hash.begin.cfml</string>
-		                </dict>
-		            </dict>
-		            <key>end</key>
-		            <string>(#)</string>
-		            <key>endCaptures</key>
-		            <dict>
-		                <key>1</key>
-		                <dict>
-		                    <key>name</key>
-		                    <string>punctuation.definition.hash.end.cfml</string>
-		                </dict>
-		            </dict>
-		            <key>name</key>
-		            <string>string.interpolated.hash.cfml source.cfscript.embedded.cfml</string>
-		            <key>patterns</key>
-		            <array>
-		                <dict>
-		                    <key>include</key>
-		                    <string>source.cfscript</string>
-		                </dict>
-		            </array>
-		        </dict>
+					<key>match</key>
+					<string>##</string>
+					<key>name</key>
+					<string>string.escaped.hash.cfml</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(#)(?=.*#)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.hash.begin.cfml</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(#)</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.hash.end.cfml</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.interpolated.hash.cfml source.cfscript.embedded.cfml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>source.cfscript</string>
+						</dict>
+					</array>
+				</dict>
 			</array>
 		</dict>
 
