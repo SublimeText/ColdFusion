@@ -90,16 +90,21 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 </table>
 
 ##Completions and Snippets
+**Note**: A classic completions plugin is available from @bbluemel which can be downloaded at
+
+https://github.com/bbluemel/ColdFusionTagCompletions
+***
+Although, this package includes CFScript completions (```.sublime-completions```) and ColdFusion tag completions (API-injected), it's recommended that you create your own custom snippets using code that fits your particular coding style.
+To create a new snippet select ```Tools > New Snippet...``` from the Sublime Text menu.
+Use ```<scope>text.html.cfm - string</scope>``` for ColdFusion markup snippets and ```<scope>source.cfscript - string</scope>``` for CFScript snippets.
+
 Completions in order of priority are:
 * Snippets
 * API-injected completions
 * ```.sublime-completions``` files
 * words in the current buffer
 
-Although, this package includes CFScript completions (```.sublime-completions```) and ColdFusion tag completions (API-injected), it's recommended that you create your own custom snippets using code that fits your particular coding style.
-To create a new snippet select ```Tools > New Snippet...``` menu.
-
-Snippets repositories made available by ColdFusion community members:
+The following list contains snippets repositories made available by ColdFusion community members:
 
 * https://github.com/indynagpal/sublime-stuff
 * https://github.com/bittersweetryan/ColdFusion-Script-Sublime-Snippets
@@ -120,7 +125,6 @@ These following packages are all available through Package Control
 These packages require manual installation
 
 * https://github.com/DominicWatson/SublimeText2CfQuickDocsLauncher
-* https://github.com/bbluemel/ColdFusionTagCompletions
 
 ##License
 Copyright (c) 2012
