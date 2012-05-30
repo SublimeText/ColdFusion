@@ -89,6 +89,26 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
     </tr>
 </table>
 
+##Completions and Snippets
+Completions in order of priority are:
+
+* Snippets (first and foremost)
+* API-injected completions
+* ```.sublime-completions``` files
+* Finally, words in the current buffer
+
+Although, this package includes CFScript completions (```.sublime-completions```) and ColdFusion tag completions (API-injected), it's recommended that you create your own custom snippets using code that fits your particular coding style.
+To create a new snippet select ```Tools > New Snippet...```
+
+You can disable the default cfml tag completion by setting ```"disable_default_tag_completions"``` to ```true``` in your settings file.
+
+Snippets repositories made available by ColdFusion community members:
+
+* https://github.com/indynagpal/sublime-stuff
+* https://github.com/bittersweetryan/ColdFusion-Script-Sublime-Snippets
+
+To install snippets just put the ```.sublime-snippet``` files in your Packages/User folder or subfolder (to get to your Packages/User folder select the ```Preferences>Browse Packages...``` menu).
+
 ##Recommmended Packages
 
 These following packages are all available through Package Control
@@ -101,11 +121,10 @@ These following packages are all available through Package Control
 * https://github.com/virtix/sublime-text-2-mxunit
 
 These packages require manual installation
-
 * https://github.com/DominicWatson/SublimeText2CfQuickDocsLauncher
-* https://github.com/indynagpal/sublime-stuff
-* https://github.com/bittersweetryan/ColdFusion-Script-Sublime-Snippets
 
+Alternative completions:
+https://github.com/bbluemel/ColdFusionTagCompletions
 
 ##License
 Copyright (c) 2012
