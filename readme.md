@@ -111,9 +111,8 @@ The following list contains snippets repositories made available by ColdFusion c
 
 To install snippets just put the ```.sublime-snippet``` files in your Packages/User folder or sub-folder (to get to your Packages/User folder select the ```Preferences>Browse Packages...``` menu).
 
-##Recommended Packages
-
-These following packages are all available through Package Control
+##Additional Packages
+Some additional packages you might want to check out (these packages are all available through Package Control):
 
 * https://github.com/BoundInCode/AutoFileName
 * https://github.com/weslly/ColorPicker
