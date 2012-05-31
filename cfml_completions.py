@@ -315,8 +315,10 @@ class CFMLAutoComplete(sublime_plugin.EventListener):
                 "text.html.cfm - source, text.html.cfm.embedded.cfml - source.cfscript.embedded.cfml - source.sql.embedded.cfml"):
             return []
 
-        # if self.view.settings().get("disable_default_tag_completions")
-        #     return []
+        s = sublime.load_settings('ColdFusion.sublime-settings')
+        if s.get("disable_default_tag_completions"):
+             return []
+
         # Do not trigger if we are in a tag or string
         pt = locations[0] - len(prefix) - 1
         if 'tag' in view.scope_name(pt):

@@ -1,0 +1,8 @@
+{
+        // disables the default ColdFusion tag completions
+        "disable_default_tag_completions": false,
+
+        // dictionary currently only accepts cf10
+        // planned are cfmlbd7, railo1, cf7, cf8, or cf9
+        "dictionary": "cf10"
+}
