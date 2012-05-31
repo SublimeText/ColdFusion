@@ -6,11 +6,11 @@
 * Auto inserts closing hash # (see Default (platform).sublime-keymap)
 * Provides completions that match just after typing an opening angle bracket (see cfml_completions.py)
 * Exhaustive library of snippet bindings (see ColdFusion.sublime-completions)
-* ColdFusion specific keybindings (see Default (platform).sublime-keymap)
+* ColdFusion specific key bindings (see Default (platform).sublime-keymap)
 
 ## Installation
 
-The recommmended method of installation is via Package Control.
+The recommended method of installation is via Package Control.
 
 ### Package Control
 
@@ -31,7 +31,7 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 
 - - -
 
-## Keybindings
+## Key bindings
 
 <table>
     <tr>
@@ -76,7 +76,7 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
     </tr>
 </table>
 
-###### Overidden Sublime Keybindings
+###### Overridden Sublime Key bindings
 
 <table>
     <tr>
@@ -90,7 +90,7 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 </table>
 
 ##Completions and Snippets
-**Note**: A classic completions plugin is available from @bbluemel which can be downloaded at
+**Note**: A classic completions plug-in is available from @bbluemel which can be downloaded at
 
 https://github.com/bbluemel/ColdFusionTagCompletions
 ***
@@ -109,9 +109,9 @@ The following list contains snippets repositories made available by ColdFusion c
 * https://github.com/indynagpal/sublime-stuff
 * https://github.com/bittersweetryan/ColdFusion-Script-Sublime-Snippets
 
-To install snippets just put the ```.sublime-snippet``` files in your Packages/User folder or subfolder (to get to your Packages/User folder select the ```Preferences>Browse Packages...``` menu).
+To install snippets just put the ```.sublime-snippet``` files in your Packages/User folder or sub-folder (to get to your Packages/User folder select the ```Preferences>Browse Packages...``` menu).
 
-##Recommmended Packages
+##Recommended Packages
 
 These following packages are all available through Package Control
 
