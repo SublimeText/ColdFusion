@@ -109,7 +109,7 @@ The following list contains snippets repositories made available by ColdFusion c
 * https://github.com/indynagpal/sublime-stuff
 * https://github.com/bittersweetryan/ColdFusion-Script-Sublime-Snippets
 
-To install snippets just put the ```.sublime-snippet``` files in your Packages/User folder or sub-folder (to get to your Packages/User folder select the ```Preferences>Browse Packages...``` menu).
+To install snippets just put the ```.sublime-snippet``` files in your Packages/User folder or sub-folder (to get to your Packages/User folder select ```Preferences > Browse Packages...``` from the Sublime Text 2 menu).
 
 ##Additional Packages
 Some additional packages you might want to check out (these packages are all available through Package Control):
