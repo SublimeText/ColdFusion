@@ -32,9 +32,10 @@ class ShowCflibCommand(sublime_plugin.WindowCommand):
 
     def on_select_udf(self, index):
         if index == -1:
-            return
-        d = json.load(urlopen(CFLIBUDF + str(self.udfs[index][0])))
-        self.window.active_view().run_command("insert_udf", {"code":str(d['CODE'])})
+            self.run()
+        else:
+            d = json.load(urlopen(CFLIBUDF + str(self.udfs[index][0])))
+            self.window.active_view().run_command("insert_udf", {"code":str(d['CODE'])})
 
 class InsertUdfCommand(sublime_plugin.TextCommand):
     def run(self, edit, code):
