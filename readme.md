@@ -1,5 +1,8 @@
 # ColdFusion Package for Sublime Text 2
 
+### What's New
+* Added Command ```ColdFusion: Insert UDF``` (6/2/12)
+
 ### Features
 
 * ColdFusion cfml, and script-based CFCs syntax highlighting. (see tmLanguage files)
