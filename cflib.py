@@ -28,7 +28,7 @@ class ShowCflibCommand(sublime_plugin.WindowCommand):
         if index == -1:
             return
         self.getUdfs(index)
-        self.window.show_quick_panel([[v.strip(), c.strip()] for k, v, c in self.udfs], self.on_select_udf,sublime.MONOSPACE_FONT)
+        self.window.show_quick_panel([[v.strip(), c.strip()] for k, v, c in self.udfs], self.on_select_udf)
 
     def on_select_udf(self, index):
         if index == -1:
