@@ -122,6 +122,7 @@ Some additional packages you might want to check out (these packages are all ava
 * https://github.com/xobb1t/Sublime-AdvancedNewFile
 * https://github.com/kemayo/sublime-text-2-git
 * https://github.com/dz0ny/LiveReload-sublimetext2
+* https://github.com/bgreenlee/sublime-github
 * https://github.com/virtix/sublime-text-2-mxunit
 
 These packages require manual installation
