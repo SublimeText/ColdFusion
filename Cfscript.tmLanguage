@@ -137,7 +137,7 @@
                     <string>(?x)
                         \b
                         (?i:
-                        (lock)|(transaction)|(thread)|(component)|(abort)
+                        (lock)|(transaction)|(thread)|(abort)
                         |(exit)|(include)|(param)|(thread)|(import)
                         |(rethrow|throw)|(property)|(interface)|(location)
                         |(break|exit)|(pageencoding)|(schedule)|(return)
@@ -166,74 +166,69 @@
                         <key>4</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.component.cfscript</string>
+                            <string>entity.name.tag.operator.abort.cfscript</string>
                         </dict>
                         <key>5</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.abort.cfscript</string>
+                            <string>entity.name.tag.operator.exit.cfscript</string>
                         </dict>
                         <key>6</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.exit.cfscript</string>
+                            <string>entity.name.tag.operator.include.cfscript</string>
                         </dict>
                         <key>7</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.include.cfscript</string>
+                            <string>entity.name.tag.operator.param.cfscript</string>
                         </dict>
                         <key>8</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.param.cfscript</string>
+                            <string>entity.name.tag.operator.thread.cfscript</string>
                         </dict>
                         <key>9</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.thread.cfscript</string>
+                            <string>entity.name.tag.operator.import.cfscript</string>
                         </dict>
                         <key>10</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.import.cfscript</string>
+                            <string>entity.name.tag.operator.catch-exception.cfscript</string>
                         </dict>
                         <key>11</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.catch-exception.cfscript</string>
+                            <string>entity.name.tag.operator.property.cfscript</string>
                         </dict>
                         <key>12</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.property.cfscript</string>
+                            <string>entity.name.tag.operator.interface.cfscript</string>
                         </dict>
                         <key>13</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.interface.cfscript</string>
+                            <string>entity.name.tag.operator.location.cfscript</string>
                         </dict>
                         <key>14</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.location.cfscript</string>
+                            <string>entity.name.tag.operator.control.cfscript</string>
                         </dict>
                         <key>15</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.control.cfscript</string>
+                            <string>entity.name.tag.operator.pageencoding.cfscript</string>
                         </dict>
                         <key>16</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.pageencoding.cfscript</string>
-                        </dict>
-                        <key>17</key>
-                        <dict>
-                            <key>name</key>
                             <string>entity.name.tag.operator.schedule.cfscript</string>
                         </dict>
-                        <key>18</key>
+                        <key>17</key>
                         <dict>
                             <key>name</key>
                             <string>entity.name.tag.operator.return.cfscript</string>
@@ -260,6 +255,136 @@
             </array>
         </dict>
 
+        <!-- component-operators -->
+        <key>component-operators</key>
+        <dict>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>begin</key>
+                    <string>(?x)
+                        \b
+                        (?i:
+                        (component)
+                        )
+                        \b
+                        \s+
+                        (?![\.\/&gt;=,#\)])
+                    </string>
+                    <key>beginCaptures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.component.cfscript</string>
+                        </dict>
+                    </dict>
+                    <key>end</key>
+                    <string>(?=[;{\(])</string>
+                    <key>patterns</key>
+                    <array>
+                        <dict>
+                            <key>include</key>
+                            <string>#component-extends-attribute</string>
+                        </dict>
+                        <dict>
+                            <key>match</key>
+                            <string>(?i:(\w+)\s*(?=\=))</string>
+                            <key>name</key>
+                            <string>entity.name.tag.operator-attribute.cfscript</string>
+                        </dict>
+                        <dict>
+                            <key>include</key>
+                            <string>#cfscript-code</string>
+                        </dict>
+                    </array>
+                </dict>
+            </array>
+        </dict>
+        <!-- /component-operators -->
+
+
+        <!-- for component-operators extends extraction -->
+        <key>component-extends-attribute</key>
+        <dict>
+            <key>begin</key>
+            <string>\b(extends)\b\s*(=)</string>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>entity.name.tag.operator-attribute.extends.cfml</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>keyword.operator.assignment.cfscript</string>
+                </dict>
+            </dict>
+            <key>end</key>
+            <string>(?=[;{\(])</string>
+            <key>name</key>
+            <string>meta.component.attribute-with-value.extends.cfml</string>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>begin</key>
+                    <string>"</string>
+                    <key>beginCaptures</key>
+                    <dict>
+                        <key>0</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.definition.string.begin.cfscript</string>
+                        </dict>
+                    </dict>
+                    <key>contentName</key>
+                    <string>meta.component-operator.extends.value.cfscript</string>
+                    <key>end</key>
+                    <string>"</string>
+                    <key>endCaptures</key>
+                    <dict>
+                        <key>0</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.definition.string.end.cfscript</string>
+                        </dict>
+                    </dict>
+                    <key>name</key>
+                    <string>string.quoted.double.cfml</string>
+                </dict>
+                <dict>
+                    <key>begin</key>
+                    <string>'</string>
+                    <key>beginCaptures</key>
+                    <dict>
+                        <key>0</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.definition.string.begin.cfscript</string>
+                        </dict>
+                    </dict>
+                    <key>contentName</key>
+                    <string>meta.component-operator.extends.value.cfscript</string>
+                    <key>end</key>
+                    <string>'</string>
+                    <key>endCaptures</key>
+                    <dict>
+                        <key>0</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.definition.string.end.cfscript</string>
+                        </dict>
+                    </dict>
+                    <key>name</key>
+                    <string>string.quoted.single.cfscript</string>
+                </dict>
+            </array>
+        </dict>
+        <!-- component-operators extends! attribute -->
+
+
 
 
         <key>cfscript</key>
@@ -281,6 +406,10 @@
         <dict>
             <key>patterns</key>
             <array>
+                <dict>
+                    <key>include</key>
+                    <string>#component-operators</string>
+                </dict>
                 <dict>
                     <key>include</key>
                     <string>#tag-operators</string>
