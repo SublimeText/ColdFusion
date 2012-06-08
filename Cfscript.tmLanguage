@@ -307,7 +307,7 @@
                             <key>match</key>
                             <string>(?i:(\w+)\s*(?=\=))</string>
                             <key>name</key>
-                            <string>entity.tag.name.operator-attribute.cfscript</string>
+                            <string>entity.tag.name.operator-attribute.other.cfscript</string>
                         </dict>
                         <dict>
                             <key>include</key>
@@ -354,7 +354,7 @@
                             <key>match</key>
                             <string>(?i:(\w+)\s*(?=\=))</string>
                             <key>name</key>
-                            <string>entity.name.tag.operator-attribute.cfscript</string>
+                            <string>entity.name.tag.operator-attribute.other.cfscript</string>
                         </dict>
                         <dict>
                             <key>include</key>
