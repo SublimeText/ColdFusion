@@ -3,6 +3,7 @@ import sublime_plugin
 
 
 class ColdFusionTagComplete(sublime_plugin.EventListener):
+    valid_scopes_tags = ["meta.tag.inline.cfml", "meta.tag.block.other.cfml", "meta.tag.block.function.cfml", "meta.tag.block.flow-control.cfml", "meta.tag.block.exceptions.cfml"]
     completions = {
         'cfabort': {
             'completions': [
@@ -4549,12 +4550,19 @@ class ColdFusionTagComplete(sublime_plugin.EventListener):
 
 
     }
+    def on_modified(self, view):
+        sel = view.sel()[0].a
+        if view.substr(sel - 1) == " ":
+            if any(s in view.scope_name(sel) for s in self.valid_scopes_tags):
+                sublime.set_timeout(lambda: 
+                    view.run_command("auto_complete", { 'disable_auto_insert': True, 'next_completion_if_showing': False }), 50
+                )
+               
 
     def on_query_completions(self, view, prefix, locations):
         sel = view.sel()[0].a
         completions = []
-        valid_scopes_tags = ["meta.tag.inline.cfml", "meta.tag.block.other.cfml", "meta.tag.block.function.cfml", "meta.tag.block.flow-control.cfml", "meta.tag.block.exceptions.cfml"]
-        if any(s in view.scope_name(sel) for s in valid_scopes_tags):
+        if any(s in view.scope_name(sel) for s in self.valid_scopes_tags):
             scopestart = view.extract_scope(sel).a
             if scopestart == sel:
                 scopestart = view.extract_scope(sel - 1).a
