@@ -58,10 +58,10 @@ you can add it to your User - Key Bindings file ```Preferences > Key Bindings - 
     </tr>
     <tr>
         <td>
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>r</kbd> <code>&lt;cfscript&gt;SELECTION&lt;/cfscript&gt;</code>
+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>d</kbd> <code>&lt;cfdump var=&quot;#SELECTION#&quot;&gt;</code>
         </td>
         <td>
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>d</kbd> <code>&lt;cfdump var=&quot;#SELECTION#&quot;&gt;</code>
+<kbd>alt</kbd>+<kbd>shift</kbd>+<kbd>r</kbd> <code>&lt;cfscript&gt;SELECTION&lt;/cfscript&gt;</code>
         </td>
     </tr>
     <tr>
