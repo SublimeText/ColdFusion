@@ -36,8 +36,10 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 
 ## Key bindings
 
-Some packages will override key-bindings. If you have problems with a specific key shortcut,
+Some packages will override key bindings. If you have problems with a specific key shortcut,
 you can add it to your User - Key Bindings file ```Preferences > Key Bindings - User```
+
+You can also use ```sublime.log_commands(True)``` in the console (```ctrl+~```) to output key presses.
 
 <table>
     <tr>
@@ -81,6 +83,7 @@ you can add it to your User - Key Bindings file ```Preferences > Key Bindings - 
         </td>
     </tr>
 </table>
+
 
 ##Completions and Snippets
 **Note**: A classic completions plug-in is available from @bbluemel which can be downloaded at
