@@ -333,4 +333,4 @@ class CFMLAutoComplete(sublime_plugin.EventListener):
         if view.substr(pt) != '<':
             _completions = [(list(item)[-2],"<" + list(item)[1]) for item in _completions]
 
-        return sorted(_completions)
+        return _completions
