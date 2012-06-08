@@ -36,6 +36,9 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 
 ## Key bindings
 
+Some packages will override key-bindings. If you have problems with a specific key shortcut,
+you can add it to your User - Key Bindings file ```Preferences > Key Bindings - User```
+
 <table>
     <tr>
         <td>
@@ -50,7 +53,7 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>3</kbd> <code>&lt;cfoutput&gt;#SELECTION#&lt;/cfoutput&gt;</code>
         </td>
         <td>
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>a</kbd> <code>&lt;cfabort /&gt;</code>
+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>a</kbd> <code>&lt;cfabort /&gt;</code>
         </td>
     </tr>
     <tr>
@@ -58,7 +61,7 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>r</kbd> <code>&lt;cfscript&gt;SELECTION&lt;/cfscript&gt;</code>
         </td>
         <td>
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>d</kbd> <code>&lt;cfdump var=&quot;#SELECTION#&quot;&gt;</code>
+<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>d</kbd> <code>&lt;cfdump var=&quot;#SELECTION#&quot;&gt;</code>
         </td>
     </tr>
     <tr>
@@ -75,19 +78,6 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
         </td>
         <td>
 <kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>=</kbd> <code>&lt;cfset SELECTION /&gt;</code>
-        </td>
-    </tr>
-</table>
-
-###### Overridden Sublime Key bindings
-
-<table>
-    <tr>
-        <td>
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>d</kbd> <code>duplicate line</code>
-        </td>
-        <td>
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>a</kbd> <code>expand selection to tag</code>
         </td>
     </tr>
 </table>

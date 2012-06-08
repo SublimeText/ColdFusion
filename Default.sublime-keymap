@@ -60,9 +60,9 @@
         {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
     ]
     },
-    // ctrl+shift+a <cfabort />
+    // ctrl+alt+a <cfabort />
     {
-    "keys": ["ctrl+shift+a"], "command": "insert_snippet",
+    "keys": ["ctrl+alt+a"], "command": "insert_snippet",
     "args": { "contents": "<cfabort />" },
     "context":
     [
@@ -102,9 +102,9 @@
         {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
       ]
     },
-    // ctrl+shift+d  <cfdump var="##">
+    // ctrl+alt+d  <cfdump var="##">
     {
-    "keys": ["ctrl+shift+d"], "command": "insert_snippet",
+    "keys": ["ctrl+alt+d"], "command": "insert_snippet",
     "args": { "contents": "<cfdump var=\"#${1:$SELECTION}#\" />" },
     "context":
     [
@@ -173,12 +173,5 @@
         { "key": "following_text", "operator": "regex_contains", "operand": "^#", "match_all": true },
         { "key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }
       ]
-    },
-    /***************
-    overridden sublime keyboard shortcuts
-    */
-    // ctrl+alt+d
-    { "keys": ["ctrl+alt+d"], "command": "duplicate_line"},
-    // ctrl+alt+a
-    { "keys": ["ctrl+alt+a"], "command": "expand_selection", "args": {"to": "tag"}}
+    }
 ]
