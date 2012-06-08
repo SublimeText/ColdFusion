@@ -92,31 +92,20 @@
                     <key>name</key>
                     <string>entity.name.function.cfscript</string>
                 </dict>
-                <!-- <key>8</key>
-                <dict>
-                    <key>name</key>
-                    <string>punctuation.definition.function-parameters.begin.cfscript</string>
-                </dict> -->
             </dict>
             <key>end</key>
-            <string>(?=\()</string>
-            <key>endCaptures</key>
-            <dict>
-                <key>0</key>
-                <dict>
-                    <key>name</key>
-                    <string>punctuation.definition.function-parameters.end.cfscript</string>
-                </dict>
-            </dict>
+            <string>(?={)</string>
             <key>name</key>
             <string>meta.definition.function.cfscript</string>
             <key>patterns</key>
             <array>
                 <dict>
-                    <key>match</key>
-                    <string>,</string>
-                    <key>name</key>
-                    <string>punctuation.definition.seperator.parameter.cfscript</string>
+                    <key>include</key>
+                    <string>#parameters</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#comments</string>
                 </dict>
                 <dict>
                     <key>include</key>
@@ -125,6 +114,80 @@
             </array>
         </dict>
         <!-- /functions -->
+
+        <!-- function parens parameters -->
+        <key>parameters</key>
+         <dict>
+             <key>patterns</key>
+             <array>
+                 <dict>
+                    <key>begin</key>
+                    <string>(\()</string>
+                    <key>beginCaptures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.definition.parameters.begin.cfscript</string>
+                        </dict>
+                     </dict>
+                    <key>end</key>
+                    <string>(\))</string>
+                    <key>endCaptures</key>
+                    <dict>
+                         <key>1</key>
+                         <dict>
+                             <key>name</key>
+                             <string>punctuation.definition.parameters.end.cfscript</string>
+                         </dict>
+                    </dict>
+                    <key>name</key>
+                    <string>meta.function.arguments.cfscript</string>
+                    <key>patterns</key>
+                    <array>
+                        <dict>
+                            <key>match</key>
+                            <string>(?i:required)</string>
+                            <key>name</key>
+                            <string>keyword.other.required.argument.cfscript</string>
+                        </dict>
+                        <dict>
+                            <key>include</key>
+                            <string>#storage-types</string>
+                        </dict>
+                        <dict>
+                            <key>match</key>
+                            <string>(=)</string>
+                            <key>name</key>
+                            <string>keyword.operator.argument-assignment.cfscript</string>
+                        </dict>
+                        <dict>
+                            <key>match</key>
+                            <string>(?i:false|true|no|yes)</string>
+                            <key>name</key>
+                            <string>constant.language.boolean.argument.cfscript</string>
+                        </dict>
+                        <dict>
+                            <key>match</key>
+                            <string>(?i:\w)</string>
+                            <key>name</key>
+                            <string>variable.parameter.cfscript</string>
+                        </dict>
+                        <dict>
+                            <key>match</key>
+                            <string>,</string>
+                            <key>name</key>
+                            <string>punctuation.definition.seperator.parameter.cfscript</string>
+                        </dict>
+                        <dict>
+                            <key>include</key>
+                            <string>#strings</string>
+                        </dict>
+                    </array>
+                 </dict>
+            </array>
+        </dict>
+        <!-- / end parameters -->
 
 
         <!-- tag-operators -->
@@ -666,12 +729,6 @@
                     <string>\b(?i:new)\b</string>
                     <key>name</key>
                     <string>keyword.other.new.cfscript</string>
-                </dict>
-                <dict>
-                    <key>match</key>
-                    <string>\b(?i:required)\b</string>
-                    <key>name</key>
-                    <string>keyword.other.required.cfscript</string>
                 </dict>
                 <dict>
                     <key>match</key>
