@@ -22,12 +22,60 @@
 
         <dict>
             <key>include</key>
-            <string>#cfscript</string>
+            <string>#cfscript-code</string>
         </dict>
     </array>
 
     <key>repository</key>
     <dict>
+
+        <key>cfscript-code</key>
+        <dict>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>include</key>
+                    <string>#component-operators</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#tag-operators</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#functions</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#sql-code</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#keywords</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#function-call</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#storage-types</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#constants</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#variables</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#strings</string>
+                </dict>
+            </array>
+        </dict>
+
 
         <!-- functions -->
         <key>functions</key>
@@ -203,10 +251,10 @@
                         (lock)|(transaction)|(thread)|(abort)
                         |(exit)|(include)|(param)|(thread)|(import)
                         |(rethrow|throw)|(property)|(interface)|(location)
-                        |(break|exit)|(pageencoding)|(schedule)|(return)|(try)
+                        |(break|exit)|(pageencoding)|(schedule)|(return)|(try|catch)
                         )
                         \b
-                        \s+
+                        \s*
                         (?![\.\/&gt;=,#\)])
                     </string>
                     <key>beginCaptures</key>
@@ -452,66 +500,6 @@
         </dict>
         <!-- component-operators extends! attribute -->
 
-
-
-
-        <key>cfscript</key>
-        <dict>
-            <key>patterns</key>
-            <array>
-                <dict>
-                    <key>include</key>
-                    <string>#functions</string>
-                </dict>
-                <dict>
-                    <key>include</key>
-                    <string>#cfscript-code</string>
-                </dict>
-            </array>
-        </dict>
-
-        <key>cfscript-code</key>
-        <dict>
-            <key>patterns</key>
-            <array>
-                <dict>
-                    <key>include</key>
-                    <string>#component-operators</string>
-                </dict>
-                <dict>
-                    <key>include</key>
-                    <string>#tag-operators</string>
-                </dict>
-                <dict>
-                    <key>include</key>
-                    <string>#sql-code</string>
-                </dict>
-                <dict>
-                    <key>include</key>
-                    <string>#keywords</string>
-                </dict>
-                <dict>
-                    <key>include</key>
-                    <string>#function-call</string>
-                </dict>
-                <dict>
-                    <key>include</key>
-                    <string>#storage-types</string>
-                </dict>
-                <dict>
-                    <key>include</key>
-                    <string>#constants</string>
-                </dict>
-                <dict>
-                    <key>include</key>
-                    <string>#variables</string>
-                </dict>
-                <dict>
-                    <key>include</key>
-                    <string>#strings</string>
-                </dict>
-            </array>
-        </dict>
         <!-- storage types -->
         <key>storage-types</key>
         <dict>
