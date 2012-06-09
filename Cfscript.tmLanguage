@@ -203,7 +203,7 @@
                         (lock)|(transaction)|(thread)|(abort)
                         |(exit)|(include)|(param)|(thread)|(import)
                         |(rethrow|throw)|(property)|(interface)|(location)
-                        |(break|exit)|(pageencoding)|(schedule)|(return)
+                        |(break|exit)|(pageencoding)|(schedule)|(return)|(try)
                         )
                         \b
                         \s+
@@ -295,6 +295,11 @@
                         <dict>
                             <key>name</key>
                             <string>entity.name.tag.operator.return.cfscript</string>
+                        </dict>
+                        <key>18</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.catch-exception.cfscript</string>
                         </dict>
                     </dict>
                     <key>end</key>
@@ -729,12 +734,6 @@
                     <string>\b(?i:new)\b</string>
                     <key>name</key>
                     <string>keyword.other.new.cfscript</string>
-                </dict>
-                <dict>
-                    <key>match</key>
-                    <string>\b(?i:(try|catch))\b</string>
-                    <key>name</key>
-                    <string>keyword.control.catch-exception.cfscript</string>
                 </dict>
                 <dict>
                     <key>match</key>
