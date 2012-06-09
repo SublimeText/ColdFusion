@@ -360,7 +360,9 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.tag.inline.cfml source.cfscript.embedded.cfml</string>
+			<string>meta.tag.inline.cfml</string>
+			<key>contentName</key>
+			<string>source.cfscript.embedded.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
