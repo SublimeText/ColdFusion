@@ -575,7 +575,7 @@
 					<string>(?x)
 						(&lt;/?)
 						(?i:
-							(cftry)|(cfcatch)|(cflock)|(cffinally)|(cferror)|(cfrethrow)|(cfthrow)
+							(cftry)|(cfcatch)|(cflock)|(cffinally|cferror|cfrethrow|cfthrow)
 						)
 						\b
 					</string>
