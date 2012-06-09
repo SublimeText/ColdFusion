@@ -660,7 +660,9 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.block.conditional.cfml source.cfscript.embedded.cfml</string>
+					<string>meta.tag.block.conditional.cfml</string>
+					<key>contentName</key>
+					<string>source.cfscript.embedded.cfml</string>
 					<key>patterns</key>
 					<array>
 						<dict>
