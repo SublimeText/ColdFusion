@@ -106,6 +106,25 @@ The following list contains snippets repositories made available by ColdFusion c
 * https://github.com/bittersweetryan/ColdFusion-Script-Sublime-Snippets
 
 To install snippets just put the ```.sublime-snippet``` files in your Packages/User folder or sub-folder (to get to your Packages/User folder select ```Preferences > Browse Packages...``` from the Sublime Text 2 menu).
+##Custom Themes
+If you'd like to customize your favorite theme for ColdFusion support, you can use the ```entity.name.tag.cf``` scope in your tmTheme file.
+For example the following definition will use the color ```#C87551``` for all ColdFusion tags:
+```
+<dict>
+    <key>name</key>
+    <string>Entity</string>
+    <key>scope</key>
+    <string>entity.name.tag.cf</string>
+    <key>settings</key>
+    <dict>
+        <key>fontStyle</key>
+        <string></string>
+        <key>foreground</key>
+        <string>#C87551</string>
+    </dict>
+</dict>
+```
+You can use <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>shift</kbd>+<kbd>p</kbd> to get the scope name at the cursor position for more theme customizing .
 
 ##Additional Packages
 Some additional packages you might want to check out (these packages are all available through Package Control):
