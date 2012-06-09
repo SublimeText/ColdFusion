@@ -894,7 +894,9 @@
                         </dict>
                     </dict>
                     <key>name</key>
-                    <string>source.cfscript.embedded.cfscript, meta.inline.hash.cfscript</string>
+                    <string>meta.inline.hash.cfscript</string>
+                    <key>contentName</key>
+                    <string>source.cfscript.embedded.cfscript</string>
                     <key>patterns</key>
                     <array>
                         <dict>
