@@ -51,10 +51,11 @@ component output="false" displayname="import" {
 				for ( j = 1; j <= ArrayLen( currenttag.parameter ); j++ ) {
 					paramname = currenttag.parameter[j].XmlAttributes.name;
 					newtag.completions.add( paramname );
-					if ( currenttag.parameter[j].XmlAttributes.type == "Boolean" ||
-							( StructKeyExists( currenttag.parameter[j], "values" ) && StructKeyExists( currenttag.parameter[j].values, "value" ) ) ) {
-						newattribute = Duplicate( this.newattributetemplate );
-						newattribute.name = currenttag.parameter[j].XmlAttributes.name;
+					newattribute = Duplicate( this.newattributetemplate );
+					newattribute.name = currenttag.parameter[j].XmlAttributes.name;
+					if ( StructKeyExists( currenttag.parameter[j].XmlAttributes, "type" ) && ( currenttag.parameter[j].XmlAttributes.type == "Boolean" ||
+							( StructKeyExists( currenttag.parameter[j], "values" ) && StructKeyExists( currenttag.parameter[j].values, "value" ) ) ) ) {
+
 						switch ( currenttag.parameter[j].XmlAttributes.type ) {
 							case "Boolean":
 								newattribute.completions.add( "true" );
@@ -68,8 +69,9 @@ component output="false" displayname="import" {
 								}
 								break;
 						}
-						newtag.attributes[newattribute.name] = newattribute;
+
 					}
+					newtag.attributes[newattribute.name] = newattribute;
 					/*
 					if ( StructKeyExists( currenttag.parameter[j].XmlAttributes, "required" ) && currenttag.parameter[j].XmlAttributes.required EQ "true" ) {
 
@@ -91,10 +93,12 @@ component output="false" displayname="import" {
 		var attrCompIterator = "";
 		var attrComp = "";
 		var crlf = chr( 13 ) & chr( 10 );
+		var attrIterator = "";
+		var attr = "";
 
 		while( tagIterator.hasNext() ) {
 			tag = tagIterator.next();
-			pythonoutput &= "'" & tag.name & "': {" & crlf;
+			pythonoutput &= "self.completions['" & tag.name & "'] = {" & crlf;
 			compIter = tag.completions.iterator();
 			pythonoutput &= "	'completions': [" & crlf;
 			while ( compIter.hasNext() ) {
@@ -113,11 +117,18 @@ component output="false" displayname="import" {
 				}
 				pythonoutput &= crlf;
 			}
-			pythonoutput &= "	]" & crlf;
-			pythonoutput &= "}";
-			if ( tagIterator.hasNext() ) {
-				pythonoutput &= "," & crlf;
+			pythonoutput &= "	]," & crlf;
+			attrIterator = StructKeyArray(tag.attributes).iterator();
+			pythonoutput &= "	'attributes': [";
+			while ( attrIterator.hasNext() ) {
+				attr = attrIterator.next();
+				pythonoutput &= crlf & '		"' & attr & '"';
+				if ( attrIterator.hasNext() ) {
+					pythonoutput &= ",";
+				}
 			}
+			pythonoutput &= crlf & "	]" & crlf;
+			pythonoutput &= "}" & crlf;
 		}
 		return pythonoutput;
 	}
