@@ -424,6 +424,63 @@
 			<string>#embedded-tags</string>
 		</dict>
 
+
+		<!-- cfoutput -->
+		<dict>
+			<key>begin</key>
+			<string>(?:^\s+)?(&lt;)((?i:cfoutput))\b(?![^&gt;]*/&gt;)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.start.cfml</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.cf.output.cfml</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.end.cfml</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(&lt;/)((?i:cfoutput))(&gt;)(?:\s*\n)?</string>
+			<key>name</key>
+			<string>meta.tag.block.cfoutput.cfml</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#tag-stuff</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.end.cfml</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?=&lt;/(?i:cfoutput))</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#nest-hash</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+
 		<!-- ALL OTHER BLOCK TAGS -->
 		<dict>
 			<key>begin</key>
@@ -466,13 +523,6 @@
 					<string>#tag-stuff</string>
 				</dict>
 			</array>
-		</dict>
-
-
-
-		<dict>
-			<key>include</key>
-			<string>#nest-hash</string>
 		</dict>
 
 		<dict>
@@ -1086,7 +1136,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(#)(?=.*#)</string>
+					<string>(#)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
