@@ -244,10 +244,8 @@
 			<key>end</key>
 			<string>(&lt;/)((?i:cfquery))(&gt;)(?:\s*\n)?</string>
 			<key>name</key>
-			<!--
-			should decorate matches but may mess up highlighting
-			meta.tag.block.cfquery.cfml
-			-->
+			<string>meta.tag.block.cfquery.cfml</string>
+			<key>contentName</key>
 			<string>source.sql.embedded.cfml</string>
 			<key>patterns</key>
 			<array>
