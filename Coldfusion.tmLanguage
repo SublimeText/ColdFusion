@@ -245,8 +245,6 @@
 			<string>(&lt;/)((?i:cfquery))(&gt;)(?:\s*\n)?</string>
 			<key>name</key>
 			<string>meta.tag.block.cfquery.cfml</string>
-			<key>contentName</key>
-			<string>source.sql.embedded.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -268,6 +266,8 @@
 							<string>punctuation.definition.tag.end.cfml</string>
 						</dict>
 					</dict>
+					<key>contentName</key>
+					<string>source.sql.embedded.cfml</string>
 					<key>end</key>
 					<string>(?=&lt;/(?i:cfquery))</string>
 					<key>patterns</key>
