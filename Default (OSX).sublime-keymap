@@ -83,10 +83,9 @@
     // alt+shift+r <cfscript>$0</cfscript>
     {
     "keys": ["alt+shift+r"], "command": "insert_snippet",
-    "args": { "contents": "<cfscript>\n\t$0\n</cfscript>" },
+    "args": { "contents": "<cfscript>\n\t${0:$SELECTION}\n</cfscript>" },
     "context":
       [
-        { "key": "selection_empty", "operator": "equal", "operand": true, "match_all": true },
         { "key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
         {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
       ]
