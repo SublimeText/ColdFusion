@@ -70,6 +70,21 @@ To install snippets just put the ```.sublime-snippet``` files in your Packages/U
 If you'd like to customize your favorite theme for ColdFusion support, you can use the ```entity.name.tag.cf``` scope in your tmTheme file.
 For example the following definition will use the color ```#C87551``` for all ColdFusion tags:
 ```
+<!-- this will color ColdFusion tag &lt; &gt; symbols -->
+<dict>
+    <key>name</key>
+    <string>Punctuation</string>
+    <key>scope</key>
+    <string>punctuation.definition.tag.cf</string>
+    <key>settings</key>
+    <dict>
+        <key>fontStyle</key>
+        <string></string>
+        <key>foreground</key>
+        <string>#C87551</string>
+    </dict>
+</dict>
+<!-- this will color ColdFusion tags -->
 <dict>
     <key>name</key>
     <string>Entity</string>
