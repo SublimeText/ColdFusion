@@ -758,6 +758,10 @@
 							<key>include</key>
 							<string>#nest-hash</string>
 						</dict>
+						<dict>
+							<key>include</key>
+							<string>text.html.cfm</string>
+						</dict>
 					</array>
 				</dict>
 			</array>
