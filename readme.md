@@ -39,7 +39,7 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 Some packages will override key bindings. If you have problems with a specific key shortcut,
 you can add it to your User - Key Bindings file ```Preferences > Key Bindings - User```
 
-You can also use ```sublime.log_commands(True)``` in the console (```ctrl+~```) to output key presses and their corresponding command in the console pane.
+You can also use ```sublime.log_commands(True)``` in the console (```ctrl+~```) to output key presses and their corresponding command to the console pane.
 
 <table>
     <tr>
@@ -141,7 +141,7 @@ For example the following definition will use the color ```#C87551``` for all Co
     </dict>
 </dict>
 ```
-You can use <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>shift</kbd>+<kbd>p</kbd> to get the scope name at the cursor position for more theme customizing .
+You can use <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>⇧</kbd>+<kbd>P</kbd> to get the scope name at the cursor position for more theme customizing .
 
 ##Additional Packages
 Some additional packages you might want to check out  - they are all available through Package Control http://wbond.net/sublime_packages/community
