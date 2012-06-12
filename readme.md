@@ -84,6 +84,7 @@ You can also use ```sublime.log_commands(True)``` in the console (```ctrl+~```) 
     </tr>
 </table>
 
+* For some more useful default key bindings see: https://gist.github.com/2918078
 
 ##Completions and Snippets
 **Note**: A classic completions plug-in is available from @bbluemel which can be downloaded at
