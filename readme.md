@@ -39,52 +39,11 @@ Go to your Sublime Text 2 `Packages` directory and clone the repository using th
 Some packages will override key bindings. If you have problems with a specific key shortcut,
 you can add it to your User - Key Bindings file ```Preferences > Key Bindings - User```
 
-You can also use ```sublime.log_commands(True)``` in the console (```ctrl+~```) to output key presses.
+You can also use ```sublime.log_commands(True)``` in the console (```ctrl+~```) to output key presses and their corresponding command in the console pane.
 
-<table>
-    <tr>
-        <td>
-<kbd>shift</kbd>+<kbd>3</kbd> <code>#SELECTION#</code>
-        </td>
-        <td>
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>o</kbd> <code>&lt;cfoutput&gt;SELECTION&lt;/cfoutput&gt;</code>
-        </td>
-    </tr>
-    <tr>
-        <td>
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>3</kbd> <code>&lt;cfoutput&gt;#SELECTION#&lt;/cfoutput&gt;</code>
-        </td>
-        <td>
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>a</kbd> <code>&lt;cfabort /&gt;</code>
-        </td>
-    </tr>
-    <tr>
-        <td>
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>d</kbd> <code>&lt;cfdump var=&quot;#SELECTION#&quot;&gt;</code>
-        </td>
-        <td>
-<kbd>alt</kbd>+<kbd>shift</kbd>+<kbd>r</kbd> <code>&lt;cfscript&gt;SELECTION&lt;/cfscript&gt;</code>
-        </td>
-    </tr>
-    <tr>
-        <td>
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>c</kbd> <code>cfml comment</code>
-        </td>
-        <td>
-<kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>shift</kbd>+<kbd>/</kbd> <code>javadoc comment</code>
-        </td>
-    </tr>
-    <tr>
-        <td>
-<kbd>alt</kbd>+<kbd>enter</kbd> <code>terminates statement; adds new line</code>
-        </td>
-        <td>
-<kbd>ctrl</kbd>+<kbd>shift</kbd>+<kbd>=</kbd> <code>&lt;cfset SELECTION /&gt;</code>
-        </td>
-    </tr>
-</table>
+For a list of ColdFusion package key bindings and default key bindings see:
 
-* For some more useful default key bindings see: https://gist.github.com/2918078
+* https://gist.github.com/2918869
 
 ##Completions and Snippets
 **Note**: A classic completions plug-in is available from @bbluemel which can be downloaded at

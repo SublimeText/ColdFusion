@@ -112,12 +112,6 @@
         {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
     ]
     },
-    // super+shift+c line comment
-    { "keys": ["super+shift+c"], "command": "toggle_comment", "args": { "block": false },
-    "context":
-    [
-        { "key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }
-    ]},
     // super+alt+shift+/ javadoc comment
     {
     "keys": ["super+alt+shift+/"], "command": "insert_snippet",
