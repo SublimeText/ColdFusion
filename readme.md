@@ -41,9 +41,51 @@ you can add it to your User - Key Bindings file ```Preferences > Key Bindings - 
 
 You can also use ```sublime.log_commands(True)``` in the console (```ctrl+~```) to output key presses and their corresponding command in the console pane.
 
-For a list of ColdFusion package key bindings and default key bindings see:
+<table>
+    <tr>
+        <td>
+<kbd>⇧</kbd>+<kbd>#</kbd> <code>#SELECTION#</code>
+        </td>
+        <td>
+<kbd>Ctrl</kbd>+<kbd>⇧</kbd>+<kbd>O</kbd> <code>&lt;cfoutput&gt;SELECTION&lt;/cfoutput&gt;</code>
+        </td>
+    </tr>
+    <tr>
+        <td>
+<kbd>Ctrl</kbd>+<kbd>⇧</kbd>+<kbd>#</kbd> <code>&lt;cfoutput&gt;#SELECTION#&lt;/cfoutput&gt;</code>
+        </td>
+        <td>
+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>A</kbd> <code>&lt;cfabort /&gt;</code>
+        </td>
+    </tr>
+    <tr>
+        <td>
+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>D</kbd> <code>&lt;cfdump var=&quot;#SELECTION#&quot;&gt;</code>
+        </td>
+        <td>
+<kbd>Alt</kbd>+<kbd>⇧</kbd>+<kbd>R</kbd> <code>&lt;cfscript&gt;SELECTION&lt;/cfscript&gt;</code>
+        </td>
+    </tr>
+    <tr>
+        <td>
+<kbd>Ctrl</kbd>+<kbd>⇧</kbd>+<kbd>/</kbd> <code>block comment (cfml/cfscript) </code>
+        </td>
+        <td>
+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>⇧</kbd>+<kbd>/</kbd> <code>javadoc comment</code>
+        </td>
+    </tr>
+    <tr>
+        <td>
+<kbd>Alt</kbd>+<kbd>↩</kbd> <code>terminates statement (cfscript)</code>
+        </td>
+        <td>
+<kbd>Ctrl</kbd>+<kbd>⇧</kbd>+<kbd>=</kbd> <code>&lt;cfset SELECTION /&gt;</code>
+        </td>
+    </tr>
+</table>
 
-* https://gist.github.com/2918869
+
+Many more key bindings are available via Sublime ```Preferences > Key Bindings - Default```
 
 ##Completions and Snippets
 **Note**: A classic completions plug-in is available from @bbluemel which can be downloaded at
