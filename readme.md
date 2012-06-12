@@ -87,7 +87,7 @@ For example the following definition will use the color ```#C87551``` for all Co
 You can use <kbd>ctrl</kbd>+<kbd>alt</kbd>+<kbd>shift</kbd>+<kbd>p</kbd> to get the scope name at the cursor position for more theme customizing .
 
 ##Additional Packages
-Some additional packages you might want to check out (these packages are all available through Package Control):
+Some additional packages you might want to check out  - they are all available through Package Control http://wbond.net/sublime_packages/community
 
 * https://github.com/BoundInCode/AutoFileName (provides file auto-complete)
 * https://github.com/weslly/ColorPicker (choose a color and get the hex code)
