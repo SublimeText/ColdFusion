@@ -24,6 +24,8 @@ class ColdFusionTagComplete(sublime_plugin.EventListener):
             word = view.substr(view.word(scopestart + 1))
             if word in self.cflib.completions.keys():
                 completions = self.cflib.completions[word]['completions']
+        if completions == []:
+            return
         return (completions, sublime.INHIBIT_WORD_COMPLETIONS | sublime.INHIBIT_EXPLICIT_COMPLETIONS)
 
     def get_class( kls ):
