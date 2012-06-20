@@ -786,8 +786,8 @@
 			</dict>
 			<key>end</key>
 			<string>(&lt;/)((?i:cfoutput))(&gt;)(?:\s*\n)?</string>
-			<key>name</key>
-			<string>meta.tag.cfoutput.cfml</string>
+<!-- 			<key>contentName</key>
+			<string>meta.tag.cfoutput.cfml</string> -->
 			<key>patterns</key>
 			<array>
 				<dict>
