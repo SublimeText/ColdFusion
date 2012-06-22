@@ -20,58 +20,6 @@
 	<key>patterns</key>
 	<array>
 
-		<dict>
-			<key>begin</key>
-			<string>(&lt;/?)(?i:(li|dd|dl|dt)|(div)|(fieldset|form|frame|frameset)|(h1|h2|h3|h4|h5|h6))\b</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.begin.html</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.inline.list.html</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.block.div.html</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.block.form.html</string>
-				</dict>
-				<key>5</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.inline.header.html</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>meta.tag.any.html</string>
-			<key>end</key>
-			<string>(&gt;)</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.end.html</string>
-				</dict>
-			</dict>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#tag-stuff</string>
-				</dict>
-			</array>
-		</dict>
-
 
 		<!-- CFSCRIPT -->
 		<dict>
