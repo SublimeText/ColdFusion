@@ -741,11 +741,11 @@
 			<string>(&lt;/)((?i:cfoutput))(&gt;)(?:\s*\n)?</string>
 			<key>patterns</key>
 			<array>
-				<!-- <dict>
+				<dict>
 					<key>begin</key>
-					<string>(?&lt;=cfoutput)</string>
+					<string>(?&lt;=cfoutput)\s</string>
 					<key>end</key>
-					<string>(&gt;)</string>
+					<string>(?=&gt;)</string>
 					<key>name</key>
 					<string>meta.tag.cfoutput.cfml</string>
 					<key>patterns</key>
@@ -755,7 +755,7 @@
 							<string>#tag-stuff</string>
 						</dict>
 					</array>
-				</dict> -->
+				</dict>
 				<dict>
 					<key>begin</key>
 					<string>(&gt;)</string>
