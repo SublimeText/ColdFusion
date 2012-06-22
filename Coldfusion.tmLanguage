@@ -741,7 +741,7 @@
 			<string>(&lt;/)((?i:cfoutput))(&gt;)(?:\s*\n)?</string>
 			<key>patterns</key>
 			<array>
-				<dict>
+				<!-- <dict>
 					<key>begin</key>
 					<string>(?&lt;=cfoutput)</string>
 					<key>end</key>
@@ -755,10 +755,10 @@
 							<string>#tag-stuff</string>
 						</dict>
 					</array>
-				</dict>
+				</dict> -->
 				<dict>
 					<key>begin</key>
-					<string>(?!=cfoutput)</string>
+					<string>(&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>0</key>
