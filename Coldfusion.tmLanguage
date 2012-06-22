@@ -768,6 +768,11 @@
 			<string>(?:^\s+)?(&lt;)((?i:cfoutput))\b(?![^&gt;]*/&gt;)</string>
 			<key>captures</key>
 			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>meta.tag.cfoutput.cfml</string>
+				</dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
@@ -786,19 +791,33 @@
 			</dict>
 			<key>end</key>
 			<string>(&lt;/)((?i:cfoutput))(&gt;)(?:\s*\n)?</string>
-<!-- 			<key>contentName</key>
-			<string>meta.tag.cfoutput.cfml</string> -->
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>#tag-stuff</string>
+					<key>begin</key>
+					<string>(?&lt;=cfoutput)</string>
+					<key>end</key>
+					<string>(&gt;)</string>
+					<key>name</key>
+					<string>meta.tag.cfoutput.cfml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#tag-stuff</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>(&gt;)</string>
+					<string>(?!=cfoutput)</string>
 					<key>beginCaptures</key>
 					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.tag.cfoutput.cfml</string>
+						</dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
