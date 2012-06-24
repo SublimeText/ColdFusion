@@ -12,7 +12,7 @@ def get_class():
         m = getattr(m, comp)
     return m
 
-class ColdFusionTagComplete(sublime_plugin.EventListener):
+class TagAttributeAutoComplete(sublime_plugin.EventListener):
     cflib = get_class()()
     valid_scopes_tags = ["meta.tag.inline.cf", "meta.tag.block.cf"]
 
