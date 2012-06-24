@@ -14,8 +14,7 @@ def get_class():
 
 class ColdFusionTagComplete(sublime_plugin.EventListener):
     cflib = get_class()()
-    valid_scopes_tags = ["meta.tag.inline.cfml", "meta.tag.block.other.cfml", "meta.tag.block.function.cfml", "meta.tag.block.flow-control.cfml", "meta.tag.block.exceptions.cfml"]
-
+    valid_scopes_tags = ["meta.tag.inline.cf", "meta.tag.block.cf"]
 
     def on_modified(self, view):
         sel = view.sel()[0].a
