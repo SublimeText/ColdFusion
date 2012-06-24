@@ -1,6 +1,7 @@
 # ColdFusion Package for Sublime Text 2
 
 ### What's New
+* Added Tag Attribute completions (6/24/12)
 * Added Command ```ColdFusion: Insert CFlib UDF``` (6/2/12)
 
 ### Features
