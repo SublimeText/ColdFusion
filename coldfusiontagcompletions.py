@@ -1,6 +1,19 @@
 import sublime
 import sublime_plugin
+
+SETTINGS = sublime.load_settings('ColdFusion.sublime-settings')
+
+def get_class():
+    kls = "taglib." + SETTINGS.get("dictionary") + ".tags"
+    parts = kls.split('.')
+    module = ".".join(parts[:-1])
+    m = __import__( module )
+    for comp in parts[1:]:
+        m = getattr(m, comp)
+    return m
+
 class ColdFusionTagComplete(sublime_plugin.EventListener):
+    cflib = get_class()()
     valid_scopes_tags = ["meta.tag.inline.cfml", "meta.tag.block.other.cfml", "meta.tag.block.function.cfml", "meta.tag.block.flow-control.cfml", "meta.tag.block.exceptions.cfml"]
 
 
@@ -27,14 +40,3 @@ class ColdFusionTagComplete(sublime_plugin.EventListener):
         if completions == []:
             return
         return (completions, sublime.INHIBIT_WORD_COMPLETIONS | sublime.INHIBIT_EXPLICIT_COMPLETIONS)
-
-    def get_class( kls ):
-        parts = kls.split('.')
-        module = ".".join(parts[:-1])
-        m = __import__( module )
-        for comp in parts[1:]:
-            m = getattr(m, comp)
-        return m
-
-    cflib = get_class('taglib.cf10.tags')()
-
