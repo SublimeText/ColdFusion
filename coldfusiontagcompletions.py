@@ -57,12 +57,17 @@ class TagAttributeAutoComplete(sublime_plugin.EventListener):
         completions = []
 
         if any(s in view.scope_name(sel) for s in self.valid_scopes_tags):
-            scopestart = view.extract_scope(sel).a
-            if scopestart == sel:
-                scopestart = view.extract_scope(sel - 1).a
-            word = view.substr(view.word(scopestart + 1))
-            if word in self.cflib.completions.keys():
-                completions = self.cflib.completions[word]['completions']
+            for region in view.sel():
+                pos = region.begin()
+
+                tagdata = view.substr(sublime.Region(0, pos)).split("<")
+                tagdata.reverse()
+                tagdata = tagdata.pop(0).split(" ")
+                tagname = tagdata[0]
+
+            if tagname in self.cflib.completions.keys():
+                completions = self.cflib.completions[tagname]['completions']
+
         if completions == []:
             return
         return (completions, sublime.INHIBIT_WORD_COMPLETIONS | sublime.INHIBIT_EXPLICIT_COMPLETIONS)
