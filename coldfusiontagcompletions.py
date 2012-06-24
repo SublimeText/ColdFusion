@@ -12,6 +12,29 @@ def get_class():
         m = getattr(m, comp)
     return m
 
+class TagAutoComplete(sublime_plugin.EventListener):
+    cflib = get_class()()
+
+    def on_query_completions(self, view, prefix, locations):
+        completions = []
+        if not view.match_selector(locations[0],
+                "text.html.cfm - source - meta, text.html.cfm.embedded.cfml - source.cfscript.embedded.cfml - source.sql.embedded.cfml"):
+            return
+
+        # Do not trigger if we are in a tag or string or comment
+        pt = locations[0] - len(prefix) - 1
+        if any(s in view.scope_name(pt) for s in ["tag","string","comment"]):
+            return
+
+        for s in self.cflib.completions.keys():
+            completions.extend([(s + "\t(cmfl) Tag",s)])
+
+        # if the less than opening tag is missing lets add it
+        if view.substr(pt) != '<':
+            completions = [(list(item)[-2],"<" + list(item)[1]) for item in completions]
+
+        return sorted(completions)
+
 class TagAttributeAutoComplete(sublime_plugin.EventListener):
     cflib = get_class()()
     valid_scopes_tags = ["meta.tag.inline.cf", "meta.tag.block.cf"]
