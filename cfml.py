@@ -316,7 +316,7 @@ class CFMLAutoComplete(sublime_plugin.EventListener):
             return []
 
         s = sublime.load_settings('ColdFusion.sublime-settings')
-        if s.get("disable_default_tag_completions"):
+        if not s.get("verbose_tag_completions"):
              return []
 
         # Do not trigger if we are in a tag or string
