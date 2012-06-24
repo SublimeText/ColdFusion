@@ -142,6 +142,17 @@ For example the following definition will use the color ```#C87551``` for all Co
 ```
 You can use <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>⇧</kbd>+<kbd>P</kbd> to get the scope name at the cursor position for more theme customizing .
 
+##Development Branch
+To help test the development branch you can install it by dowloading the zip and copying the contents to the Packages/ColdFusion folder.
+
+
+Alternatively, you can use git to install the ColdFusion package as mentioned above and switch to the development tracking branch using:
+
+```
+git checkout development
+```
+
+
 ##Additional Packages
 Some additional packages you might want to check out  - they are all available through Package Control http://wbond.net/sublime_packages/community
 
