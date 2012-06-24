@@ -18,11 +18,15 @@ class TagAttributeAutoComplete(sublime_plugin.EventListener):
 
     def on_modified(self, view):
         sel = view.sel()[0].a
+
         if view.substr(sel - 1) == " ":
             if any(s in view.scope_name(sel) for s in self.valid_scopes_tags):
+                t = view.settings().get("auto_complete_delay")
                 sublime.set_timeout(lambda:
-                    view.run_command("auto_complete", { 'disable_auto_insert': True, 'next_completion_if_showing': False }), 50
-                )
+                    view.run_command("auto_complete", {
+                                            'disable_auto_insert': True,
+                                            'next_completion_if_showing': False,
+                                            'api_completions_only': True}), t)
 
 
     def on_query_completions(self, view, prefix, locations):
