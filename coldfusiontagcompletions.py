@@ -20,6 +20,9 @@ class TagAutoComplete(sublime_plugin.EventListener):
         if not view.match_selector(locations[0],
                 "text.html.cfm - source - meta, text.html.cfm.embedded.cfml - source.cfscript.embedded.cfml - source.sql.embedded.cfml"):
             return
+        s = sublime.load_settings('ColdFusion.sublime-settings')
+        if s.get("verbose_tag_completions"):
+             return
 
         # Do not trigger if we are in a tag or string or comment
         pt = locations[0] - len(prefix) - 1
@@ -40,6 +43,9 @@ class TagAttributeAutoComplete(sublime_plugin.EventListener):
     valid_scopes_tags = ["meta.tag.inline.cf", "meta.tag.block.cf"]
 
     def on_modified(self, view):
+        s = sublime.load_settings('ColdFusion.sublime-settings')
+        if s.get("verbose_tag_completions"):
+             return
         sel = view.sel()[0].a
 
         if view.substr(sel - 1) == " ":
@@ -53,6 +59,9 @@ class TagAttributeAutoComplete(sublime_plugin.EventListener):
 
 
     def on_query_completions(self, view, prefix, locations):
+        s = sublime.load_settings('ColdFusion.sublime-settings')
+        if s.get("verbose_tag_completions"):
+             return
         sel = view.sel()[0].a
         completions = []
 
