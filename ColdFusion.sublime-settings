@@ -1,6 +1,7 @@
 {
-        // disables the verbose ColdFusion tag completions
-        "verbose_tag_completions": true,
+        // setting this to true will enable verbose tag completions
+        // cf10 only for now
+        "verbose_tag_completions": false,
 
         // cf7, cf8, cf9, or cf10
         "dictionary": "cf10"
