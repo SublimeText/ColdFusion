@@ -1174,6 +1174,11 @@
 					<string>(#)</string>
 					<key>endCaptures</key>
 					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>source.cfscript.embedded.cfml</string>
+						</dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
