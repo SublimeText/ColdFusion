@@ -313,11 +313,11 @@ class CFMLAutoComplete(sublime_plugin.EventListener):
     def on_query_completions(self, view, prefix, locations):
         if not view.match_selector(locations[0],
                 "text.html.cfm - source - meta, text.html.cfm.embedded.cfml - source.cfscript.embedded.cfml - source.sql.embedded.cfml"):
-            return []
+            return
 
         s = sublime.load_settings('ColdFusion.sublime-settings')
         if not s.get("verbose_tag_completions"):
-             return []
+             return
 
         # Do not trigger if we are in a tag or string or comment
         pt = locations[0] - len(prefix) - 1
