@@ -327,7 +327,7 @@
 		<!-- CFSET|CFRETURN -->
 		<dict>
 			<key>begin</key>
-			<string>(&lt;)(?i:(cfset)|(cfreturn))\b</string>
+			<string>(&lt;)(?i:(cfset|cfreturn)|(cfargument))\b</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -341,6 +341,11 @@
 					<string>entity.name.tag.cf.inline.declaration.cfml</string>
 				</dict>
 				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.cf.inline.argument.cfml</string>
+				</dict>
+				<key>4</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.tag.cf.inline.other.cfml</string>
