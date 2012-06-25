@@ -10,7 +10,7 @@
 * ColdFusion cfml, and script-based CFCs syntax highlighting. (see tmLanguage files)
 * Auto inserts closing hash # (see Default (platform).sublime-keymap)
 * Provides completions that match just after typing an opening angle bracket (see cfml_completions.py)
-* Exhaustive library of snippet bindings (see ColdFusion.sublime-completions)
+* Auto Complete ColdFusion Tags and Attributes (opt. cf7, cf8, cf9 & cf10)
 * ColdFusion specific key bindings (see Default (platform).sublime-keymap)
 
 ## Installation
@@ -90,10 +90,6 @@ You can also use ```sublime.log_commands(True)``` in the console (```ctrl+~```) 
 Many more key bindings are available via Sublime ```Preferences > Key Bindings - Default```
 
 ##Completions and Snippets
-**Note**: A classic completions plug-in is available from @bbluemel which can be downloaded at
-
-https://github.com/bbluemel/ColdFusionTagCompletions
-***
 Although, this package includes CFScript completions (```.sublime-completions```) and ColdFusion tag completions (API-injected), it's recommended that you create your own custom snippets using code that fits your particular coding style.
 To create a new snippet select ```Tools > New Snippet...``` from the Sublime Text menu.
 Use ```<scope>text.html.cfm - string</scope>``` for ColdFusion markup snippets and ```<scope>source.cfscript - string</scope>``` for CFScript snippets.
