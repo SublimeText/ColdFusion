@@ -18,7 +18,9 @@ class TagAutoComplete(sublime_plugin.EventListener):
     def on_query_completions(self, view, prefix, locations):
         completions = []
         if not view.match_selector(locations[0],
-                "text.html.cfm - source - meta, text.html.cfm.embedded.cfml - source.cfscript.embedded.cfml - source.sql.embedded.cfml"):
+                "text.html.cfm - source - meta, \
+                text.html.cfm.embedded.cfml - \
+                source.cfscript.embedded.cfml - source.sql.embedded.cfml"):
             return
         s = sublime.load_settings('ColdFusion.sublime-settings')
         if s.get("verbose_tag_completions"):
