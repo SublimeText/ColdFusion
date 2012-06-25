@@ -48,6 +48,10 @@ class TagAttributeAutoComplete(sublime_plugin.EventListener):
              return
         sel = view.sel()[0].a
 
+        # we're starting a new tag don't trigger auto_complete
+        if "punctuation.definition.tag.cf.begin" in view.scope_name(sel):
+            return
+
         if view.substr(sel - 1) == " ":
             if any(s in view.scope_name(sel) for s in self.valid_scopes_tags):
                 t = view.settings().get("auto_complete_delay")
