@@ -12,6 +12,31 @@ def get_class():
         m = getattr(m, comp)
     return m
 
+class CloseCftagCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        sel = self.view.sel()[0]
+        self.view.insert(edit, sel.end(), ">")
+        self.view.run_command("hide_auto_complete")
+        if not SETTINGS.get("auto_close_cfml"):
+            return
+
+        for region in self.view.sel():
+            pos = region.begin()
+
+            tagdata = self.view.substr(sublime.Region(0, pos)).split("<")
+            tagdata.reverse()
+            tagdata = tagdata.pop(0).split(" ")
+            print tagdata
+            tagname = tagdata[0]
+
+        if self.view.match_selector(sel.end(),"meta.tag.block.cf"):
+            if not tagname[-1] == ">":
+                tagname = tagname + ">"
+            if not SETTINGS.get("auto_indent_on_close"):
+                self.view.run_command("insert_snippet", {"contents": "$0</" + tagname})
+            else:
+                self.view.run_command("insert_snippet", {"contents": "\n\t$0\n</" + tagname})
+
 class TagAutoComplete(sublime_plugin.EventListener):
     cflib = get_class()()
 

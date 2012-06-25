@@ -3,6 +3,12 @@
         // cf10 only for now
         "verbose_tag_completions": false,
 
+        // will close block coldfusion tags on ">" keypress
+        "auto_close_cfml": true,
+
+        // will auto indent block coldfusion tags if auto_close_tag is true
+        "auto_indent_on_close": true,
+
         // cf7, cf8, cf9, or cf10
         "dictionary": "cf10"
 }

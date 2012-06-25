@@ -1,4 +1,9 @@
 [
+    { "keys": [">"], "command": "close_cftag", "context":
+        [
+            { "key": "selector", "operator": "equal", "operand": "text.html.cfm, source.cfscript.cfc", "match_all": true }
+        ]
+    },
     // Auto-pair quotes
     { "keys": ["\""], "command": "insert_snippet", "args": {"contents": "\"$0\""}, "context":
         [
