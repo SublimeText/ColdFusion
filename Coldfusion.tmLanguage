@@ -410,7 +410,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.tag.inline.cf.any.ml</string>
+			<string>meta.tag.inline.cf.any.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
