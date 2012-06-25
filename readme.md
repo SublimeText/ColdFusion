@@ -1,6 +1,7 @@
 # ColdFusion Package for Sublime Text 2
 
 ### What's New
+* Added "auto_close_cfml", "auto_indent_on_close" settings (6/25/12)
 * Added Tag Attribute completions (6/24/12)
 * Added Command ```ColdFusion: Insert CFlib UDF``` (6/2/12)
 
