@@ -25,10 +25,15 @@
             <string>(?:^\s+)?(&lt;)((?i:cfcomponent))(?![^&gt;]*/&gt;)</string>
             <key>captures</key>
             <dict>
+                <key>0</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.tag.block.cf.component.cfml</string>
+                </dict>
                 <key>1</key>
                 <dict>
                     <key>name</key>
-                    <string>punctuation.definition.tag.begin.cfml</string>
+                    <string>punctuation.definition.tag.cf.begin.cfml</string>
                 </dict>
                 <key>2</key>
                 <dict>
@@ -38,28 +43,44 @@
                 <key>3</key>
                 <dict>
                     <key>name</key>
-                    <string>punctuation.definition.tag.end.cfml</string>
+                    <string>punctuation.definition.tag.cf.end.cfml</string>
                 </dict>
             </dict>
             <key>end</key>
             <string>(&lt;/)((?i:cfcomponent))(&gt;)(?:\s*\n)?</string>
-            <key>name</key>
+            <key>contentName</key>
             <string>text.html.cfm.embedded.cfml</string>
             <key>patterns</key>
             <array>
                 <dict>
-                    <key>include</key>
-                    <string>#tag-stuff</string>
+                    <key>begin</key>
+                    <string>(?&lt;=cfcomponent)\s</string>
+                    <key>end</key>
+                    <string>(?=&gt;)</string>
+                    <key>name</key>
+                    <string>meta.tag.block.cf.component.cfml</string>
+                    <key>patterns</key>
+                    <array>
+                        <dict>
+                            <key>include</key>
+                            <string>#tag-stuff</string>
+                        </dict>
+                    </array>
                 </dict>
                 <dict>
                     <key>begin</key>
                     <string>(&gt;)</string>
                     <key>beginCaptures</key>
                     <dict>
+                        <key>0</key>
+                        <dict>
+                            <key>name</key>
+                            <string>meta.tag.block.cf.component.cfml</string>
+                        </dict>
                         <key>1</key>
                         <dict>
                             <key>name</key>
-                            <string>punctuation.definition.tag.end.cfml</string>
+                            <string>punctuation.definition.tag.cf.end.cfml</string>
                         </dict>
                     </dict>
                     <key>end</key>
