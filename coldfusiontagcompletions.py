@@ -32,7 +32,7 @@ class TagAutoComplete(sublime_plugin.EventListener):
             return
 
         for s in self.cflib.completions.keys():
-            completions.extend([(s + "\t(cmfl) Tag",s)])
+            completions.extend([(s + "\tTag (cmfl)",s)])
 
         # if the less than opening tag is missing lets add it
         if view.substr(pt) != '<':
