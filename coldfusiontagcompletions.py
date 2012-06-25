@@ -65,9 +65,6 @@ class TagAttributeAutoComplete(sublime_plugin.EventListener):
 
 
     def on_query_completions(self, view, prefix, locations):
-        s = sublime.load_settings('ColdFusion.sublime-settings')
-        if s.get("verbose_tag_completions"):
-             return
         sel = view.sel()[0].a
         completions = []
 
