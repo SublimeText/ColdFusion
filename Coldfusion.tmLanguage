@@ -381,8 +381,11 @@
 			<string>(?x)
 				(&lt;)
 					(?i:
-						(cf((location)|(forward)|(import)|(param)|(break)
-							|(abort)|(flush)|(setting)))
+						(cf(location|forward|import|param|break|abort|flush
+							|setting|test|dump|content|include|catch|continue
+							|file|log|object|invoke|throw|property|htmlhead
+							|header)
+						)
 						\b
 					)
 			</string>
