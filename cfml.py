@@ -319,12 +319,10 @@ class CFMLAutoComplete(sublime_plugin.EventListener):
         if not s.get("verbose_tag_completions"):
              return []
 
-        # Do not trigger if we are in a tag or string
+        # Do not trigger if we are in a tag or string or comment
         pt = locations[0] - len(prefix) - 1
-        if 'tag' in view.scope_name(pt):
-            return []
-        if 'string' in view.scope_name(pt):
-            return []
+        if any(s in view.scope_name(pt) for s in ["tag","string","comment"]):
+            return
 
         _completions = []
         _completions.extend(cften)
