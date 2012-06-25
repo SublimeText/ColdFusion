@@ -32,7 +32,7 @@ class CloseCftagCommand(sublime_plugin.TextCommand):
         if self.view.match_selector(sel.end(),"meta.tag.block.cf"):
             if not tagname[-1] == ">":
                 tagname = tagname + ">"
-            if not SETTINGS.get("auto_indent_on_close"):
+            if not SETTINGS.get("auto_indent_on_close") or tagname == "cfoutput>":
                 self.view.run_command("insert_snippet", {"contents": "$0</" + tagname})
             else:
                 self.view.run_command("insert_snippet", {"contents": "\n\t$0\n</" + tagname})
