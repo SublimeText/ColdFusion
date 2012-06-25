@@ -66,6 +66,11 @@ class TagAttributeAutoComplete(sublime_plugin.EventListener):
         sel = view.sel()[0].a
         completions = []
 
+        # Do not trigger if we are in a string or comment
+        pt = locations[0] - len(prefix) - 1
+        if any(s in view.scope_name(pt) for s in ["string","comment"]):
+            return
+
         if any(s in view.scope_name(sel) for s in self.valid_scopes_tags):
             for region in view.sel():
                 pos = region.begin()
