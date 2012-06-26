@@ -29,7 +29,7 @@ class CloseCftagCommand(sublime_plugin.TextCommand):
             print tagdata
             tagname = tagdata[0]
 
-        if self.view.match_selector(sel.end(),"meta.tag.block.cf"):
+        if self.view.match_selector(sel.end(),"meta.tag.block.cf") and tagname.find("/") == -1:
             if not tagname[-1] == ">":
                 tagname = tagname + ">"
             if not SETTINGS.get("auto_indent_on_close") or tagname == "cfoutput>":
