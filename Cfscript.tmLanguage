@@ -815,8 +815,7 @@
                 <key>2</key>
                 <dict>
                     <key>name</key>
-                    <!-- may possibly need renaming -->
-                    <string>support.function.cfscript</string>
+                    <string>entity.name.function.cfscript</string>
                 </dict>
                 <key>3</key>
                 <dict>
