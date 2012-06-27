@@ -395,6 +395,8 @@
                             <string>entity.name.tag.operator.component.cfscript</string>
                         </dict>
                     </dict>
+                    <key>name</key>
+                    <string>meta.class.component.cfscript</string>
                     <key>end</key>
                     <string>(?=[;{\(])</string>
                     <key>patterns</key>
