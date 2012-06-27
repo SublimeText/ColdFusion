@@ -26,7 +26,6 @@ class CloseCftagCommand(sublime_plugin.TextCommand):
             tagdata = self.view.substr(sublime.Region(0, pos)).split("<")
             tagdata.reverse()
             tagdata = tagdata.pop(0).split(" ")
-            print tagdata
             tagname = tagdata[0]
 
         if self.view.match_selector(sel.end(),"meta.tag.block.cf") and tagname.find("/") == -1:
