@@ -929,7 +929,7 @@
                         (application|arguments|attributes|caller|cgi|client|
                             cookie|flash|form|local|request|server|session|
                             this|thistag|thread|thread local|url|variables|
-                            super|self)
+                            super|self|argumentcollection)
                         \b
                         |
                         (\w+)
