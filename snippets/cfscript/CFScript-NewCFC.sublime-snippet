@@ -18,6 +18,6 @@ component output="${1:false}" displayname="$2"  {
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>component</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.cfscript - string</scope>
+	<scope>source.cfscript - string - meta</scope>
 	<description>New CFC</description>
 </snippet>
