@@ -32,9 +32,10 @@ class MethodsAutoComplete(sublime_plugin.EventListener):
             params = re.sub("\w+\(","",snippet,1)[:-1].split(",")
 
             num = 1
-            for p in params:
-                snippet = snippet.replace(p, '${' + str(num) + ':' + p + '}')
-                num = num + 1
+            if len(params[0]):
+                for p in params:
+                    snippet = snippet.replace(p, '${' + str(num) + ':' + p + '}')
+                    num = num + 1
             c = re.sub("\(.*\)","",c)
             _completions.append((c + "\tFunction (component)", snippet))
 
