@@ -3,6 +3,7 @@ import sublime_plugin
 import re
 
 completions = []
+SETTINGS = sublime.load_settings('ColdFusion.sublime-settings')
 
 def add_methods(cfc_file):
     with open(cfc_file, 'r') as f:
@@ -23,6 +24,9 @@ class MethodsAutoComplete(sublime_plugin.EventListener):
         if not view.match_selector(locations[0],
                 "source.cfscript.cfc - meta - string - comment"):
             return []
+
+        if not SETTINGS.get("component_method_completions"):
+            return
 
         _completions = []
         add_methods(view.file_name())

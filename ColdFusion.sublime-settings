@@ -9,6 +9,9 @@
         // will auto indent block coldfusion tags if auto_close_tag is true
         "auto_indent_on_close": false,
 
+        // enables method completions in cfscript components
+        "component_method_completions": true,
+
         // cf7, cf8, cf9, or cf10
         "dictionary": "cf10"
 }
