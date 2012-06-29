@@ -396,7 +396,7 @@
                         </dict>
                     </dict>
                     <key>name</key>
-                    <string>meta.class.component.cfscript</string>
+                    <string>meta.tag.operator.cfscript meta.class.component.cfscript</string>
                     <key>end</key>
                     <string>(?=[;{\(])</string>
                     <key>patterns</key>
