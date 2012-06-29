@@ -886,7 +886,7 @@
                 <key>2</key>
                 <dict>
                     <key>name</key>
-                    <string>entity.name.function.cfscript</string>
+                    <string>entity.name.function-call.cfscript</string>
                 </dict>
                 <key>3</key>
                 <dict>
