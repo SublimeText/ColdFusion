@@ -228,6 +228,11 @@
 			<string>(?:^\s+)?(&lt;)((?i:cfquery))\b(?![^&gt;]*/&gt;)</string>
 			<key>captures</key>
 			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>meta.tag.block.cf.query.cfml</string>
+				</dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
@@ -246,23 +251,37 @@
 			</dict>
 			<key>end</key>
 			<string>(&lt;/)((?i:cfquery))(&gt;)(?:\s*\n)?</string>
-			<key>name</key>
-			<string>meta.tag.block.cf.query.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>#qry-name-attribute</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#tag-stuff</string>
+					<key>begin</key>
+					<string>(?&lt;=cfquery)\s</string>
+					<key>end</key>
+					<string>(?=&gt;)</string>
+					<key>name</key>
+					<string>meta.tag.block.cf.output.cfml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#qry-name-attribute</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#tag-stuff</string>
+						</dict>
+					</array>
 				</dict>
 				<dict>
 					<key>begin</key>
 					<string>(&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.tag.block.cf.query.cfml</string>
+						</dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
