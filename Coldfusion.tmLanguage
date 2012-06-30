@@ -221,6 +221,104 @@
 		</dict>
 
 
+		<!-- CFSET|CFRETURN -->
+		<dict>
+			<key>begin</key>
+			<string>(&lt;)(?i:(cfset|cfreturn)|(cfargument))\b</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.cf.begin.cfml</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.cf.inline.declaration.cfml</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.cf.inline.argument.cfml</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.cf.inline.other.cfml</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>((?:\s?/)?&gt;)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.cf.end.cfml</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.tag.inline.cf.any.cfml</string>
+			<key>contentName</key>
+			<string>source.cfscript.embedded.cfml</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.cfscript</string>
+				</dict>
+			</array>
+		</dict>
+
+		<!-- inline tags  -->
+		<dict>
+			<key>begin</key>
+			<string>(?x)
+				(&lt;)
+					(?i:
+						(cf(queryparam|location|forward|import|param|break|abort|flush
+							|setting|test|dump|content|include|catch|continue
+							|file|log|object|invoke|throw|property|htmlhead
+							|header)
+						)
+						\b
+					)
+			</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.cf.begin.cfml</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.cf.inline.other.cfml</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>((?:\s?/)?&gt;)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.cf.end.cfml</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.tag.inline.cf.any.cfml</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#tag-stuff</string>
+				</dict>
+			</array>
+		</dict>
+
 
 		<!-- CFQUERY -->
 		<dict>
@@ -339,105 +437,6 @@
 							<string>source.sql</string>
 						</dict>
 					</array>
-				</dict>
-			</array>
-		</dict>
-
-		<!-- CFSET|CFRETURN -->
-		<dict>
-			<key>begin</key>
-			<string>(&lt;)(?i:(cfset|cfreturn)|(cfargument))\b</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.cf.begin.cfml</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.cf.inline.declaration.cfml</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.cf.inline.argument.cfml</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.cf.inline.other.cfml</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>((?:\s?/)?&gt;)</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.cf.end.cfml</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>meta.tag.inline.cf.any.cfml</string>
-			<key>contentName</key>
-			<string>source.cfscript.embedded.cfml</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>source.cfscript</string>
-				</dict>
-			</array>
-		</dict>
-
-		<!-- inline tags (TODO: need to add the rest)
-		these tags do not have a closing tag -->
-		<dict>
-			<key>begin</key>
-			<string>(?x)
-				(&lt;)
-					(?i:
-						(cf(location|forward|import|param|break|abort|flush
-							|setting|test|dump|content|include|catch|continue
-							|file|log|object|invoke|throw|property|htmlhead
-							|header)
-						)
-						\b
-					)
-			</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.cf.begin.cfml</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.cf.inline.other.cfml</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>((?:\s?/)?&gt;)</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.cf.end.cfml</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>meta.tag.inline.cf.any.cfml</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#tag-stuff</string>
 				</dict>
 			</array>
 		</dict>
