@@ -275,10 +275,24 @@
                     <key>patterns</key>
                     <array>
                         <dict>
+                            <key>include</key>
+                            <string>#strings</string>
+                        </dict>
+                        <dict>
+                            <key>match</key>
+                            <string>,</string>
+                            <key>name</key>
+                            <string>punctuation.definition.seperator.cfscript</string>
+                        </dict>
+                        <dict>
                             <key>match</key>
                             <string>\w+</string>
                             <key>name</key>
-                            <string>variable.other.cfscript</string>
+                            <string>variable.other.index.cfscript</string>
+                        </dict>
+                        <dict>
+                            <key>include</key>
+                            <string>$self</string>
                         </dict>
                     </array>
                 </dict>
