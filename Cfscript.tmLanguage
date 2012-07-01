@@ -35,6 +35,10 @@
             <array>
                 <dict>
                     <key>include</key>
+                    <string>#brackets</string>
+                </dict>
+                <dict>
+                    <key>include</key>
                     <string>#component-operators</string>
                 </dict>
                 <dict>
@@ -237,6 +241,49 @@
         </dict>
         <!-- / end parameters -->
 
+        <!-- brackets -->
+        <key>brackets</key>
+        <dict>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>begin</key>
+                    <string>([\w]+)?\s*(\[)</string>
+                    <key>beginCaptures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>variable.other.set.cfscript</string>
+                        </dict>
+                        <key>2</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.definition.bracket-begin.cfscript</string>
+                        </dict>
+                     </dict>
+                    <key>end</key>
+                    <string>\]</string>
+                    <key>endCaptures</key>
+                    <dict>
+                        <key>0</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.definition.bracket-end.cfscript</string>
+                        </dict>
+                     </dict>
+                    <key>patterns</key>
+                    <array>
+                        <dict>
+                            <key>match</key>
+                            <string>\w+</string>
+                            <key>name</key>
+                            <string>variable.other.cfscript</string>
+                        </dict>
+                    </array>
+                </dict>
+            </array>
+        </dict>
 
         <!-- tag-operators -->
         <key>tag-operators</key>
