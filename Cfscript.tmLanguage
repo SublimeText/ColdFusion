@@ -887,7 +887,7 @@
                     |getdirectoryfrompath|getencoding|getexception|getfilefrompath|getfileinfo
                     |getfunctioncalledname|getfunctionlist|getgatewayhelper|gethttprequestdata|gethttptimestring
                     |getk2serverdoccount|getk2serverdoccountlimit|getlocale|getlocaledisplayname|getlocalhostip
-                    |getmetadata|getmetricdata|getpagecontext|getprinterinfo|getprinterlist|getprofilesections
+                    |getmetadata|getmetricdata|getpagecontext|getrequest|getrequesturi|getprinterinfo|getprinterlist|getprofilesections
                     |getprofilestring|getreadableimageformats|getsoaprequest|getsoaprequestheader|getsoapresponse
                     |getsoapresponseheader|gettempdirectory|gettempfile|gettemplatepath|gettickcount
                     |gettimezoneinfo|gettoken|getuserroles|getvfsmetadata|getwriteableimageformats|hash|hour
