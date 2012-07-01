@@ -22,6 +22,15 @@
 
         <dict>
             <key>include</key>
+            <string>#component-operators</string>
+        </dict>
+        <dict>
+            <key>include</key>
+            <string>#tag-operators</string>
+        </dict>
+
+        <dict>
+            <key>include</key>
             <string>#cfscript-code</string>
         </dict>
     </array>
@@ -36,14 +45,6 @@
                 <dict>
                     <key>include</key>
                     <string>#brackets</string>
-                </dict>
-                <dict>
-                    <key>include</key>
-                    <string>#component-operators</string>
-                </dict>
-                <dict>
-                    <key>include</key>
-                    <string>#tag-operators</string>
                 </dict>
                 <dict>
                     <key>include</key>
