@@ -162,6 +162,10 @@
                 </dict>
                 <dict>
                     <key>include</key>
+                    <string>#function-properties</string>
+                </dict>
+                <dict>
+                    <key>include</key>
                     <string>#cfscript-code</string>
                 </dict>
             </array>
@@ -241,6 +245,27 @@
             </array>
         </dict>
         <!-- / end parameters -->
+
+        <!-- optional function properties -->
+        <key>function-properties</key>
+        <dict>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>match</key>
+                    <string>\b(?i:output)</string>
+                    <key>name</key>
+                    <string>entity.name.function-property.output.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>\b([\w]+)</string>
+                    <key>name</key>
+                    <string>entity.name.function-property.cfscript</string>
+                </dict>
+            </array>
+        </dict>
+        <!-- / end optional function properties -->
 
         <!-- brackets -->
         <key>brackets</key>
