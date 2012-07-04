@@ -16,7 +16,12 @@ class CloseCftagCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         sel = self.view.sel()[0]
         self.view.insert(edit, sel.end(), ">")
+
         self.view.run_command("hide_auto_complete")
+
+        # prevents from triggering inside strings
+        if self.view.match_selector(sel.end(), "string"):
+            return
         if not SETTINGS.get("auto_close_cfml"):
             return
 
