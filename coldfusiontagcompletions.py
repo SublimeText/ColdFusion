@@ -43,7 +43,8 @@ class TagAutoComplete(sublime_plugin.EventListener):
         completions = []
         if not view.match_selector(locations[0],
                 "text.html.cfm - source - meta - comment, \
-                text.html.cfm.embedded.cfml, source.sql.embedded.cfml "):
+                text.html.cfm.embedded.cfml - meta - comment, \
+                source.sql.embedded.cfml - meta - comment"):
             return
         if SETTINGS.get("verbose_tag_completions"):
             return
