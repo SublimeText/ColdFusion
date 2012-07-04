@@ -1,7 +1,8 @@
 [
     { "keys": [">"], "command": "close_cftag", "context":
         [
-            { "key": "selector", "operator": "equal", "operand": "text.html.cfm, source.cfscript.cfc", "match_all": true }
+            // we shouldn't need source.cfscript.cfc but this won't trigger for cfcomponent otherwise
+            { "key": "selector", "operator": "equal", "operand": "meta.tag.block.cf, source.cfscript.cfc"}
         ]
     },
     // Auto-pair quotes

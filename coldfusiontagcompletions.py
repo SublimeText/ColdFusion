@@ -14,15 +14,23 @@ def get_class():
 
 class CloseCftagCommand(sublime_plugin.TextCommand):
     def run(self, edit):
+
         sel = self.view.sel()[0]
+
+        # insert the actual &gt; character
         self.view.insert(edit, sel.end(), ">")
 
+        # prevents auto_complete pop up from triggering
         self.view.run_command("hide_auto_complete")
 
-        # prevents from triggering inside strings
-        if self.view.match_selector(sel.end(), "string"):
-            return
+        # return if disabled in settings file
         if not SETTINGS.get("auto_close_cfml"):
+            return
+
+        # prevents triggering inside strings and other scopes that are not block tags
+        # this should be taken care of in keybindings, but it's not working for cfcomponent
+        if self.view.match_selector(sel.end(), "string") \
+            or not self.view.match_selector(sel.end(), "meta.tag.block.cf"):
             return
 
         for region in self.view.sel():
