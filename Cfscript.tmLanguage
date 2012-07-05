@@ -255,13 +255,13 @@
                     <key>match</key>
                     <string>\b(?i:output)</string>
                     <key>name</key>
-                    <string>entity.name.function-property.output.cfscript</string>
+                    <string>entity.other.attribute-name.output.cfscript</string>
                 </dict>
                 <dict>
                     <key>match</key>
                     <string>\b([\w]+)</string>
                     <key>name</key>
-                    <string>entity.name.function-property.cfscript</string>
+                    <string>entity.other.attribute-name.any.cfscript</string>
                 </dict>
             </array>
         </dict>
