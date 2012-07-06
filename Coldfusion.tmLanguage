@@ -434,6 +434,10 @@
 						</dict>
 						<dict>
 							<key>include</key>
+							<string>#nest-hash</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>source.sql</string>
 						</dict>
 					</array>
