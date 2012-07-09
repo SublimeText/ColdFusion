@@ -166,6 +166,7 @@ Some additional packages you might want to check out  - they are all available t
 
 These packages require manual installation
 
+* https://github.com/timsayshey/Sublime-Text-CFWheels (cfwheels plugin)
 * https://github.com/DominicWatson/SublimeText2CfQuickDocsLauncher (cfml documentation)
 
 ##License
