@@ -71,4 +71,4 @@ class MethodsAutoComplete(sublime_plugin.EventListener):
 
         # prevents dups
         del completions[:]
-        return sorted(_completions)
+        return _completions
