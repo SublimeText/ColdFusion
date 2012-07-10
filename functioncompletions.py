@@ -1,11 +1,12 @@
 import sublime
 import sublime_plugin
-import re
+import re, os
 
 completions = []
 SETTINGS = sublime.load_settings('ColdFusion.sublime-settings')
 
-def add_methods(cfc_file):
+# props to @boundincode for imoplemntation
+def add_methods(cfc_file, hint_text):
     with open(cfc_file, 'r') as f:
         read_data = f.read()
     methods = []
@@ -17,7 +18,19 @@ def add_methods(cfc_file):
         if s:
             methods.append(s.group().strip())
 
-    completions.extend(methods)
+    for c in methods:
+        snippet = c
+        params = re.sub("\w+\(","",snippet,1)[:-1].split(",")
+
+        num = 1
+        if len(params[0]):
+            for p in params:
+                snippet = snippet.replace(p, '${' + str(num) + ':' + p + '}')
+                num = num + 1
+        # removes parens
+        c = re.sub("\(.*\)","",c)
+        completions.append((c + "\t" + hint_text, snippet))
+
 
 class MethodsAutoComplete(sublime_plugin.EventListener):
     def on_query_completions(self, view, prefix, locations):
@@ -28,20 +41,34 @@ class MethodsAutoComplete(sublime_plugin.EventListener):
         if not SETTINGS.get("component_method_completions"):
             return
 
+        # set local _completions variable
         _completions = []
-        add_methods(view.file_name())
 
-        for c in completions:
-            snippet = c
-            params = re.sub("\w+\(","",snippet,1)[:-1].split(",")
+        # try and find the cfc file and add it's methods
+        try:
+            cfc_region = view.find_by_selector("meta.component-operator.extends.value.cfscript")[0]
+        except IndexError:
+            cfc_region = ""
 
-            num = 1
-            if len(params[0]):
-                for p in params:
-                    snippet = snippet.replace(p, '${' + str(num) + ':' + p + '}')
-                    num = num + 1
-            c = re.sub("\(.*\)","",c)
-            _completions.append((c + "\tFunction (component)", snippet))
+        if len(cfc_region):
+            extendspath =  view.substr(cfc_region).replace(".","/")
 
+            # check for the cfc in root folders
+            for folder in sublime.active_window().folders():
+                if os.path.isfile(folder + "/" + extendspath + ".cfc"):
+                    cfc_file = folder + "/" + extendspath + ".cfc"
+                    break
+            try:
+                add_methods(cfc_file, "Fn. " + view.substr(cfc_region).split(".")[-1] )
+            except UnboundLocalError:
+                pass
+
+        # add this files methods to autocomplete
+        add_methods(view.file_name(), "Fn. this")
+
+        # add the completions to the local _completions variable
+        _completions.extend(completions)
+
+        # prevents dups
         del completions[:]
-        return _completions
+        return sorted(_completions)
