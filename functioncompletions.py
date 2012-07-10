@@ -53,11 +53,21 @@ class MethodsAutoComplete(sublime_plugin.EventListener):
         if len(cfc_region):
             extendspath =  view.substr(cfc_region).replace(".","/")
 
-            # check for the cfc in root folders
-            for folder in sublime.active_window().folders():
-                if os.path.isfile(folder + "/" + extendspath + ".cfc"):
-                    cfc_file = folder + "/" + extendspath + ".cfc"
-                    break
+            # first check the current directory for nested cfc path
+            # get the dir this file is in first
+            this_file = view.file_name()
+            dir_len = this_file.rfind('/') #(for OSX)
+            if not dir_len > 0:
+                dir_len = this_file.rfind('\\') #(for Windows)
+            this_dir = this_file[:(dir_len + 1)] # adds ending '/'
+
+            cfc_file = this_dir + extendspath + ".cfc"
+            if not os.path.isfile(cfc_file):
+                # check for the cfc in root folders
+                for folder in sublime.active_window().folders():
+                    if os.path.isfile(folder + "/" + extendspath + ".cfc"):
+                        cfc_file = folder + "/" + extendspath + ".cfc"
+                        break
             try:
                 add_methods(cfc_file, view.substr(cfc_region).split(".")[-1] )
             except UnboundLocalError:
