@@ -29,7 +29,7 @@ def add_methods(cfc_file, hint_text):
                 num = num + 1
         # removes parens
         c = re.sub("\(.*\)","",c)
-        completions.append((c + "\t" + hint_text, snippet))
+        completions.append((c + "\tfn. " + hint_text, snippet))
 
 
 class MethodsAutoComplete(sublime_plugin.EventListener):
@@ -59,12 +59,12 @@ class MethodsAutoComplete(sublime_plugin.EventListener):
                     cfc_file = folder + "/" + extendspath + ".cfc"
                     break
             try:
-                add_methods(cfc_file, "Fn. " + view.substr(cfc_region).split(".")[-1] )
+                add_methods(cfc_file, view.substr(cfc_region).split(".")[-1] )
             except UnboundLocalError:
                 pass
 
         # add this files methods to autocomplete
-        add_methods(view.file_name(), "Fn. this")
+        add_methods(view.file_name(), "this")
 
         # add the completions to the local _completions variable
         _completions.extend(completions)
