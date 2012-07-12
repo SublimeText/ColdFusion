@@ -1,5 +1,5 @@
 {
-    "scope": "source.cfscript - source.sql - text.html.cfm - string - meta - comment,source.cfscript.embedded.cfml - string, source.sql",
+    "scope": "meta.name.interpolated.hash - string, source.cfscript - source.sql - text.html.cfm - string - meta - comment, source.cfscript.embedded.cfml - string, source.sql",
     "completions":
     [
 
