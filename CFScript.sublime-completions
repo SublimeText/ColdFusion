@@ -8,11 +8,9 @@
 
         { "trigger": "true", "contents": "true"},
         { "trigger": "false", "contents": "false"},
+
         { "trigger": "TRUE", "contents": "TRUE"},
         { "trigger": "FALSE", "contents": "FALSE"},
-
-        { "trigger": "required", "contents": "required "},
-        { "trigger": "REQUIRED", "contents": "REQUIRED "},
 
         { "trigger": "return", "contents": "return "},
         { "trigger": "RETURN", "contents": "RETURN "},
