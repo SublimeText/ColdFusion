@@ -55,8 +55,11 @@
         { "trigger": "thread", "contents": "thread"},
         { "trigger": "THREAD", "contents": "THREAD"},
 
+        { "trigger": "url", "contents": "url"},
         { "trigger": "URL", "contents": "URL"},
+
         { "trigger": "this", "contents": "this"},
+        { "trigger": "THIS", "contents": "THIS"},
 
         { "trigger": "variables", "contents": "variables"},
         { "trigger": "VARIABLES", "contents": "VARIABLES"},
