@@ -164,6 +164,7 @@ Some additional packages you might want to check out  - they are all available t
 * https://github.com/dz0ny/LiveReload-sublimetext2 (live reload browser)
 * https://github.com/bgreenlee/sublime-github (github gists and more)
 * https://github.com/virtix/sublime-text-2-mxunit (mxunit testing)
+* https://github.com/seancoyne/farcry-sublimetext (farcry snippets)
 
 These packages require manual installation
 
