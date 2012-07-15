@@ -104,6 +104,15 @@
         {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
     ]
     },
+    // super+shift+o writeOutput();
+    {
+    "keys": ["super+shift+o"], "command": "insert_snippet",
+    "args": { "contents": "writeOutput(${0:$SELECTION});" },
+    "context":
+    [
+        {"key": "selector", "operator": "equal", "operand": "source.cfscript, source.cfscript.embedded.cfml", "match_all": true }
+    ]
+    },
     // alt+shift+r <cfscript>$0</cfscript>
     {
     "keys": ["alt+shift+r"], "command": "insert_snippet",
@@ -133,6 +142,15 @@
     [
         {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
         {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
+    ]
+    },
+    // super+alt+d  writeDump();
+    {
+    "keys": ["super+alt+d"], "command": "insert_snippet",
+    "args": { "contents": "writeDump(${1:$SELECTION});" },
+    "context":
+    [
+        {"key": "selector", "operator": "equal", "operand": "source.cfscript, source.cfscript.embedded.cfml", "match_all": true }
     ]
     },
     // super+alt+shift+/ javadoc comment
