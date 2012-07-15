@@ -341,6 +341,7 @@
         { "trigger": "valueList\tfn. (cfscript)", "contents": "valueList(${1:${2:column}${3:, [delimiter]}})"},
         { "trigger": "week\tfn. (cfscript)", "contents": "week(${1:${2:date}})"},
         { "trigger": "wrap\tfn. (cfscript)", "contents": "wrap(${1:\"${2:string}\", ${3:limit}${4:, [strip]}})"},
+        { "trigger": "writeDump\tfn. (cfscript)", "contents": "writeDump(${1:var})"},
         { "trigger": "writeOutput\tfn. (cfscript)", "contents": "writeOutput(${1:\"${2:string}\"})"},
         { "trigger": "xmlChildPos\tfn. (cfscript)", "contents": "xmlChildPos(${1:${2:elem}, \"${3:childname}\", ${4:n}})"},
         { "trigger": "xmlElemNew\tfn. (cfscript)", "contents": "xmlElemNew(${1:${2:xmlobj}${3:, [namespace]}, \"${4:childname}\"})"},
