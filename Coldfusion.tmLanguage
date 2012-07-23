@@ -101,7 +101,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.cf.end.ctml</string>
+					<string>punctuation.definition.tag.cf.end.cfml</string>
 				</dict>
 			</dict>
 			<key>name</key>
@@ -481,7 +481,7 @@
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>punctuation.definition.tag.cf.end.ctml</string>
+					<string>punctuation.definition.tag.cf.end.cfml</string>
 				</dict>
 			</dict>
 			<key>name</key>
@@ -574,7 +574,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.tag.cf.end.ctml</string>
+							<string>punctuation.definition.tag.cf.end.cfml</string>
 						</dict>
 					</dict>
 					<key>name</key>
@@ -638,7 +638,7 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.tag.cf.end.ctml</string>
+							<string>punctuation.definition.tag.cf.end.cfml</string>
 						</dict>
 					</dict>
 					<key>name</key>
