@@ -55,9 +55,9 @@ class TagAutoComplete(sublime_plugin.EventListener):
     def on_query_completions(self, view, prefix, locations):
         completions = []
         if not view.match_selector(locations[0],
-                "text.html.cfm - meta - source - comment - string, \
-                punctuation.definition.tag.begin, \
-                text.html.cfm.embedded.cfml - source.cfscript.embedded.cfml - comment - string, \
+                "punctuation.definition.tag.cf.begin, \
+                text.html.cfm - meta - source - comment - string, \
+                text.html.cfm.embedded.cfml - meta - source.cfscript.embedded.cfml - comment - string, \
                 source.sql.embedded.cfml - string - comment"):
             return
         if SETTINGS.get("verbose_tag_completions"):
