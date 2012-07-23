@@ -110,7 +110,17 @@
     "args": { "contents": "writeOutput(${0:$SELECTION});" },
     "context":
     [
-        {"key": "selector", "operator": "equal", "operand": "source.cfscript, source.cfscript.embedded.cfml", "match_all": true }
+        {"key": "selector", "operator": "equal", "operand": "source.cfscript", "match_all": true },
+        {"key": "selector", "operator": "not_equal", "operand": "text.html.cfm.embedded.cfml", "match_all": false }
+    ]
+    },
+    // ctrl+shift+o writeOutput();
+    {
+    "keys": ["ctrl+shift+o"], "command": "insert_snippet",
+    "args": { "contents": "writeOutput(${0:$SELECTION});" },
+    "context":
+    [
+        {"key": "selector", "operator": "equal", "operand": "source.cfscript.embedded.cfml", "match_all": true }
     ]
     },
     // alt+shift+r <cfscript>$0</cfscript>
