@@ -1018,15 +1018,15 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>&lt;!--.*--&gt;</string>
-					<key>name</key>
-					<string>comment.line.html</string>
-				</dict>
-				<dict>
-					<key>match</key>
 					<string>&lt;!---.*---&gt;</string>
 					<key>name</key>
 					<string>comment.line.cfml</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>&lt;!--.*--&gt;</string>
+					<key>name</key>
+					<string>comment.line.html</string>
 				</dict>
 				<dict>
 					<key>begin</key>
