@@ -35,7 +35,7 @@ def add_methods(cfc_file, hint_text):
 class MethodsAutoComplete(sublime_plugin.EventListener):
     def on_query_completions(self, view, prefix, locations):
         if not view.match_selector(locations[0],
-                "source.cfscript.cfc - meta - string - comment"):
+                "source.cfscript.cfc - text - meta - string - comment"):
             return []
 
         if not SETTINGS.get("component_method_completions"):
