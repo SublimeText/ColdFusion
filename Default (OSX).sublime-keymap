@@ -114,7 +114,6 @@
         {"key": "selector", "operator": "not_equal", "operand": "text.html.cfm.embedded.cfml", "match_all": false }
     ]
     },
-    // super+shift+o writeOutput();
     {
     "keys": ["super+shift+o"], "command": "insert_snippet",
     "args": { "contents": "writeOutput(${0:$SELECTION});" },
@@ -133,17 +132,6 @@
         {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
       ]
     },
-    // super+shift+r with selection <cfscript></cfscript>
-    {
-    "keys": ["super+shift+r"], "command": "insert_snippet",
-    "args": { "contents": "<cfscript>${0:$SELECTION}</cfscript>" },
-    "context":
-      [
-        { "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true },
-        { "key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
-        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
-      ]
-    },
     // super+alt+d  <cfdump var="##">
     {
     "keys": ["super+alt+d"], "command": "insert_snippet",
@@ -154,13 +142,22 @@
         {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
     ]
     },
-    // super+alt+d  writeDump();
+    // super+shift+o writeDump();
     {
     "keys": ["super+alt+d"], "command": "insert_snippet",
-    "args": { "contents": "writeDump(${1:$SELECTION});" },
+    "args": { "contents": "writeDump(${0:$SELECTION});" },
     "context":
     [
-        {"key": "selector", "operator": "equal", "operand": "source.cfscript, source.cfscript.embedded.cfml", "match_all": true }
+        {"key": "selector", "operator": "equal", "operand": "source.cfscript", "match_all": true },
+        {"key": "selector", "operator": "not_equal", "operand": "text.html.cfm.embedded.cfml", "match_all": false }
+    ]
+    },
+    {
+    "keys": ["super+alt+d"], "command": "insert_snippet",
+    "args": { "contents": "writeDump(${0:$SELECTION});" },
+    "context":
+    [
+        {"key": "selector", "operator": "equal", "operand": "source.cfscript.embedded.cfml", "match_all": true }
     ]
     },
     // super+alt+shift+/ javadoc comment
