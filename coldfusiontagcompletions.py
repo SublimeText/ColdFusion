@@ -2,6 +2,7 @@ import sublime
 import sublime_plugin
 
 SETTINGS = sublime.load_settings('ColdFusion.sublime-settings')
+SUBLIME_SETTINGS = sublime.load_settings('Preferences.sublime-settings')
 
 def get_class():
     kls = "taglib." + SETTINGS.get("dictionary") + ".tags"
@@ -84,6 +85,8 @@ class TagAttributeAutoComplete(sublime_plugin.EventListener):
 
     def on_modified(self, view):
         if SETTINGS.get("verbose_tag_completions"):
+            return
+        if not SUBLIME_SETTINGS.get("auto_complete"):
             return
         sel = view.sel()[0].a
 
