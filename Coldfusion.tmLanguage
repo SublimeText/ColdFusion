@@ -224,7 +224,7 @@
 		<!-- CFSET|CFRETURN -->
 		<dict>
 			<key>begin</key>
-			<string>(&lt;)(?i:(cfset|cfreturn)|(cfargument))\b</string>
+			<string>(&lt;)(?i:(cfset|cfreturn))\b</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -236,16 +236,6 @@
 				<dict>
 					<key>name</key>
 					<string>entity.name.tag.cf.inline.declaration.cfml</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.cf.inline.argument.cfml</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.cf.inline.other.cfml</string>
 				</dict>
 			</dict>
 			<key>end</key>
@@ -280,7 +270,7 @@
 						(cf(queryparam|location|forward|import|param|break|abort|flush
 							|setting|test|dump|content|include|catch|continue
 							|file|log|object|invoke|throw|property|htmlhead
-							|header)
+							|header|argument)
 						)
 						\b
 					)
