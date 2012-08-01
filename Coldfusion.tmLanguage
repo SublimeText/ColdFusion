@@ -725,7 +725,9 @@
 						</dict>
 					</dict>
 					<key>name</key>
-					<string>meta.tag.inline.cf.conditional.cfml source.cfscript.embedded.cfml</string>
+					<string>meta.tag.inline.cf.conditional.cfml</string>
+					<key>contentName</key>
+					<string>source.cfscript.embedded.cfml</string>
 					<key>patterns</key>
 					<array>
 						<dict>
