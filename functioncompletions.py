@@ -72,6 +72,8 @@ class MethodsAutoComplete(sublime_plugin.EventListener):
                 add_methods(cfc_file, view.substr(cfc_region).split(".")[-1] )
             except UnboundLocalError:
                 pass
+            except IOError:
+                pass
 
         # add this files methods to autocomplete
         add_methods(view.file_name(), "this")
