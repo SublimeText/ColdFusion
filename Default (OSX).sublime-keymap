@@ -70,8 +70,8 @@
     "args": { "contents": "<cfoutput>#${0:$SELECTION}#</cfoutput>" },
     "context":
     [
-        {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
-        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
+        {"key": "selector", "operator": "equal", "operand": "text.html.cfm"},
+        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml" }
     ]
     },
     // super+shift+= <cfset />
@@ -80,46 +80,8 @@
     "args": { "contents": "<cfset ${1:$SELECTION} = $2>" },
     "context":
     [
-        {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
-        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
-    ]
-    },
-    // super+alt+a <cfabort />
-    {
-    "keys": ["super+alt+a"], "command": "insert_snippet",
-    "args": { "contents": "<cfabort />" },
-    "context":
-    [
-        {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
-        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
-    ]
-    },
-    // super+shift+o <cfoutput></cfoutput>
-    {
-    "keys": ["super+shift+o"], "command": "insert_snippet",
-    "args": { "contents": "<cfoutput>${0:$SELECTION}</cfoutput>" },
-    "context":
-    [
-        {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
-        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
-    ]
-    },
-    // super+shift+o writeOutput();
-    {
-    "keys": ["super+shift+o"], "command": "insert_snippet",
-    "args": { "contents": "writeOutput(${0:$SELECTION});" },
-    "context":
-    [
-        {"key": "selector", "operator": "equal", "operand": "source.cfscript", "match_all": true },
-        {"key": "selector", "operator": "not_equal", "operand": "text.html.cfm.embedded.cfml", "match_all": false }
-    ]
-    },
-    {
-    "keys": ["super+shift+o"], "command": "insert_snippet",
-    "args": { "contents": "writeOutput(${0:$SELECTION});" },
-    "context":
-    [
-        {"key": "selector", "operator": "equal", "operand": "source.cfscript.embedded.cfml", "match_all": true }
+        {"key": "selector", "operator": "equal", "operand": "text.html.cfm"},
+        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml" }
     ]
     },
     // alt+shift+r <cfscript>$0</cfscript>
@@ -128,9 +90,47 @@
     "args": { "contents": "<cfscript>\n\t${0:$SELECTION}\n</cfscript>" },
     "context":
       [
-        { "key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
-        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
+        {"key": "selector", "operator": "equal", "operand": "text.html.cfm"},
+        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml" }
       ]
+    },
+    // super+alt+a <cfabort />
+    {
+    "keys": ["super+alt+a"], "command": "insert_snippet",
+    "args": { "contents": "<cfabort />" },
+    "context":
+    [
+        {"key": "selector", "operator": "equal", "operand": "text.html.cfm"},
+        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml" }
+    ]
+    },
+    // super+shift+o writeOutput();
+    {
+    "keys": ["super+shift+o"], "command": "insert_snippet",
+    "args": { "contents": "writeOutput(${0:$SELECTION});" },
+    "context":
+    [
+        {"key": "selector", "operator": "equal", "operand": "source.cfscript"}
+    ]
+    },
+    // super+shift+o <cfoutput></cfoutput>
+    {
+    "keys": ["super+shift+o"], "command": "insert_snippet",
+    "args": { "contents": "<cfoutput>${0:$SELECTION}</cfoutput>" },
+    "context":
+    [
+        {"key": "selector", "operator": "equal", "operand": "text.html.cfm"},
+        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml"}
+    ]
+    },
+    // super+alt+d writeDump();
+    {
+    "keys": ["super+alt+d"], "command": "insert_snippet",
+    "args": { "contents": "writeDump(${0:$SELECTION});" },
+    "context":
+    [
+        {"key": "selector", "operator": "equal", "operand": "source.cfscript"}
+    ]
     },
     // super+alt+d  <cfdump var="##">
     {
@@ -138,26 +138,8 @@
     "args": { "contents": "<cfdump var=\"#${1:$SELECTION}#\" />" },
     "context":
     [
-        {"key": "selector", "operator": "equal", "operand": "text.html.cfm", "match_all": true },
-        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml,source.sql.embedded.cfml", "match_all": false }
-    ]
-    },
-    // super+shift+o writeDump();
-    {
-    "keys": ["super+alt+d"], "command": "insert_snippet",
-    "args": { "contents": "writeDump(${0:$SELECTION});" },
-    "context":
-    [
-        {"key": "selector", "operator": "equal", "operand": "source.cfscript", "match_all": true },
-        {"key": "selector", "operator": "not_equal", "operand": "text.html.cfm.embedded.cfml", "match_all": false }
-    ]
-    },
-    {
-    "keys": ["super+alt+d"], "command": "insert_snippet",
-    "args": { "contents": "writeDump(${0:$SELECTION});" },
-    "context":
-    [
-        {"key": "selector", "operator": "equal", "operand": "source.cfscript.embedded.cfml", "match_all": true }
+        {"key": "selector", "operator": "equal", "operand": "text.html.cfm"},
+        {"key": "selector", "operator": "not_equal", "operand": "source.cfscript.embedded.cfml"}
     ]
     },
     // super+alt+shift+/ javadoc comment
@@ -166,7 +148,7 @@
     "args": { "contents": "/**\n* $0\n*/" },
     "context":
       [
-        {"key": "selector", "operator": "equal", "operand": "source.cfscript,source.cfscript.embedded.cfml", "match_all": true }
+        {"key": "selector", "operator": "equal", "operand": "source.cfscript" }
       ]
     },
     // shift+3 wrap selection with hash
