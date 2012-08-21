@@ -31,6 +31,7 @@ class CloseCftagCommand(sublime_plugin.TextCommand):
         # prevents triggering inside strings and other scopes that are not block tags
         # this should be taken care of in keybindings, but it's not working for cfcomponent
         if self.view.match_selector(sel.end(), "string") \
+            or self.view.match_selector(sel.end(), "source") \
             or not self.view.match_selector(sel.end(), "meta.tag.block.cf"):
             return
 
