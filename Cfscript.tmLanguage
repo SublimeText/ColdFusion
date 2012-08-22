@@ -314,7 +314,7 @@
                             <key>match</key>
                             <string>\w+</string>
                             <key>name</key>
-                            <string>variable.other.index.cfscript</string>
+                            <string>storage.type.index.cfscript</string>
                         </dict>
                         <dict>
                             <key>include</key>
