@@ -1064,13 +1064,6 @@
         <dict>
             <key>patterns</key>
             <array>
-                <!-- matches single character // this should be improved it's lazy -->
-                <dict>
-                    <key>match</key>
-                    <string>\b(\w)\b</string>
-                    <key>name</key>
-                    <string>storage.language.cfscript</string>
-                </dict>
                 <dict>
                     <key>match</key>
                     <string>\b(?i:(this|key))(?!\.)</string>
