@@ -342,7 +342,7 @@
                         )
                         \b
                         \s*
-                        (?![^\w|"\(|{|;])
+                        (?![^\w|"|'|\(|{|;])
                     </string>
                     <key>beginCaptures</key>
                     <dict>
