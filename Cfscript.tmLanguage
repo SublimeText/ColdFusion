@@ -311,12 +311,6 @@
                             <string>punctuation.definition.seperator.cfscript</string>
                         </dict>
                         <dict>
-                            <key>match</key>
-                            <string>\w+</string>
-                            <key>name</key>
-                            <string>storage.type.index.cfscript</string>
-                        </dict>
-                        <dict>
                             <key>include</key>
                             <string>$self</string>
                         </dict>
