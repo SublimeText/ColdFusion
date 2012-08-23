@@ -339,7 +339,8 @@
                         |(exit)|(include)|(param)|(thread)|(import)
                         |(rethrow|throw)|(property)|(interface)|(location)
                         |(break)|(pageencoding)|(schedule)|(return)|(try|catch|finally)
-                        |(switch|case|default)|(if|else|elseif)|(for|in|do|while|break|continue)
+                        |(switch|case|default)|(else\s+if|else|if)
+                        |(for|in|do|while|break|continue)
                         |(trace)|(savecontent)
                         )
                         \b
