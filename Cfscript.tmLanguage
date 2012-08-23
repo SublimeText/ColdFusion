@@ -338,7 +338,9 @@
                         (lock)|(transaction)|(thread)|(abort)
                         |(exit)|(include)|(param)|(thread)|(import)
                         |(rethrow|throw)|(property)|(interface)|(location)
-                        |(break|exit)|(pageencoding)|(schedule)|(return)|(try|catch)
+                        |(break)|(pageencoding)|(schedule)|(return)|(try|catch|finally)
+                        |(switch|case|default)|(if|else|elseif)|(for|in|do|while|break|continue)
+                        |(trace)|(savecontent)
                         )
                         \b
                         \s*
@@ -364,12 +366,12 @@
                         <key>4</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.abort.cfscript</string>
+                            <string>keyword.control.operator.abort.cfscript</string>
                         </dict>
                         <key>5</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.exit.cfscript</string>
+                            <string>keyword.control.operator.exit.cfscript</string>
                         </dict>
                         <key>6</key>
                         <dict>
@@ -394,7 +396,7 @@
                         <key>10</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.catch-exception.cfscript</string>
+                            <string>keyword.control.operator.catch-exception.cfscript</string>
                         </dict>
                         <key>11</key>
                         <dict>
@@ -414,7 +416,7 @@
                         <key>14</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.control.cfscript</string>
+                            <string>keyword.control.operator.break.cfscript</string>
                         </dict>
                         <key>15</key>
                         <dict>
@@ -429,12 +431,37 @@
                         <key>17</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.return.cfscript</string>
+                            <string>keyword.control.operator.return.cfscript</string>
                         </dict>
                         <key>18</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.catch-exception.cfscript</string>
+                            <string>keyword.control.operator.catch-exception.cfscript</string>
+                        </dict>
+                        <key>19</key>
+                        <dict>
+                            <key>name</key>
+                            <string>keyword.control.operator.switch.cfscript</string>
+                        </dict>
+                        <key>20</key>
+                        <dict>
+                            <key>name</key>
+                            <string>keyword.control.operator.conditional.cfscript</string>
+                        </dict>
+                        <key>21</key>
+                        <dict>
+                            <key>name</key>
+                            <string>keyword.control.operator.loop.cfscript</string>
+                        </dict>
+                        <key>22</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.trace.cfscript</string>
+                        </dict>
+                        <key>23</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.savecontent.cfscript</string>
                         </dict>
                     </dict>
                     <key>end</key>
@@ -815,14 +842,6 @@
                     <string>\b(?i:new)\b</string>
                     <key>name</key>
                     <string>keyword.other.new.cfscript</string>
-                </dict>
-                <dict>
-                    <key>match</key>
-                    <string>(?x)
-                        \b(?i:(case|default|continue|if|else|elseif|finally
-                            |for|in|do|while|switch|trace))\b</string>
-                    <key>name</key>
-                    <string>keyword.control.cfscript</string>
                 </dict>
                 <dict>
                     <key>match</key>
