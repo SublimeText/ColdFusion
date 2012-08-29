@@ -846,7 +846,7 @@
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(?i:(GREATER|LESS|THAN|EQUAL\s+TO|DOES|CONTAINS|EQUAL|EQ|NEQ|LT|LTE|GT|GTE|AND|IS))\b</string>
+                    <string>\b(?i:(GREATER|LESS|THAN|EQUAL\s+TO|DOES|CONTAINS|EQUAL|EQ|NEQ|LT|LTE|LE|GT|GTE|GE|AND|IS))\b</string>
                     <key>name</key>
                     <string>keyword.operator.decision.cfscript</string>
                 </dict>
