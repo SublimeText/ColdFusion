@@ -8,13 +8,10 @@
     <string>source.cfscript.cfc text.html.cfm.embedded.cfml meta.tag.block.cf.script.cfml source.cfscript.embedded.cfml</string>
     <key>settings</key>
     <dict>
+        <key>decreaseIndentPattern</key>
+        <string>^(.*\*/)?\s*\}.*$</string>
         <key>increaseIndentPattern</key>
-        <string>(?x)
-            ^\s*
-            \{
-            [^;]*
-            \s*$
-        </string>
+        <string>^.*\{[^}"']*$</string>
     </dict>
     <key>uuid</key>
     <string>DA88A960-F9E2-11E1-A21F-0800200C9A66</string>
