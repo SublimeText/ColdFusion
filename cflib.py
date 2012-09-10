@@ -12,8 +12,8 @@ class ShowCflibCommand(sublime_plugin.WindowCommand):
         super(ShowCflibCommand, self).__init__(*args, **kwargs)
         categories = []
         udfs = []
-        self.getCategories()
     def run(self):
+        self.getCategories()
         self.window.show_quick_panel([[v] for k, v in (self.categories)], self.on_select_categories)
 
     def getCategories(self):
