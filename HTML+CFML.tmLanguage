@@ -1174,10 +1174,49 @@
 				</dict>
 			</array>
 		</dict>
+		<key>cfcomments</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>&lt;!---.*---&gt;</string>
+					<key>name</key>
+					<string>comment.line.cfml</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>&lt;!---</string>
+					<key>captures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.comment.cfml</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>---&gt;</string>
+					<key>name</key>
+					<string>comment.block.cfml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#cfcomments</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
 		<key>tag-stuff</key>
 		<dict>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#cfcomments</string>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#tag-id-attribute</string>
