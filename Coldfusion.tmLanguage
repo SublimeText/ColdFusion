@@ -119,107 +119,6 @@
 			</array>
 		</dict>
 
-		<!-- ****** SCRIPT TAG COPIED FROM HTML.tmLanguage FILE **********
-		duplicated here to highlight CF markup inside script elements -->
-		<dict>
-			<key>begin</key>
-			<string>(?:^\s+)?(&lt;)((?i:script))\b(?![^&gt;]*/&gt;)</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.html</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.tag.script.html</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(?&lt;=&lt;/(script|SCRIPT))(&gt;)(?:\s*\n)?</string>
-			<key>endCaptures</key>
-			<dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.tag.html</string>
-				</dict>
-			</dict>
-			<key>name</key>
-			<string>meta.tag.block.cf.script.html</string>
-			<key>contentName</key>
-			<string>source.js.embedded.html</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>#tag-stuff</string>
-				</dict>
-				<dict>
-					<key>begin</key>
-					<string>(?&lt;!&lt;/(?:script|SCRIPT))(&gt;)</string>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.tag.html</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.tag.script.html</string>
-						</dict>
-					</dict>
-					<key>end</key>
-					<string>(&lt;/)((?i:script))</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#embedded-tags</string>
-						</dict>
-						<dict>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.comment.js</string>
-								</dict>
-							</dict>
-							<key>match</key>
-							<string>(//).*?((?=&lt;/script)|$\n?)</string>
-							<key>name</key>
-							<string>comment.line.double-slash.js</string>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>/\*</string>
-							<key>captures</key>
-							<dict>
-								<key>0</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.definition.comment.js</string>
-								</dict>
-							</dict>
-							<key>end</key>
-							<string>\*/|(?=&lt;/script)</string>
-							<key>name</key>
-							<string>comment.block.js</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>source.js</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-		</dict>
-
 
 		<!-- CFSET|CFRETURN -->
 		<dict>
@@ -487,7 +386,7 @@
 
 		<dict>
 			<key>include</key>
-			<string>text.html.basic</string>
+			<string>text.html.coldfusion</string>
 		</dict>
 	</array>
 
