@@ -1215,6 +1215,10 @@
 			<array>
 				<dict>
 					<key>include</key>
+					<string>#nest-hash</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#cfcomments</string>
 				</dict>
 				<dict>

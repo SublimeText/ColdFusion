@@ -950,6 +950,10 @@
 			<array>
 				<dict>
 					<key>include</key>
+					<string>#cfcomments</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#tag-generic-attribute</string>
 				</dict>
 				<dict>
