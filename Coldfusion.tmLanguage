@@ -417,6 +417,10 @@
 					<key>include</key>
 					<string>#cfoutput</string>
 				</dict>
+				<dict>
+					<key>include</key>
+					<string>#cfmail</string>
+				</dict>
 			</array>
 		</dict>
 
@@ -713,6 +717,90 @@
 			</array>
 		</dict>
 		<!-- /cfoutput -->
+
+		<!-- cfmail -->
+		<key>cfmail</key>
+		<dict>
+			<key>begin</key>
+			<string>(?:^\s+)?(&lt;)((?i:cfmail))\b(?![^&gt;]*/&gt;)</string>
+			<key>captures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>meta.tag.block.cf.mail.cfml</string>
+				</dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.cf.begin.cfml</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.tag.cf.mail.cfml</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.tag.cf.end.cfml</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(&lt;/)((?i:cfmail))(&gt;)(?:\s*\n)?</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>(?&lt;=cfmail)\s</string>
+					<key>end</key>
+					<string>(?=&gt;)</string>
+					<key>name</key>
+					<string>meta.tag.block.cf.mail.cfml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#tag-stuff</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(&gt;)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.tag.block.cf.mail.cfml</string>
+						</dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.tag.cf.end.cfml</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?=&lt;/(?i:cfmail))</string>
+					<!-- Added scope to allow highlighting illegal unescaped hashes -->
+					<key>contentName</key>
+					<string>meta.scope.between-mail-tags.cfml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#nest-hash</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>text.html.cfm</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<!-- /cfmail -->
 
 <!-- /ends embedded tags -->
 <!-- ************************************************************************** -->
