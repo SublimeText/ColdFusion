@@ -331,6 +331,13 @@
                     <key>name</key>
                     <string>keyword.control.operator.conditional.cfscript</string>
                 </dict>
+                <dict>
+                    <key>match</key>
+                    <string>(switch|case|default)</string>
+                    <key>name</key>
+                    <string>keyword.control.operator.switch.cfscript</string>
+                </dict>
+
 
                 <dict>
                     <key>begin</key>
@@ -341,7 +348,6 @@
                         |(exit)|(include)|(param)|(thread)|(import)
                         |(rethrow|throw)|(property)|(interface)|(location)
                         |(break)|(pageencoding)|(schedule)|(return)|(try|catch|finally)
-                        |(switch|case|default)
                         |(for|in|do|while|break|continue)
                         |(trace)|(savecontent)
                         )
@@ -444,19 +450,14 @@
                         <key>19</key>
                         <dict>
                             <key>name</key>
-                            <string>keyword.control.operator.switch.cfscript</string>
+                            <string>keyword.control.operator.loop.cfscript</string>
                         </dict>
                         <key>20</key>
                         <dict>
                             <key>name</key>
-                            <string>keyword.control.operator.loop.cfscript</string>
-                        </dict>
-                        <key>21</key>
-                        <dict>
-                            <key>name</key>
                             <string>entity.name.tag.operator.trace.cfscript</string>
                         </dict>
-                        <key>22</key>
+                        <key>21</key>
                         <dict>
                             <key>name</key>
                             <string>entity.name.tag.operator.savecontent.cfscript</string>
