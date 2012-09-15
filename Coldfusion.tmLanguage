@@ -1177,17 +1177,18 @@
 					<key>name</key>
 					<string>string.escaped.hash.cfml</string>
 				</dict>
+<!-- Documentation for hash regexes is available at https://gist.github.com/a5e891b504683ccdf3bc -->
 				<!-- Match single illegal unescaped hash -->
 				<dict>
 					<key>match</key>
-					<string>#(?!(([a-zA-Z_$]+(((\[.*\])|(\(.*\)))|(\.[\w$]+)*)*)|(\(.*\)))#)</string>
+					<string>#(?!(([a-zA-Z_$][\w$]*(((\[.*\])|(\(.*\)))|(\.[\w$]+)*)*)|(\(.*\)))#)</string>
 					<key>name</key>
 					<string>string.unescaped.hash.cfml</string>
 				</dict>
 				<!-- Match the start of interpolated hashes but ignore single hashes that are unmatched -->
 				<dict>
 					<key>begin</key>
-					<string>(#)(?=(([a-zA-Z_$]+(((\[.*\])|(\(.*\)))|(\.[\w$]+)*)*)|(\(.*\)))#)</string>
+					<string>(#)(?=(([a-zA-Z_$][\w$]*(((\[.*\])|(\(.*\)))|(\.[\w$]+)*)*)|(\(.*\)))#)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
