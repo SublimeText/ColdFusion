@@ -1177,17 +1177,17 @@
 					<key>name</key>
 					<string>string.escaped.hash.cfml</string>
 				</dict>
-				<!-- Match single illegal unescaped hash -->
+				<!-- Match single illegal unescaped hash
 				<dict>
 					<key>match</key>
 					<string>#(?!(([a-zA-Z_$]+(\.?[\w$]+)*((\[.*\])|(\(.*\)))?)|(\(.*\)))#)</string>
 					<key>name</key>
 					<string>string.unescaped.hash.cfml</string>
-				</dict>
+				</dict> -->
 				<!-- Match the start of interpolated hashes but ignore single hashes that are unmatched -->
 				<dict>
 					<key>begin</key>
-					<string>(#)(?=(([a-zA-Z_$]+(\.?[\w$]+)*((\[.*\])|(\(.*\)))?)|(\(.*\)))#)</string>
+					<string>(#)<!-- (?=(([a-zA-Z_$]+(\.?[\w$]+)*((\[.*\])|(\(.*\)))?)|(\(.*\)))#) --></string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
