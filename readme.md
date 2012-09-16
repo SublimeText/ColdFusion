@@ -107,7 +107,13 @@ The following list contains snippets repositories made available by ColdFusion c
 * https://github.com/bittersweetryan/ColdFusion-Script-Sublime-Snippets
 
 To install snippets just put the ```.sublime-snippet``` files in your Packages/User folder or sub-folder (to get to your Packages/User folder select ```Preferences > Browse Packages...``` from the Sublime Text 2 menu).
+
 ##Custom Themes
+
+The following themes optimized for ColdFusion are made available by ColdFusion community members and can be installed with Package Control (http://wbond.net/sublime_packages/community)
+
+* https://github.com/Siddley/Enhanced.HTML.CFML
+
 If you'd like to customize your favorite theme for ColdFusion support, you can use the ```entity.name.tag.cf``` scope in your tmTheme file.
 For example the following definition will use the color ```#C87551``` for all ColdFusion tags:
 ```
