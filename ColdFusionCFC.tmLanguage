@@ -123,6 +123,14 @@
                 <dict>
                     <key>begin</key>
                     <string>&lt;!---</string>
+                    <key>captures</key>
+                    <dict>
+                        <key>0</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.definition.comment.cfml</string>
+                        </dict>
+                    </dict>
                     <key>end</key>
                     <string>---&gt;</string>
                     <key>name</key>
