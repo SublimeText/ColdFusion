@@ -1202,7 +1202,7 @@
 								)\#		# asserts closing hash
 							)</string>
 					<key>name</key>
-					<string>string.unescaped.hash.cfml</string>
+					<string>invalid.illegal.unescaped.hash.cfml</string>
 				</dict>
 				<!-- Match the start of interpolated hashes but ignore single hashes that are unmatched -->
 				<dict>
