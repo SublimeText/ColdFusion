@@ -60,7 +60,7 @@ class TagAutoComplete(sublime_plugin.EventListener):
                 "punctuation.definition.tag.cf.begin, \
                 text.html.cfm - meta - source - comment - string, \
                 text.html.cfm.embedded.cfml - meta - source.cfscript.embedded.cfml - comment - string, \
-                source.sql.embedded.cfml - string - comment"):
+                source.sql.embedded.cfml - string - comment - meta.name.interpolated.hash"):
             return
         if SETTINGS.get("verbose_tag_completions"):
             return

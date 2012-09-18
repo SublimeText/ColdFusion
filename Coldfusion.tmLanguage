@@ -283,6 +283,14 @@
 					<array>
 						<dict>
 							<key>include</key>
+							<string>#string-double-quoted</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#string-single-quoted</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>#embedded-tags</string>
 						</dict>
 						<dict>
