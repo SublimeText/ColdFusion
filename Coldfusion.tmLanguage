@@ -1247,6 +1247,8 @@
 						</dict>
 					</dict>
 					<key>contentName</key>
+					<string>source.cfscript.embedded.cfml</string>
+-					<key>name</key>
 					<string>meta.name.interpolated.hash.cfml</string>
 					<key>patterns</key>
 					<array>
