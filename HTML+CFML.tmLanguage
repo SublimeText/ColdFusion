@@ -1153,6 +1153,11 @@
 							<key>include</key>
 							<string>#entities</string>
 						</dict>
+						<!-- highlights hashes in html single quoted id attributes -->
+						<dict>
+							<key>include</key>
+							<string>#nest-hash</string>
+						</dict>
 					</array>
 				</dict>
 				<dict>
@@ -1189,6 +1194,11 @@
 						<dict>
 							<key>include</key>
 							<string>#entities</string>
+						</dict>
+						<!-- highlights hashes in html single quoted id attributes -->
+						<dict>
+							<key>include</key>
+							<string>#nest-hash</string>
 						</dict>
 					</array>
 				</dict>
@@ -1343,6 +1353,8 @@
 						</dict>
 					</dict>
 					<key>contentName</key>
+					<string>source.cfscript.embedded.html</string>
+					<key>name</key>
 					<string>meta.name.interpolated.hash.html</string>
 					<key>patterns</key>
 					<array>
