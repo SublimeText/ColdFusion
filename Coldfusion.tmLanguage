@@ -707,6 +707,9 @@
 					</dict>
 					<key>end</key>
 					<string>(?=&lt;/(?i:cfoutput))</string>
+					<!-- Scope allows highlighting illegal unescaped hashes and fine-grained highlighting of embedded hashes, variables and functions -->
+					<key>contentName</key>
+					<string>meta.scope.between-output-tags.cfml</string>
 					<key>patterns</key>
 					<array>
 						<dict>
