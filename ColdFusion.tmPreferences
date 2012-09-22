@@ -46,7 +46,7 @@
 					|cfimport|cfcontent|cfbreak|cfinclude|cfcatch|cfcontinue
 					|cflocation|cfsetting|cffile|cflog|cfobject|cfinvoke|cfimport
 					|cfforward|cfreturn|cfthrow|cfproperty|cfhtmlhead|cfheader
-					|area|base|br|hr|img|input|link|meta|param
+					|cftrace|area|base|br|hr|img|input|link|meta|param
 					)
 				)
 				[^&gt;]*
