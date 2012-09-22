@@ -66,11 +66,10 @@ class TagAutoComplete(sublime_plugin.EventListener):
         if SETTINGS.get("verbose_tag_completions"):
             return
 
-        # Do not trigger if we are in a tag or string or comment
         pt = locations[0] - len(prefix) - 1
-        # not using this since we're matching selectors above
-        # if any(s in view.scope_name(pt) for s in ["meta.tag.block.cf","meta.tag.inline.cf","string","comment"]):
-        #     return
+        # view.match_selector being bonky so we're going nuclear here
+        if any(s in view.scope_name(pt) for s in ["meta.tag.block.cf","meta.tag.inline.cf","string","comment"]):
+            return
 
         for s in self.cflib.completions.keys():
             completions.extend([(s + "\tTag (cmfl)",s)])
