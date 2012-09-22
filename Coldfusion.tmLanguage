@@ -169,7 +169,7 @@
 						(cf(queryparam|location|forward|import|param|break|abort|flush
 							|setting|test|dump|content|include|catch|continue
 							|file|log|object|invoke|throw|property|htmlhead
-							|header|argument|exit)
+							|header|argument|exit|trace)
 						)
 						\b
 					)
