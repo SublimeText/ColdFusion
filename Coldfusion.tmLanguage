@@ -45,8 +45,6 @@
 			</dict>
 			<key>end</key>
 			<string>(&lt;/)((?i:cfscript))(&gt;)(?:\s*\n)?</string>
-			<key>contentName</key>
-			<string>source.cfscript.embedded.cfml</string>
 			<key>name</key>
 			<string>meta.tag.block.cf.script.cfml</string>
 			<key>patterns</key>
@@ -62,6 +60,8 @@
 							<string>punctuation.definition.tag.cf.end.cfml</string>
 						</dict>
 					</dict>
+					<key>contentName</key>
+					<string>source.cfscript.embedded.cfml</string>
 					<key>end</key>
 					<string>(?=&lt;/(?i:cfscript))</string>
 					<key>patterns</key>
