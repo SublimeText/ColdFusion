@@ -89,7 +89,7 @@
                 <string>(?x)^\s*
                     (?:
                         (?: # optional access-control modifier and return-type
-                            (?:(?i:\b(private|package|public|remote)?)\s+)+\s* # access-control.modifier
+                            (?i:\b(private|package|public|remote)\s+)? # access-control.modifier
                             (?i:\b
                                 (void)
                                 |
@@ -97,7 +97,7 @@
                                 |
                                 ([A-Za-z0-9_\.$]+) #return-type component/object (may need additional tokens)
                             )?
-                        )?
+                        )
                     )
                     \s*
                     (?i:(function)) # storage.function
