@@ -706,16 +706,19 @@
                 <dict>
                     <key>captures</key>
                     <dict>
-                        <key>1</key>
+                        <key>2</key>
                         <dict>
                             <key>name</key>
                             <string>punctuation.definition.comment.cfscript</string>
                         </dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>comment.line.double-slash.cfscript</string>
+                        </dict>
                     </dict>
                     <key>match</key>
-                    <string>(//).*$\n?</string>
-                    <key>name</key>
-                    <string>comment.line.double-slash.cfscript</string>
+                    <string>((//).*?[^\s])\s*$\n?</string>
                 </dict>
             </array>
         </dict>
