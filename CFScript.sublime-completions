@@ -133,6 +133,7 @@
         { "trigger": "decrypt\tfn. (cfscript)", "contents": "decrypt(${1:\"${2:encrypted_string}\", \"${3:seed}\"})"},
         { "trigger": "deleteClientVariable\tfn. (cfscript)", "contents": "deleteClientVariable(${1:\"${2:name}\"})"},
         { "trigger": "deserializeJSON\tfn. (cfscript)", "contents": "deserializeJSON(${1:string})"},
+        { "trigger": "directoryList\tfn. (cfscript)", "contents": "directoryList(${1:\"${2:path}\"${3:, [recurse]}${4:, [listInfo]}${5:, [filter]}${6:, [sort]}})"},
         { "trigger": "directoryExists\tfn. (cfscript)", "contents": "directoryExists(${1:\"${2:absolute_path}\"})"},
         { "trigger": "dollarFormat\tfn. (cfscript)", "contents": "dollarFormat(${1:${2:number}})"},
         { "trigger": "duplicate\tfn. (cfscript)", "contents": "duplicate(${1:${2:variable}})"},
