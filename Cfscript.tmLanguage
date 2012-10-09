@@ -20,10 +20,19 @@
             <string>#comments</string>
         </dict>
 
+         <!-- this is just the "component" tag operator -->
         <dict>
             <key>include</key>
             <string>#component-operators</string>
         </dict>
+        <!--  #tag-operators are outside #cfscript-code
+            as #cfscript-code is included in #tag-operators and
+            #function parameters and #tag-operators don't nest
+         -->
+         <dict>
+             <key>include</key>
+             <string>#functions</string>
+         </dict>
         <dict>
             <key>include</key>
             <string>#tag-operators</string>
@@ -48,7 +57,7 @@
                 </dict>
                 <dict>
                     <key>include</key>
-                    <string>#functions</string>
+                    <string>#closures</string>
                 </dict>
                 <dict>
                     <key>include</key>
@@ -73,6 +82,32 @@
                 <dict>
                     <key>include</key>
                     <string>#strings</string>
+                </dict>
+            </array>
+        </dict>
+
+
+        <key>closures</key>
+        <dict>
+            <key>begin</key>
+            <string>(?i:(function))\s*</string>
+            <key>beginCaptures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>storage.closure.cfscript</string>
+                </dict>
+            </dict>
+            <key>end</key>
+            <string>(?={)</string>
+            <key>name</key>
+            <string>meta.closure.cfscript</string>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>include</key>
+                    <string>#parameters</string>
                 </dict>
             </array>
         </dict>
@@ -1019,6 +1054,10 @@
                 <dict>
                     <key>include</key>
                     <string>#comments</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#tag-operators</string>
                 </dict>
                 <dict>
                     <key>include</key>
