@@ -64,10 +64,6 @@
                 </dict>
                 <dict>
                     <key>include</key>
-                    <string>#storage-types</string>
-                </dict>
-                <dict>
-                    <key>include</key>
                     <string>#constants</string>
                 </dict>
                 <dict>
@@ -626,12 +622,6 @@
             <array>
                 <dict>
                     <key>match</key>
-                    <string>\b(?i:var)\b</string>
-                    <key>name</key>
-                    <string>storage.modifier.var.cfscript</string>
-                </dict>
-                <dict>
-                    <key>match</key>
                     <string>\b(?i:(function|string|date|struct|array|void|binary|numeric|boolean|query|xml|uuid|any))\b</string>
                     <key>name</key>
                     <string>storage.type.primitive.cfscript</string>
@@ -1084,11 +1074,18 @@
             </array>
         </dict>
         <!-- /nest_hash -->
+
         <!-- variables -->
         <key>variables</key>
         <dict>
             <key>patterns</key>
             <array>
+                <dict>
+                    <key>match</key>
+                    <string>\b(?i:var)\b</string>
+                    <key>name</key>
+                    <string>storage.modifier.var.cfscript</string>
+                </dict>
                 <dict>
                     <key>match</key>
                     <string>\b(?i:(this|key))(?!\.)</string>
