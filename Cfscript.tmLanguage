@@ -199,7 +199,7 @@
                          </dict>
                     </dict>
                     <key>name</key>
-                    <string>meta.function.arguments.cfscript</string>
+                    <string>meta.function.parameters.cfscript</string>
                     <key>patterns</key>
                     <array>
                         <dict>
