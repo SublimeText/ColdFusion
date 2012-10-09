@@ -149,7 +149,7 @@
             <key>end</key>
             <string>(?={)</string>
             <key>name</key>
-            <string>meta.definition.function.cfscript</string>
+            <string>meta.function.cfscript</string>
             <key>patterns</key>
             <array>
                 <dict>
@@ -466,7 +466,7 @@
                     <key>end</key>
                     <string>(?=[;{\(])</string>
                     <key>name</key>
-                    <string>meta.tag.operator.cfscript</string>
+                    <string>meta.operator.cfscript</string>
                     <key>patterns</key>
                     <array>
                         <dict>
@@ -513,7 +513,7 @@
                         </dict>
                     </dict>
                     <key>name</key>
-                    <string>meta.tag.operator.cfscript meta.class.component.cfscript</string>
+                    <string>meta.operator.cfscript meta.class.component.cfscript</string>
                     <key>end</key>
                     <string>(?=[;{\(])</string>
                     <key>patterns</key>
