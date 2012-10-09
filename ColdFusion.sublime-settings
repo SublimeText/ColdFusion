@@ -7,7 +7,7 @@
         "auto_close_cfml": true,
 
         // will auto indent tags on auto_close_cfml
-        "auto_indent_on_close": false,
+        "auto_indent_on_close": true,
 
         // enables method completions in cfscript components
         "component_method_completions": true,
