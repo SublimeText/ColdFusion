@@ -1003,17 +1003,17 @@
                 <key>3</key>
                 <dict>
                     <key>name</key>
-                    <string>punctuation.definition.function-parameters.begin.cfscript</string>
+                    <string>punctuation.definition.arguments.begin.cfscript</string>
                 </dict>
             </dict>
             <key>end</key>
-            <string>\)</string>
+            <string>(\))</string>
             <key>endCaptures</key>
             <dict>
-                <key>0</key>
+                <key>1</key>
                 <dict>
                     <key>name</key>
-                    <string>punctuation.definition.function-parameters.end.cfscript</string>
+                    <string>punctuation.definition.arguments.end.cfscript</string>
                 </dict>
             </dict>
             <key>name</key>
@@ -1024,7 +1024,7 @@
                     <key>match</key>
                     <string>,</string>
                     <key>name</key>
-                    <string>punctuation.definition.seperator.parameter.cfscript</string>
+                    <string>punctuation.definition.seperator.arguments.cfscript</string>
                 </dict>
                 <dict>
                     <key>include</key>
