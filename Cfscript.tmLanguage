@@ -53,7 +53,7 @@
             <array>
                 <dict>
                     <key>include</key>
-                    <string>#brackets</string>
+                    <string>#braces</string>
                 </dict>
                 <dict>
                     <key>include</key>
@@ -298,11 +298,23 @@
         </dict>
         <!-- / end optional function properties -->
 
-        <!-- brackets -->
-        <key>brackets</key>
+        <!-- braces -->
+        <key>braces</key>
         <dict>
             <key>patterns</key>
             <array>
+                <dict>
+                    <key>name</key>
+                    <string>meta.brace.curly.cfscript</string>
+                    <key>match</key>
+                    <string>{|}</string>
+                </dict>
+                <dict>
+                    <key>name</key>
+                    <string>meta.brace.round.cfscript</string>
+                    <key>match</key>
+                    <string>\(|\)</string>
+                </dict>
                 <dict>
                     <key>begin</key>
                     <string>([\w]+)?\s*(\[)</string>
@@ -316,7 +328,7 @@
                         <key>2</key>
                         <dict>
                             <key>name</key>
-                            <string>punctuation.definition.bracket-begin.cfscript</string>
+                            <string>punctuation.definition.set.begin.cfscript</string>
                         </dict>
                      </dict>
                     <key>end</key>
@@ -326,7 +338,7 @@
                         <key>0</key>
                         <dict>
                             <key>name</key>
-                            <string>punctuation.definition.bracket-end.cfscript</string>
+                            <string>punctuation.definition.set.end.cfscript</string>
                         </dict>
                      </dict>
                     <key>patterns</key>
@@ -339,7 +351,7 @@
                             <key>match</key>
                             <string>,</string>
                             <key>name</key>
-                            <string>punctuation.definition.seperator.cfscript</string>
+                            <string>punctuation.definition.set.seperator.cfscript</string>
                         </dict>
                         <dict>
                             <key>include</key>
@@ -349,6 +361,7 @@
                 </dict>
             </array>
         </dict>
+        <!-- /braces -->
 
         <!-- tag-operators -->
         <key>tag-operators</key>
