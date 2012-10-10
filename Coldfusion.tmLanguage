@@ -155,6 +155,10 @@
 			<array>
 				<dict>
 					<key>include</key>
+					<string>#cfcomments</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>source.cfscript</string>
 				</dict>
 			</array>
