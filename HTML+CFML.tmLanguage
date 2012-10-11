@@ -215,6 +215,10 @@
 					<array>
 						<dict>
 							<key>include</key>
+							<string>text.html.cfm</string>
+						</dict>
+						<dict>
+							<key>include</key>
 							<string>#embedded-code</string>
 						</dict>
 						<dict>
