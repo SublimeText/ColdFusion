@@ -371,13 +371,13 @@
                 <!-- conditionals may omit curly braces so just match as keywords -->
                 <dict>
                     <key>match</key>
-                    <string>(else\s+if|else|if)</string>
+                    <string>\b(else\s+if|else|if)\b</string>
                     <key>name</key>
                     <string>keyword.control.operator.conditional.cfscript</string>
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>(switch|case|default)</string>
+                    <string>\b(switch|case|default)\b</string>
                     <key>name</key>
                     <string>keyword.control.operator.switch.cfscript</string>
                 </dict>
