@@ -1257,6 +1257,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>text.html.cfm</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#tag-id-attribute</string>
 				</dict>
 				<dict>
