@@ -90,7 +90,7 @@
         <key>closures</key>
         <dict>
             <key>begin</key>
-            <string>(?i:(function))\s*</string>
+            <string>(?i:\b(function))\b</string>
             <key>beginCaptures</key>
             <dict>
                 <key>1</key>
