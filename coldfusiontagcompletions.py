@@ -43,8 +43,10 @@ class CloseCftagCommand(sublime_plugin.TextCommand):
             tagdata = tagdata.pop(0).split(" ")
             tagname = tagdata[0]
 
-            # previously used tagdata[-1].find("/") == -1 to test for closing forward slash
-        if self.view.match_selector(sel.end(),"meta.tag.block.cf")and not self.view.substr(sel.end() - 1) == "/":
+        if self.view.match_selector(sel.end(),"meta.tag.block.cf")  \
+            and not self.view.substr(sel.end() - 1) == "/" \
+            and not tagname[0] == "/":
+
             if not tagname[-1] == ">":
                 tagname = tagname + ">"
             if not SETTINGS.get("auto_indent_on_close") or tagname == "cfoutput>":
