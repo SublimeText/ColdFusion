@@ -313,11 +313,6 @@
 							<key>name</key>
 							<string>comment.block.js</string>
 						</dict>
-						<!-- highlights cfml tags in script blocks -->
-						<dict>
-						    <key>include</key>
-						    <string>text.html.cfm</string>
-						</dict>
 						<dict>
 							<key>include</key>
 							<string>#php</string>
