@@ -30,7 +30,7 @@
 	<key>keyEquivalent</key>
 	<string>^~H</string>
 	<key>name</key>
-	<string>HTML (ColdFusion)</string>
+	<string>ColdFusion Markup</string>
 	<key>patterns</key>
 	<array>
 		<dict>
