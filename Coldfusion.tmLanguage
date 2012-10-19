@@ -2,25 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>fileTypes</key>
-	<array>
-		<string>cfm</string>
-		<string>cfml</string>
-	</array>
-	<key>firstLineMatch</key>
-	<string></string>
-	<key>foldingStartMarker</key>
-	<string></string>
-	<key>foldingStopMarker</key>
-	<string></string>
-	<key>keyEquivalent</key>
-	<string></string>
 	<key>name</key>
-	<string>ColdFusion Markup</string>
+	<string>CFML (do not use)</string>
+
 	<key>patterns</key>
 	<array>
-
-
 		<!-- CFSCRIPT -->
 		<dict>
 			<key>begin</key>
@@ -394,11 +380,6 @@
 					<string>#tag-stuff</string>
 				</dict>
 			</array>
-		</dict>
-
-		<dict>
-			<key>include</key>
-			<string>text.html.coldfusion</string>
 		</dict>
 	</array>
 
@@ -1272,11 +1253,10 @@
 				</dict>
 			</array>
 		</dict>
-
 	</dict>
 
 	<key>scopeName</key>
-	<string>text.html.cfm</string>
+	<string>text.cfml.basic</string>
 
 	<key>uuid</key>
 	<string>C48DE6D0-4226-11E1-B86C-0800200C9A66</string>

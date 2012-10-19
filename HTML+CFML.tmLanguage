@@ -4,15 +4,8 @@
 <dict>
 	<key>fileTypes</key>
 	<array>
-		<!-- <string>html</string>
-		<string>htm</string>
-		<string>shtml</string>
-		<string>xhtml</string>
-		<string>phtml</string>
-		<string>inc</string>
-		<string>tmpl</string>
-		<string>tpl</string>
-		<string>ctp</string> -->
+		<string>cfm</string>
+		<string>cfml</string>
 	</array>
 	<key>firstLineMatch</key>
 	<string>&lt;!(?i:DOCTYPE)|&lt;(?i:html)|&lt;\?(?i:php)</string>
@@ -37,9 +30,13 @@
 	<key>keyEquivalent</key>
 	<string>^~H</string>
 	<key>name</key>
-	<string>HTML+CFML (do not use)</string>
+	<string>HTML (ColdFusion)</string>
 	<key>patterns</key>
 	<array>
+		<dict>
+			<key>include</key>
+			<string>text.cfml.basic</string>
+		</dict>
 		<dict>
 			<key>begin</key>
 			<string>(&lt;\?)(xml)</string>
@@ -312,6 +309,10 @@
 							<string>\*/|(?=&lt;/script)</string>
 							<key>name</key>
 							<string>comment.block.js</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>text.cfml.basic</string>
 						</dict>
 						<dict>
 							<key>include</key>
@@ -1252,7 +1253,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>text.html.cfm</string>
+					<string>text.cfml.basic</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -1371,7 +1372,7 @@
 		</dict>
 	</dict>
 	<key>scopeName</key>
-	<string>text.html.coldfusion</string>
+	<string>text.html.cfm</string>
 	<key>uuid</key>
 	<string>b2e03230-b205-4546-884e-ba107e964e46</string>
 </dict>
