@@ -1,6 +1,7 @@
 # ColdFusion Package for Sublime Text 2
 
 ### What's New
+* Added Tag Operator completions for cfscript (10/21/12)
 * Added CFScript component method completions (6/28/12)
 * Added "auto_close_cfml", "auto_indent_on_close" settings (6/25/12)
 * Added Tag Attribute completions (6/24/12)
