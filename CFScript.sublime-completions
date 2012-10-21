@@ -4,7 +4,7 @@
     [
 
         // misc completions
-        { "trigger": "var", "contents": "var $1 = $2\n"},
+        { "trigger": "var", "contents": "var $1 = $2"},
 
         { "trigger": "true", "contents": "true"},
         { "trigger": "false", "contents": "false"},
