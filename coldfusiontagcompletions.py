@@ -97,9 +97,6 @@ class TagAttributeAutoComplete(sublime_plugin.EventListener):
         # we're starting a new tag don't trigger auto_complete
         if "punctuation.definition.tag.cf.begin" in view.scope_name(sel):
             return
-        # prevents source.cfscript.embedded.cfml since it is meta.tag.block.cf
-        if "source.cfscript" in view.scope_name(sel):
-            return
 
         if view.substr(sel - 1) == " ":
             if any(s in view.scope_name(sel) for s in self.valid_scopes_tags):

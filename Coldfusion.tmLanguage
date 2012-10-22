@@ -13,6 +13,11 @@
 			<string>(?:^\s+)?(&lt;)((?i:cfscript))(?![^&gt;]*/&gt;)</string>
 			<key>captures</key>
 			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>meta.tag.block.cf.script.cfml</string>
+				</dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
@@ -31,8 +36,6 @@
 			</dict>
 			<key>end</key>
 			<string>(&lt;/)((?i:cfscript))(&gt;)(?:\s*\n)?</string>
-			<key>name</key>
-			<string>meta.tag.block.cf.script.cfml</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -40,6 +43,11 @@
 					<string>(&gt;)</string>
 					<key>beginCaptures</key>
 					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>meta.tag.block.cf.script.cfml</string>
+						</dict>
 						<key>1</key>
 						<dict>
 							<key>name</key>
