@@ -517,7 +517,7 @@
                             <key>match</key>
                             <string>(?i:(\w+)\s*(?=\=))</string>
                             <key>name</key>
-                            <string>entity.tag.name.operator-attribute.other.cfscript</string>
+                            <string>entity.name.other.attribute-name.cfscript</string>
                         </dict>
                         <dict>
                             <key>include</key>
