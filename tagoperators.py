@@ -535,9 +535,8 @@ class TagOperatorAttributeComplete(sublime_plugin.EventListener):
             pos = region.begin()
             opdata = view.substr(sublime.Region(0, pos)).split("\n")
             opdata = opdata.pop().split(" ")
-        for segment in opdata:
-            if not segment == "":
-                if segment in attributes.keys():
-                    return attributes[segment.split()[0]]
+            opdata  = filter (lambda a: a != "", opdata)
+        if opdata[0] in attributes.keys():
+            return attributes[opdata[0]]
 
         return []
