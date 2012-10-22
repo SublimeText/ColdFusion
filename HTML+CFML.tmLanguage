@@ -1210,7 +1210,7 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>&lt;!---.*---&gt;</string>
+					<string>&lt;!---.*?---&gt;</string>
 					<key>name</key>
 					<string>comment.line.cfml</string>
 				</dict>
