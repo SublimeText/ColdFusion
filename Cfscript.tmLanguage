@@ -19,6 +19,11 @@
             <key>include</key>
             <string>#comments</string>
         </dict>
+        <!-- apparently cfml style comments are working in Railo -->
+        <dict>
+            <key>include</key>
+            <string>#cfcomments</string>
+        </dict>
 
          <!-- this is just the "component" tag operator -->
         <dict>
@@ -518,6 +523,11 @@
                             <string>(?i:(\w+)\s*(?=\=))</string>
                             <key>name</key>
                             <string>entity.name.other.attribute-name.cfscript</string>
+                        </dict>
+                        <!-- cfml style comments are apparently legal here too -->
+                        <dict>
+                            <key>include</key>
+                            <string>#cfcomments</string>
                         </dict>
                         <dict>
                             <key>include</key>
