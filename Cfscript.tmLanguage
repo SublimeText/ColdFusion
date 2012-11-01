@@ -513,7 +513,25 @@
                         </dict>
                     </dict>
                     <key>end</key>
-                    <string>(?=[;{\(])</string>
+                    <string>(;)|({)|(\()</string>
+                    <key>endCaptures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>punctuation.terminator.cfscript</string>
+                        </dict>
+                        <key>2</key>
+                        <dict>
+                            <key>name</key>
+                            <string>meta.brace.curly.cfscript</string>
+                        </dict>
+                        <key>3</key>
+                        <dict>
+                            <key>name</key>
+                            <string>meta.brace.curly.cfscript</string>
+                        </dict>
+                    </dict>
                     <key>name</key>
                     <string>meta.operator.cfscript</string>
                     <key>patterns</key>
