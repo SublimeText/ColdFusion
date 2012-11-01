@@ -1,7 +1,7 @@
 [
     { "keys": ["."], "command": "dot_completions", "context":
         [
-             {"key": "selector", "operator": "equal", "operand": "source.cfscript - string - comment", "match_all": true }
+             {"key": "selector", "operator": "equal", "operand": "source.cfscript - string - comment,punctuation.definition.hash", "match_all": true }
         ]
     },
     { "keys": [">"], "command": "move", "args": {"by": "characters", "forward": true}, "context":

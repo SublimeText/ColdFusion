@@ -69,6 +69,10 @@ class TagAutoComplete(sublime_plugin.EventListener):
         if SETTINGS.get("verbose_tag_completions"):
             return
 
+        sel = view.sel()[0]
+        if view.substr(sel.begin() - 1) == ".":
+            return []
+
         pt = locations[0] - len(prefix) - 1
         # view.match_selector being bonky so we're going nuclear here
         if any(s in view.scope_name(pt) for s in ["meta.tag.block.cf","meta.tag.inline.cf","string","comment"]):
