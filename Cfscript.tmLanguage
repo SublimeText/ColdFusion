@@ -540,7 +540,7 @@
                             <key>match</key>
                             <string>(?i:(\w+)\s*(?=\=))</string>
                             <key>name</key>
-                            <string>entity.name.other.attribute-name.cfscript</string>
+                            <string>entity.other.attribute-name.cfscript</string>
                         </dict>
                         <!-- cfml style comments are apparently legal here too -->
                         <dict>
@@ -598,7 +598,7 @@
                             <key>match</key>
                             <string>(?i:(\w+)\s*(?=\=))</string>
                             <key>name</key>
-                            <string>entity.name.tag.operator-attribute.other.cfscript</string>
+                            <string>entity.other.attribute-name.cfscript</string>
                         </dict>
                         <dict>
                             <key>include</key>
