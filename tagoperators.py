@@ -500,6 +500,10 @@ class TagOperatorComplete(sublime_plugin.EventListener):
     def on_query_completions(self, view, prefix, locations):
         completions = []
 
+        if not view.match_selector(locations[0], "\
+                source.cfscript -meta -string -text -source.sql, \
+                source.cfscript.embedded.cfml -meta -string"):
+            return []
         if not view.match_selector(locations[0], "source.cfscript - meta"):
             return []
 
@@ -526,16 +530,14 @@ class TagOperatorAttributeComplete(sublime_plugin.EventListener):
                                             'api_completions_only': True}), t)
 
     def on_query_completions(self, view, prefix, locations):
-        if not view.match_selector(locations[0], "source.cfscript meta.operator"):
-            return []
-        if view.match_selector(locations[0], "string"):
+        if not view.match_selector(locations[0],
+                "source.cfscript meta.operator -string"):
             return []
 
-        for region in view.sel():
-            pos = region.begin()
-            opdata = view.substr(sublime.Region(0, pos)).split("\n")
-            opdata = opdata.pop().split(" ")
-            opdata  = filter (lambda a: a != "", opdata)
+        opdata = view.substr(sublime.Region(0, locations[0])).split("\n")
+        opdata = opdata.pop().split(" ")
+        opdata  = filter (lambda a: a != "", opdata)
+
         if opdata[0] in attributes.keys():
             return attributes[opdata[0]]
 
