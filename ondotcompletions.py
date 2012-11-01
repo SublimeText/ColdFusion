@@ -51,8 +51,6 @@ dotcompletions["CGI"] = [
     ("LOCAL_HOST", "LOCAL_HOST")
 ]
 
-SUBLIME_SETTINGS = sublime.load_settings('Preferences.sublime-settings')
-
 class DotCompletionsCommand(sublime_plugin.TextCommand):
     def run(self, edit):
 
@@ -61,10 +59,12 @@ class DotCompletionsCommand(sublime_plugin.TextCommand):
         # insert the actual . character
         self.view.insert(edit, sel.end(), ".")
 
+        if self.view.settings().get("auto_complete") == False:
+            return
+
         word = self.view.word(sel.begin() - 1)
         if self.view.substr(word) == "CGI":
             completions.extend(dotcompletions["CGI"])
-            print completions
             t = self.view.settings().get("auto_complete_delay")
             sublime.set_timeout(lambda:
                     self.view.run_command("auto_complete", {
