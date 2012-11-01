@@ -1,5 +1,6 @@
 import sublime
 import sublime_plugin
+import re
 
 attributes = {}
 attributes["exit \"$1\";"] = []
@@ -504,7 +505,9 @@ class TagOperatorComplete(sublime_plugin.EventListener):
                 source.cfscript -meta -string -text -source.sql, \
                 source.cfscript.embedded.cfml -meta -string"):
             return []
-        if not view.match_selector(locations[0], "source.cfscript - meta"):
+
+        sel = view.sel()[0]
+        if view.substr(sel.begin() - 1) == ".":
             return []
 
         for s in attributes.keys():

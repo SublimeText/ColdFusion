@@ -1,4 +1,9 @@
 [
+    { "keys": ["."], "command": "dot_completions", "context":
+        [
+             {"key": "selector", "operator": "equal", "operand": "source.cfscript - string - comment", "match_all": true }
+        ]
+    },
     { "keys": [">"], "command": "move", "args": {"by": "characters", "forward": true}, "context":
         [
             { "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
