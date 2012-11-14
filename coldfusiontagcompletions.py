@@ -19,7 +19,8 @@ class CloseCftagCommand(sublime_plugin.TextCommand):
         sel = self.view.sel()[0]
 
         # insert the actual &gt; character
-        self.view.insert(edit, sel.end(), ">")
+        for region in self.view.sel():
+            self.view.insert(edit, region.end(), ">")
 
         # prevents auto_complete pop up from triggering
         self.view.run_command("hide_auto_complete")
