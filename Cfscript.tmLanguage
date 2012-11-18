@@ -390,8 +390,7 @@
 
                 <dict>
                     <key>begin</key>
-                    <string>(?x)
-                        \b
+                    <string>(?x)^\s*
                         (?i:
                         (lock)|(transaction)|(thread)|(abort)
                         |(exit)|(include)|(param)|(thread)|(import)
