@@ -9,6 +9,7 @@ attributes["include \"$1\";"] = []
 attributes["import \"$1\";"] = []
 attributes["throw \"$1\";"] = []
 attributes["rethrow"] = []
+attributes["location"] = []
 attributes["abort"] = []
 attributes["trace"] = []
 attributes["break"] = []
@@ -192,13 +193,6 @@ attributes["schedule"] = [
     ("overwrite\t@overwrite", "overwrite=\"$1\"$0"),
     ("overwrite=\"true\"\toverwrite", "overwrite=\"${1:true}\"$0"),
     ("overwrite=\"false\"\toverwrite", "overwrite=\"${1:false}\"$0")
-]
-attributes["location"] = [
-    ("url\t@url", "url=\"$1\"$0"),
-    ("addtoken\t@addtoken", "addtoken=\"$1\"$0"),
-    ("addtoken=\"true\"\taddtoken", "addtoken=\"${1:true}\"$0"),
-    ("addtoken=\"false\"\taddtoken", "addtoken=\"${1:false}\"$0"),
-    ("statuscode\t@statuscode", "statuscode=\"$1\"$0")
 ]
 attributes["savecontent"] = [
     ("variable\t@variable", "variable=\"$1\"$0")
