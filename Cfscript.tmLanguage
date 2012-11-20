@@ -512,18 +512,13 @@
                         </dict>
                     </dict>
                     <key>end</key>
-                    <string>(;)|({)|(\()</string>
+                    <string>(;)|({)</string>
                     <key>endCaptures</key>
                     <dict>
                         <key>1</key>
                         <dict>
                             <key>name</key>
                             <string>punctuation.terminator.cfscript</string>
-                        </dict>
-                        <key>2</key>
-                        <dict>
-                            <key>name</key>
-                            <string>meta.brace.curly.cfscript</string>
                         </dict>
                         <key>3</key>
                         <dict>
@@ -535,6 +530,47 @@
                     <string>meta.operator.cfscript</string>
                     <key>patterns</key>
                     <array>
+                        <dict>
+                            <key>begin</key>
+                            <string>\(</string>
+                            <key>beginCaptures</key>
+                            <dict>
+                                <key>0</key>
+                                <dict>
+                                    <key>name</key>
+                                    <string>meta.brace.curly.cfscript</string>
+                                </dict>
+                            </dict>
+                            <key>end</key>
+                            <string>\)</string>
+                            <key>endCaptures</key>
+                            <dict>
+                                <key>0</key>
+                                <dict>
+                                    <key>name</key>
+                                    <string>meta.brace.curly.cfscript</string>
+                                </dict>
+                            </dict>
+                            <key>patterns</key>
+                            <array>
+                                <dict>
+                                    <key>match</key>
+                                    <string>,</string>
+                                    <key>name</key>
+                                    <string>punctuation.definition.seperator.arguments.cfscript</string>
+                                </dict>
+                                <dict>
+                                    <key>match</key>
+                                    <string>(?i:(\w+)\s*(?=\=))</string>
+                                    <key>name</key>
+                                    <string>entity.other.operator-parameter.cfscript</string>
+                                </dict>
+                                <dict>
+                                    <key>include</key>
+                                    <string>#cfscript-code</string>
+                                </dict>
+                            </array>
+                        </dict>
                         <dict>
                             <key>match</key>
                             <string>(?i:(\w+)\s*(?=\=))</string>
