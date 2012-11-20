@@ -1094,7 +1094,7 @@
                     <key>match</key>
                     <string>(?i:(\w+)\s*(?=\=))</string>
                     <key>name</key>
-                    <string>entity.name.other.method-parameter.cfscript</string>
+                    <string>entity.other.method-parameter.cfscript</string>
                 </dict>
                 <!-- issue #93 cfml comments in
                  source.embedded.cfscript tags function calls (cfset/cfreturn) -->
