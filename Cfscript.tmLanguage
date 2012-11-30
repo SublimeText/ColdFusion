@@ -397,7 +397,7 @@
                         |(rethrow|throw)|(property)|(interface)|(location)
                         |(break)|(pageencoding)|(schedule)|(return)|(try|catch|finally)
                         |(for|in|do|while|break|continue)
-                        |(trace)|(savecontent)
+                        |(trace)|(savecontent)|(http|httpparam)
                         )
                         \b
                         \s*
@@ -509,6 +509,11 @@
                         <dict>
                             <key>name</key>
                             <string>entity.name.tag.operator.savecontent.cfscript</string>
+                        </dict>
+                        <key>22</key>
+                        <dict>
+                            <key>name</key>
+                            <string>entity.name.tag.operator.http.cfscript</string>
                         </dict>
                     </dict>
                     <key>end</key>
