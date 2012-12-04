@@ -618,8 +618,9 @@ class TagOperatorAttributeComplete(sublime_plugin.EventListener):
                                             'api_completions_only': True}), t)
 
     def on_query_completions(self, view, prefix, locations):
-        if not view.match_selector(locations[0],
-                "source.cfscript meta.operator -string"):
+        # make sure we're in a tag operator attribute scope and not in an attribute string
+        if not any(s in view.scope_name(locations[0]) for s in self.valid_scopes_operators) or \
+        "string" in view.scope_name(locations[0]):
             return []
 
         opdata = view.substr(sublime.Region(0, locations[0])).split("\n")
