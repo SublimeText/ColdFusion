@@ -90,7 +90,7 @@ class TagAutoComplete(sublime_plugin.EventListener):
 
 class TagAttributeAutoComplete(sublime_plugin.EventListener):
     cflib = get_class()()
-    valid_scopes_tags = ["meta.tag.inline.cf", "meta.tag.block.cf"]
+    valid_scopes_tags = ["meta.tag"]
 
     def on_modified(self, view):
         if SETTINGS.get("verbose_tag_completions"):
