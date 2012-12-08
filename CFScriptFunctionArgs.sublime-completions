@@ -1,5 +1,5 @@
 {
-    "scope": "meta.function.arguments.cfscript, punctuation.definition.paramteres.end",
+    "scope": "source.cfscript meta.function.parameters",
     "completions":
     [
         { "trigger": "required\tArgument Keyword", "contents": "required"},
