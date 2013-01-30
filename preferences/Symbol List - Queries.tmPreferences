@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>name</key>
-    <string>Symbol List Query</string>
+    <string>Symbol List - Queries</string>
     <key>scope</key>
     <string>text.html.cfm meta.toc-list.query, source.cfscript meta.toc-list.query</string>
     <key>settings</key>

@@ -1,4 +1,18 @@
-# ColdFusion Package for Sublime Text 2
+# ColdFusion Package for Sublime Text
+
+### Sublime Text 3
+The development branch contains a rewrite of the ColdFusion plugin.
+The only installation method is via Git.
+```
+cd Packages/
+git clone https://github.com/SublimeText/ColdFusion.git
+cd ColdFusion
+git checkout development
+```
+* CFLIB Command is not currently working.
+* Tag Operator Completions is not yet implemented
+* CFScript component method completions is not yet implemented
+* Only CF10 Dictionary is imported.
 
 ### What's New
 * Added Tag Operator completions for cfscript (10/21/12)

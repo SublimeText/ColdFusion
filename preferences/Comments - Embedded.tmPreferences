@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>name</key>
-    <string>CFscript - Embedded</string>
+    <string>Comments - Embedded</string>
     <key>scope</key>
     <string>text.html.cfm meta.tag.inline.cfml source.cfscript.embedded.cfml, text.html.cfm meta.tag.block.conditional.cfml source.cfscript.embedded.cfml</string>
     <key>settings</key>

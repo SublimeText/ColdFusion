@@ -270,7 +270,7 @@
                             <key>match</key>
                             <string>,</string>
                             <key>name</key>
-                            <string>punctuation.definition.seperator.parameter.cfscript</string>
+                            <string>punctuation.definition.separator.parameter.cfscript</string>
                         </dict>
                         <dict>
                             <key>include</key>
@@ -356,7 +356,7 @@
                             <key>match</key>
                             <string>,</string>
                             <key>name</key>
-                            <string>punctuation.definition.set.seperator.cfscript</string>
+                            <string>punctuation.definition.set.separator.cfscript</string>
                         </dict>
                         <dict>
                             <key>include</key>
@@ -373,7 +373,8 @@
         <dict>
             <key>patterns</key>
             <array>
-                <!-- conditionals may omit curly braces so just match as keywords -->
+                <!-- conditionals may omit curly braces so we match them as keyword -->
+                <!-- these omit meta.operator to prevent tag operator auto complete -->
                 <dict>
                     <key>match</key>
                     <string>\b(else\s+if|else|if)\b</string>
@@ -386,8 +387,12 @@
                     <key>name</key>
                     <string>keyword.control.operator.switch.cfscript</string>
                 </dict>
-
-
+                <dict>
+                    <key>match</key>
+                    <string>\b(return)\b</string>
+                    <key>name</key>
+                    <string>keyword.control.operator.return.cfscript</string>
+                </dict>
                 <dict>
                     <key>begin</key>
                     <string>(?x)^[\s}]*
@@ -395,7 +400,7 @@
                         (lock)|(transaction)|(thread)|(abort)
                         |(exit)|(include)|(param)|(thread)|(import)
                         |(rethrow|throw)|(property)|(interface)|(location)
-                        |(break)|(pageencoding)|(schedule)|(return)|(try|catch|finally)
+                        |(break)|(pageencoding)|(schedule)|(try|catch|finally)
                         |(for|in|do|while|break|continue)
                         |(trace)|(savecontent)|(http|httpparam)
                         )
@@ -488,29 +493,24 @@
                         <key>17</key>
                         <dict>
                             <key>name</key>
-                            <string>keyword.control.operator.return.cfscript</string>
+                            <string>keyword.control.operator.catch-exception.cfscript</string>
                         </dict>
                         <key>18</key>
                         <dict>
                             <key>name</key>
-                            <string>keyword.control.operator.catch-exception.cfscript</string>
+                            <string>keyword.control.operator.loop.cfscript</string>
                         </dict>
                         <key>19</key>
                         <dict>
                             <key>name</key>
-                            <string>keyword.control.operator.loop.cfscript</string>
+                            <string>entity.name.tag.operator.trace.cfscript</string>
                         </dict>
                         <key>20</key>
                         <dict>
                             <key>name</key>
-                            <string>entity.name.tag.operator.trace.cfscript</string>
-                        </dict>
-                        <key>21</key>
-                        <dict>
-                            <key>name</key>
                             <string>entity.name.tag.operator.savecontent.cfscript</string>
                         </dict>
-                        <key>22</key>
+                        <key>21</key>
                         <dict>
                             <key>name</key>
                             <string>entity.name.tag.operator.http.cfscript</string>
@@ -558,11 +558,18 @@
                             </dict>
                             <key>patterns</key>
                             <array>
+                                
                                 <dict>
                                     <key>match</key>
                                     <string>,</string>
                                     <key>name</key>
-                                    <string>punctuation.definition.seperator.arguments.cfscript</string>
+                                    <string>punctuation.definition.separator.arguments.cfscript</string>
+                                </dict>
+                                <dict>
+                                    <key>match</key>
+                                    <string>in</string>
+                                    <key>name</key>
+                                    <string>keyword.operator.logical.cfscript</string>
                                 </dict>
                                 <dict>
                                     <key>match</key>
@@ -1129,7 +1136,7 @@
                     <key>match</key>
                     <string>,</string>
                     <key>name</key>
-                    <string>punctuation.definition.seperator.arguments.cfscript</string>
+                    <string>punctuation.definition.separator.arguments.cfscript</string>
                 </dict>
                 <dict>
                     <key>match</key>
@@ -1146,6 +1153,10 @@
                 <dict>
                     <key>include</key>
                     <string>#comments</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>#closures</string>
                 </dict>
                 <dict>
                     <key>include</key>
@@ -1213,21 +1224,27 @@
             <array>
                 <dict>
                     <key>match</key>
-                    <string>\b(?i:var)\b</string>
-                    <key>name</key>
-                    <string>storage.modifier.var.cfscript</string>
+                    <string>\s*(?i:(var))\s+([$\w]*)</string>
+                    <key>captures</key>
+                    <dict>
+                        <key>1</key>
+                        <dict>
+                            <key>name</key>
+                            <string>storage.modifier.var.cfscript</string>
+                        </dict>
+                        <key>2</key>
+                        <dict>
+                            <key>name</key>
+                            <string>variable.other.local.cfscript</string>
+                        </dict>
+                    </dict>
+
                 </dict>
                 <dict>
                     <key>match</key>
                     <string>\b(?i:(this|key))(?!\.)</string>
                     <key>name</key>
                     <string>variable.language.cfscript</string>
-                </dict>
-                <dict>
-                    <key>match</key>
-                    <string>(\.)</string>
-                    <key>name</key>
-                    <string>punctuation.definition.seperator.variable.cfscript</string>
                 </dict>
                 <dict>
                     <key>match</key>
@@ -1239,17 +1256,27 @@
                             this|thistag|thread|thread local|url|variables|
                             super|self|argumentcollection)
                         \b
-                        |
-                        (\w+)
-                    )</string>
+                    )
+                    </string>
+                    <key>name</key>
+                    <string>variable.language.cfscript</string>
+                </dict>
+                <dict>
+                    <key>match</key>
+                    <string>(\.)([$\w]+)?|([$\w]+)</string>
                     <key>captures</key>
                     <dict>
                         <key>1</key>
                         <dict>
                             <key>name</key>
-                            <string>variable.language.cfscript</string>
+                            <string>punctuation.definition.separator.variable.cfscript</string>
                         </dict>
                         <key>2</key>
+                        <dict>
+                            <key>name</key>
+                            <string>variable.other.dot.cfscript</string>
+                        </dict>
+                        <key>3</key>
                         <dict>
                             <key>name</key>
                             <string>variable.other.cfscript</string>

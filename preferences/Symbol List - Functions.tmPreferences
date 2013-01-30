@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>name</key>
-    <string>Symbol List</string>
+    <string>Symbol List - Functions</string>
     <key>scope</key>
     <string>source.cfscript entity.name.function, text.html.cfm meta.toc-list.function</string>
     <key>settings</key>

@@ -142,7 +142,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.tag.inline.cf.any.cfml</string>
+			<string>meta.tag.inline.cf.other.cfml</string>
 			<key>contentName</key>
 			<string>source.cfscript.embedded.cfml</string>
 			<key>patterns</key>

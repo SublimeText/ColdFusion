@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>name</key>
-    <string>CFscript - Embedded</string>
+    <string>Indent Brackets</string>
     <key>scope</key>
     <string>source.cfscript.cfc text.html.cfm.embedded.cfml meta.tag.block.cf.script.cfml source.cfscript.embedded.cfml</string>
     <key>settings</key>
