@@ -27,8 +27,6 @@ class ColdFusionAutoComplete(sublime_plugin.EventListener):
         return sorted(TAGS.get(tag, []))
 
     def cfscript_all(self, view, prefix, pos):
-        print(view.indexed_symbols())
-        print(view.symbols())
         if view.substr(pos) == ".": # completions for dot variables
             var = view.substr(view.word(pos)).lower()
             return [(v,v) for v in VARIABLES[var]] if var in VARIABLES.keys() else []
