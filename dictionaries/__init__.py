@@ -1,5 +1,5 @@
 import sublime
-import sublime_plugin
+import sublime_plugin, re
 
 # scopes in which to trigger cfml tags auto complete
 CFML_TAG_SCOPE = 'text.html.cfm -source -meta -comment, text.html.cfm source.js -meta -comment, meta.scope.between-output-tags.cfml -comment, text.html.cfm.embedded -source.cfscript.embedded -meta -comment'
@@ -18,15 +18,16 @@ AC_ON_SPACE_SCOPE = 'meta.function-call.cfscript -meta.tag.inline.cf.other, meta
 # scopes that trigger on dot auto completions
 AC_ON_DOT_SCOPE = 'source.cfscript'
 
-def get_tag_name(view, start_pt):
-    return get_tag_info(view, start_pt)[0]
+def get_tag_name(view, pos):
+    return get_tag_info(view, pos)[0]
 
-def get_tag_attribs(view, start_pt):
-    return get_tag_info(view, start_pt)
+def get_tag_attribs(view, pos):
+    return get_tag_info(view, pos)[:-1]
 
 # *****************************************************************************************
-# HELPERS 
+# HELPERS
 # *****************************************************************************************
-def get_tag_info(view, start_pt):
-    taginfo = view.substr(sublime.Region(0, start_pt)).split("<").pop().split(" ")
-    return taginfo
+def get_tag_info(view, pos):
+    taginfo = view.substr(sublime.Region(0, pos)).split("<").pop()
+    return re.split('\s|\t|\n',taginfo)
+

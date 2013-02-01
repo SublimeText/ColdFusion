@@ -82,44 +82,36 @@ class CloseCftagCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         s = sublime.load_settings('ColdFusion.sublime-settings')
 
-        sel = self.view.sel()[0]
+        # current carat position
+        pos = self.view.sel()[0].end()
 
         # insert the "&gt;" char
         for region in self.view.sel():
             self.view.insert(edit, region.end(), ">")
 
-        # prevents auto_complete pop up from triggering
-        self.view.run_command("hide_auto_complete")
-
         # return if disabled in ColdFusion.sublime-settings file
         if not s.get("auto_close_cfml"):
-            return
+            return None
 
         # prevents triggering inside strings and other scopes that are not block tags
         # this should be taken care of in keybindings, but it's not working for cfcomponent
-        if self.view.match_selector(sel.end(), "string") \
-            or self.view.match_selector(sel.end(), "source.cfscript.embedded.cfml") \
-            or not self.view.match_selector(sel.end(), "meta.tag.block.cf"):
+        # TODO ST3: use scope_selector or clean this out it may work through keybindings now
+        if self.view.match_selector(pos, "string") \
+            or self.view.match_selector(pos, "source.cfscript.embedded.cfml") \
+            or not self.view.match_selector(pos, "meta.tag.block.cf"):
             return
 
-        for region in self.view.sel():
-            pos = region.begin()
+        # only close tag if it's a block tag
+        if self.view.match_selector(pos,"meta.tag.block.cf")  \
+            and not self.view.substr(pos - 1) == "/": # don't close an already closed tag
 
-            tagdata = self.view.substr(sublime.Region(0, pos)).split("<")
-            tagdata.reverse()
-            tagdata = tagdata.pop(0).split(" ")
-            tagname = tagdata[0]
+            tagname = dic.get_tag_name(self.view, pos) + ">"
 
-        if self.view.match_selector(sel.end(),"meta.tag.block.cf")  \
-            and not self.view.substr(sel.end() - 1) == "/" \
-            and not tagname[0] == "/":
-
-            if not tagname[-1] == ">":
-                tagname = tagname + ">"
             if not s.get("auto_indent_on_close") or tagname == "cfoutput>":
                 self.view.run_command("insert_snippet", {"contents": "$0</" + tagname})
             else:
                 self.view.run_command("insert_snippet", {"contents": "\n\t$0\n</" + tagname})
+        return None
 
 # *****************************************************************************************
 # DEFAULT.SUBLIME-COMMANDS
