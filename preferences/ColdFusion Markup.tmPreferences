@@ -26,7 +26,7 @@
 				<key>name</key>
 				<string>TM_LINE_TERMINATOR</string>
 				<key>value</key>
-				<string></string>
+				<string>&gt;</string>
 	        </dict>
 		</array>
 		<key>decreaseIndentPattern</key>
