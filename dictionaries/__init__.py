@@ -32,7 +32,7 @@ AC_ON_SPACE_SCOPE = 'meta.function-call.cfscript -meta.tag.inline.cf.other, meta
 AC_ON_DOT_SCOPE = 'source.cfscript'
 
 def get_tag_name(view, pos):
-    return get_tag_info(view, pos)[0]
+    return get_tag_info(view, pos).pop(0)
 
 def get_tag_attribs(view, pos):
     return get_tag_info(view, pos)[:-1]
