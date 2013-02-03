@@ -3,15 +3,11 @@ import sublime, sublime_plugin, json
 from operator import itemgetter
 # for accessing cflib.org in CFLIB Command
 from urllib.request import urlopen
-
-# load dictionary selectors and completions
+# import our completions dictionaries
 try:
-    import dictionaries as dic
-    from dictionaries.cf10 import *
-except:
     import ColdFusion.dictionaries as dic
-    from ColdFusion.dictionaries.cf10 import *
-
+except ImportError:
+    import dictionaries as dic
 
 # *****************************************************************************************
 # COMPLETIONS
@@ -20,19 +16,19 @@ class ColdFusionAutoComplete(sublime_plugin.EventListener):
     def cfml_all(self, view, prefix, pos):
         # adds opening markup bracket if it isn't found
         lt = '<' if view.substr(pos) != '<' else ''
-        return [(v + '\tTag (cmfl)', lt + v) for v in sorted(TAGS.keys())]
+        return [(v + '\tTag (cmfl)', lt + v) for v in sorted(dic.lang.TAGS.keys())]
 
     def cfml_tag_attributes(self, view, prefix, pos):
         tag = dic.get_tag_name(view, pos)
-        return sorted(TAGS.get(tag, []))
+        return sorted(dic.lang.TAGS.get(tag, []))
 
     def cfscript_all(self, view, prefix, pos):
         if view.substr(pos) == ".": # completions for dot variables
             var = view.substr(view.word(pos)).lower()
-            return [(v,v) for v in VARIABLES[var]] if var in VARIABLES.keys() else []
-        functions = [(v.split('(').pop(0) + '\tfn. (cfscript)', v) for v in FUNCTIONS.keys()]
+            return [(v,v) for v in dic.lang.VARIABLES[var]] if var in dic.lang.VARIABLES.keys() else []
+        functions = [(v.split('(').pop(0) + '\tfn. (cfscript)', v) for v in dic.lang.FUNCTIONS.keys()]
         # add language variables
-        functions.extend([(v + '\tvar (cfscript)',v) for v in VARIABLES.keys()])
+        functions.extend([(v + '\tvar (cfscript)',v) for v in dic.lang.VARIABLES.keys()])
         # TODO: add tag operators
         return functions
 
