@@ -1,4 +1,4 @@
-import sublime, sublime_plugin, json, re, imp, os
+import sublime, sublime_plugin, json
 # for sorting COMPLETIONS SCOPES in on_query_completions
 from operator import itemgetter
 # for accessing cflib.org in CFLIB Command
