@@ -1,13 +1,14 @@
 import sublime, sublime_plugin, json, os
 # for sorting COMPLETIONS SCOPES in on_query_completions
 from operator import itemgetter
-# for accessing cflib.org in CFLIB Command
-from urllib.request import urlopen
-# import our completions dictionaries
+
+# try imports due to ST2/ST3 compatability
 try:
     import ColdFusion.dictionaries as dic
+    from urllib.request import urlopen
 except ImportError:
     import dictionaries as dic
+    from urllib import urlopen
 
 # *****************************************************************************************
 # COMPLETIONS
