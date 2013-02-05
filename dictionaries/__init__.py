@@ -1,5 +1,4 @@
-import sublime
-import sublime_plugin, re
+import sublime, sublime_plugin, re
 
 def _init():
     global lang
@@ -42,6 +41,36 @@ def get_tag_attribs(view, pos):
 
 def get_tagoperator_name(view, pos):
     return _get_tag_operator_info(view, pos).pop(0)
+
+def get_function_completions_from_file(cfc_file, hint_text):
+    completions = []
+    methods = []
+
+    with open(cfc_file, 'r') as f:
+        read_data = f.read()
+
+    method_lines = re.findall('function\s[^{]+', read_data)
+
+    for l in method_lines:
+        l = re.sub("[\\n|\s]+"," ",l)
+        s = re.search('(\w+)\s?\(.*\)', l)
+        if s:
+            methods.append(s.group().strip())
+
+    for c in methods:
+        snippet = c
+        params = re.sub("\w+\(","",snippet,1)[:-1].split(",")
+
+        num = 1
+        if params[0]:
+            for p in params:
+                snippet = snippet.replace(p, '${' + str(num) + ':' + p + '}')
+                num = num + 1
+        # removes parens
+        c = re.sub("\(.*\)","",c)
+        completions.append((c + "\tfn. " + hint_text, snippet))
+    return completions
+
 
 # *****************************************************************************************
 # HELPERS

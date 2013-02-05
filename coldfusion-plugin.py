@@ -1,4 +1,4 @@
-import sublime, sublime_plugin, json
+import sublime, sublime_plugin, json, os
 # for sorting COMPLETIONS SCOPES in on_query_completions
 from operator import itemgetter
 # for accessing cflib.org in CFLIB Command
@@ -29,8 +29,38 @@ class ColdFusionAutoComplete(sublime_plugin.EventListener):
         functions = [(v.split('(').pop(0) + '\tfn. (cfscript)', v) for v in dic.lang.FUNCTIONS.keys()]
         # add language variables
         functions.extend([(v + '\tvar (cfscript)',v) for v in dic.lang.VARIABLES.keys()])
-        # add current cfc method completions
-        functions.extend(self.get_function_completions(view, prefix, pos))
+
+        # add the current view's cfscript methods
+        functions.extend(dic.get_function_completions_from_file(view.file_name(), "this"))
+
+        # lets try and grab cfscript methods from the inherited cfc
+        try:
+            extends_value = view.find_by_selector("meta.component-operator.extends.value.cfscript").pop(0)
+        except IndexError:
+            extends_value = None
+
+        if extends_value:
+            extends_path = view.substr(extends_value).replace('.','/')
+
+            # get base path of project
+            this_file = view.file_name()
+            dir_len = this_file.rfind('/') #(for OSX)
+            if not dir_len > 0:
+                dir_len = this_file.rfind('\\') #(for Windows)
+            this_dir = this_file[:(dir_len + 1)] # adds ending '/'
+
+            cfc_file = this_dir + extends_path + ".cfc"
+            # check the cfc_file exists else look for it in project folders
+            if not os.path.isfile(cfc_file):
+                # check for the cfc in root folders
+                for folder in sublime.active_window().folders():
+                    if os.path.isfile(folder + "/" + extends_path + ".cfc"):
+                        cfc_file = folder + "/" + extends_path + ".cfc"
+                        break
+            try:
+                functions.extend(dic.get_function_completions_from_file(cfc_file, view.substr(extends_value).split(".").pop(0)))
+            except (UnboundLocalError, IOError):
+                pass
         # TODO: add tag operators
         return functions
 
