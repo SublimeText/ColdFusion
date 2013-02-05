@@ -13,30 +13,32 @@ except ImportError:
 # COMPLETIONS
 # *****************************************************************************************
 class ColdFusionAutoComplete(sublime_plugin.EventListener):
-    def cfml_all(self, view, prefix, pos):
+    def on_cfml_all(self, view, prefix, pos):
         # adds opening markup bracket if it isn't found
         lt = '<' if view.substr(pos) != '<' else ''
         return [(v + '\tTag (cmfl)', lt + v) for v in sorted(dic.lang.TAGS.keys())]
 
-    def cfml_tag_attributes(self, view, prefix, pos):
-        tag = dic.get_tag_name(view, pos)
+    def on_cfml_tag_attributes(self, view, prefix, pos):
+        tag = dic.lang.get_tag_name(view, pos)
         return sorted(dic.lang.TAGS.get(tag, []))
 
-    def cfscript_all(self, view, prefix, pos):
+    def on_cfscript_all(self, view, prefix, pos):
         if view.substr(pos) == ".": # completions for dot variables
             var = view.substr(view.word(pos)).lower()
             return [(v,v) for v in dic.lang.VARIABLES[var]] if var in dic.lang.VARIABLES.keys() else []
         functions = [(v.split('(').pop(0) + '\tfn. (cfscript)', v) for v in dic.lang.FUNCTIONS.keys()]
         # add language variables
         functions.extend([(v + '\tvar (cfscript)',v) for v in dic.lang.VARIABLES.keys()])
+        # add current cfc method completions
+        functions.extend(self.get_function_completions(view, prefix, pos))
         # TODO: add tag operators
         return functions
 
-    def cfscript_variables(self, view, prefix, pos):
+    def on_cfscript_variables(self, view, prefix, pos):
         return []
-    def cfscript_function_arguments(self, view, prefix, pos):
+    def on_cfscript_function_arguments(self, view, prefix, pos):
         return []
-    def cfscript_tagoperator_attributes(self, view, prefix, pos):
+    def on_cfscript_tagoperator_attributes(self, view, prefix, pos):
         return []
 
     # ****************************************************************
@@ -44,12 +46,12 @@ class ColdFusionAutoComplete(sublime_plugin.EventListener):
         pos = view.sel()[0].b - 1
 
         COMPLETIONS = (
-            (view.score_selector(pos, dic.CFML_TAG_SCOPE), self.cfml_all),
-            (view.score_selector(pos, dic.CFML_TAG_ATTRIBUTE_SCOPE),self.cfml_tag_attributes),
-            (view.score_selector(pos, dic.CFSCRIPT_FUNCTION_SCOPE),self.cfscript_all),
-            (view.score_selector(pos, dic.CFSCRIPT_FUNCTION_ARGS_SCOPE),self.cfscript_function_arguments),
-            (view.score_selector(pos, dic.CFSCRIPT_VARIABLES_SCOPE),self.cfscript_variables),
-            (view.score_selector(pos, dic.CFSCRIPT_TAGOPERATOR_ATTRIBUTE_SCOPE),self.cfscript_tagoperator_attributes)
+            (view.score_selector(pos, dic.CFML_TAG_SCOPE), self.on_cfml_all),
+            (view.score_selector(pos, dic.CFML_TAG_ATTRIBUTE_SCOPE),self.on_cfml_tag_attributes),
+            (view.score_selector(pos, dic.CFSCRIPT_FUNCTION_SCOPE),self.on_cfscript_all),
+            (view.score_selector(pos, dic.CFSCRIPT_FUNCTION_ARGS_SCOPE),self.on_cfscript_function_arguments),
+            (view.score_selector(pos, dic.CFSCRIPT_VARIABLES_SCOPE),self.on_cfscript_variables),
+            (view.score_selector(pos, dic.CFSCRIPT_TAGOPERATOR_ATTRIBUTE_SCOPE),self.on_cfscript_tagoperator_attributes)
         )
 
         for score, completions in sorted(COMPLETIONS,key=itemgetter(0),reverse=True):
@@ -77,7 +79,6 @@ class ColdFusionAutoComplete(sublime_plugin.EventListener):
 class CloseCftagCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         s = sublime.load_settings('ColdFusion.sublime-settings')
-
         # current carat position
         pos = self.view.sel()[0].end()
 

@@ -1,18 +1,21 @@
 import sublime
 import sublime_plugin, re
 
-def load_completions():
+def _init():
     global lang
+
     s = sublime.load_settings('ColdFusion.sublime-settings')
+    # need to use __import__ here because it's a dynamic module name
     lang = __import__(s.get('dictionary','cf10'),globals(),locals(),['*'],1)
+
 
 # load dictionary selectors and completions for ST2
 if sublime.version():
-    load_completions()
+    _init()
 
 # load dictionary selectors and completions for ST3
 def plugin_loaded():
-    sublime.set_timeout_async(lambda: load_completions(),0)
+    sublime.set_timeout_async(lambda: _init(),0)
 
 # scopes in which to trigger cfml tags auto complete
 CFML_TAG_SCOPE = 'text.html.cfm -source -meta -comment, text.html.cfm source.js -meta -comment, meta.scope.between-output-tags.cfml -comment, text.html.cfm.embedded -source.cfscript.embedded -meta -comment'
