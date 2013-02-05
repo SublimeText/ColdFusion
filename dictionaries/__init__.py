@@ -15,7 +15,7 @@ if sublime.version():
 
 # load dictionary selectors and completions for ST3
 def plugin_loaded():
-    sublime.set_timeout_async(lambda: _init(),0)
+    sublime.set_timeout_async(_init)
 
 # scopes in which to trigger cfml tags auto complete
 CFML_TAG_SCOPE = 'text.html.cfm -source -meta -comment, text.html.cfm source.js -meta -comment, meta.scope.between-output-tags.cfml -comment, text.html.cfm.embedded -source.cfscript.embedded -meta -comment'
