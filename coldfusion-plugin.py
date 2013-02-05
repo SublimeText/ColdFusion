@@ -19,7 +19,7 @@ class ColdFusionAutoComplete(sublime_plugin.EventListener):
         return [(v + '\tTag (cmfl)', lt + v) for v in sorted(dic.lang.TAGS.keys())]
 
     def on_cfml_tag_attributes(self, view, prefix, pos):
-        tag = dic.lang.get_tag_name(view, pos)
+        tag = dic.get_tag_name(view, pos)
         return sorted(dic.lang.TAGS.get(tag, []))
 
     def on_cfscript_all(self, view, prefix, pos):
