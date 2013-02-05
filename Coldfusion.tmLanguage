@@ -1191,7 +1191,7 @@
 											|
 											(\(.*\))				# or anything in parens
 											|
-											(\.[\w$]+)*				# or zero or more "dot" notated variables
+											(\.[\w$]+)				# or zero or more "dot" notated variables
 											|
 											(\s*[\+\-\*\/&amp;]\s*[\w$]+)	# or simple arithmentic operators + concatenation
 											|
@@ -1218,7 +1218,7 @@
 											|
 											(\(.*\))				# or anything in parens
 											|
-											(\.[\w$]+)*				# or zero or more "dot" notated variables
+											(\.[\w$]+)				# or zero or more "dot" notated variables
 											|
 											(\s*[\+\-\*\/&amp;]\s*[\w$]+)	# or simple arithmentic operators + concatenation
 											|
