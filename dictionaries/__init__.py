@@ -35,21 +35,21 @@ AC_ON_SPACE_SCOPE = 'meta.function-call.cfscript -meta.tag.inline.cf.other, meta
 AC_ON_DOT_SCOPE = 'source.cfscript'
 
 def get_tag_name(view, pos):
-    return get_tag_info(view, pos).pop(0)
+    return _get_tag_info(view, pos).pop(0)
 
 def get_tag_attribs(view, pos):
-    return get_tag_info(view, pos)[:-1]
+    return _get_tag_info(view, pos)[:-1]
 
 def get_tagoperator_name(view, pos):
-    return get_tag_operator_info(view, pos).pop(0)
+    return _get_tag_operator_info(view, pos).pop(0)
 
 # *****************************************************************************************
 # HELPERS
 # *****************************************************************************************
-def get_tag_info(view, pos):
+def _get_tag_info(view, pos):
     taginfo = view.substr(sublime.Region(0, pos)).split("<").pop()
     return re.split('\s|\t|\n',taginfo)
 
-def get_tag_operator_info(view, pos):
+def _get_tag_operator_info(view, pos):
     return list(filter(None, re.split('\t|\s',view.substr(view.line(pos)))))
 
