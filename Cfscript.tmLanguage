@@ -1242,7 +1242,7 @@
                 </dict>
                 <dict>
                     <key>match</key>
-                    <string>\b(?i:(this|key))(?!\.)</string>
+                    <string>\b(?i:(this|key))</string>
                     <key>name</key>
                     <string>variable.language.cfscript</string>
                 </dict>
