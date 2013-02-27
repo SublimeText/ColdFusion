@@ -9,7 +9,7 @@ def _init():
 
 
 # load dictionary selectors and completions for ST2
-if sublime.version():
+if sublime.version() and int(sublime.version()) < 3000:
     _init()
 
 # load dictionary selectors and completions for ST3
