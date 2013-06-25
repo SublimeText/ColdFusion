@@ -7,7 +7,7 @@
     <key>fileTypes</key>
     <array/>
     <key>foldingStartMarker</key>
-    <string>^.*\bfunction\s*(\w+\s*)?\([^\)]*\)(\s*\{[^\}]*)?\s*$</string>
+    <string>^.*\bfunction\s*([\w\$]+\s*)?\([^\)]*\)(\s*\{[^\}]*)?\s*$</string>
     <key>foldingStopMarker</key>
     <string>^\s*\}</string>
     <key>name</key>
@@ -141,7 +141,7 @@
                     (?:
                         (init) # entity.name.function.contructor
                         |
-                        (\w+) # entity.name.function
+                        ([\w\$]+) # entity.name.function
                     )\b
                 </string>
             <key>beginCaptures</key>
