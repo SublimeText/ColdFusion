@@ -197,5 +197,8 @@
         { "key": "following_text", "operator": "regex_contains", "operand": "^#", "match_all": true },
         { "key": "selector", "operator": "equal", "operand": "text.html.cfm,source.cfscript", "match_all": true }
       ]
+    },
+    { 
+    "keys": ["ctrl+alt+f"], "command": "fold_cffunctions"
     }
 ]
