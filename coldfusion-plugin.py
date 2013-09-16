@@ -157,35 +157,35 @@ class CloseCftagCommand(sublime_plugin.TextCommand):
 # DEFAULT.SUBLIME-COMMANDS
 # *****************************************************************************************
 class ShowCflibCommand(sublime_plugin.WindowCommand):
-
-    CFLIBCATS = r"http://www.cflib.org/api/api.cfc?method=getlibraries&returnformat=json"
-    CFLIBUDFS = r"http://www.cflib.org/api/api.cfc?method=getudfs&returnformat=json&libraryid="
-    CFLIBUDF = r"http://www.cflib.org/api/api.cfc?method=getudf&returnFormat=json&udfid="
+    cflib_category_url = r"http://www.cflib.org/api/api.cfc?method=getlibraries&returnformat=json"
+    cflib_udfs_url = r"http://www.cflib.org/api/api.cfc?method=getudfs&returnformat=json&libraryid="
+    cflib_udf_url = r"http://www.cflib.org/api/api.cfc?method=getudf&returnFormat=json&udfid="
 
     def run(self):
-        self.getCategories()
-        self.window.show_quick_panel([[v] for k, v in (self.categories)], self.on_select_categories)
+        global libs, udfs
+        if not 'libs' in globals():
+            libs = self.fetch_json(self.cflib_category_url)['DATA']
+            udfs = {}
+        sublime.set_timeout(lambda:self.window.show_quick_panel([[v] for k, v in (libs)], self.on_select_library), 10)
 
-    def getCategories(self):
-        d = json.load(urlopen(CFLIBCATS))
-        self.categories = d['DATA']
-
-    def getUdfs(self,index):
-        d = json.load(urlopen(CFLIBUDFS + str(self.categories[index][0])))
-        self.udfs = d['DATA']
-
-    def on_select_categories(self, index):
+    def on_select_library(self, index):
         if index == -1:
             return
-        self.getUdfs(index)
-        self.window.show_quick_panel([[v.strip(), c.strip()] for k, v, c in self.udfs], self.on_select_udf)
+        if not index in udfs:
+            udfs[index] = self.fetch_json(self.cflib_udfs_url + str(libs[index][0]))['DATA']
+        sublime.set_timeout(lambda:self.window.show_quick_panel([[v.strip(), c.strip()] for k, v, c in udfs[index]], self.on_select_udf), 10)
 
     def on_select_udf(self, index):
         if index == -1:
             self.run()
         else:
-            d = json.load(urlopen(CFLIBUDF + str(self.udfs[index][0])))
-            self.window.active_view().run_command("insert_udf", {"code":str(d['CODE'])})
+            code = str(self.fetch_json(self.cflib_udf_url + str(udfs[index][0][0]))['CODE'])
+            self.window.active_view().run_command("insert_udf", {"code":code})
+
+    def fetch_json(self,url):
+        req = urlopen(url)
+        enc = req.headers.get_content_charset()
+        return json.loads(req.read().decode('UTF-8'))
 
 class InsertUdfCommand(sublime_plugin.TextCommand):
     def run(self, edit, code):
