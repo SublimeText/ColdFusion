@@ -208,7 +208,7 @@ class FoldCffunctionsCommand(sublime_plugin.TextCommand):
     # Find the CFFunction regions to fold
     def findCffunctionContent(self):
         contentRegions = []
-        
+
         try:
             cffunctionOpens = self.view.find_all('<cffunction.*?name=".*?".*?>')
             cffunctionEnds = self.view.find_all('</cffunction>')
@@ -243,7 +243,7 @@ class FoldCffunctionsCommand(sublime_plugin.TextCommand):
 
         try:
             scriptFuncOpens = self.view.find_all('function.*?\{')
-            
+
             for func in scriptFuncOpens:
                 startPosition = func.end()
 
