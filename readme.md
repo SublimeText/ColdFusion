@@ -1,6 +1,6 @@
 # ColdFusion Package for Sublime Text
 
-### Sublime Text 3
+### Sublime Text 2/3
 The development branch contains a rewrite of the ColdFusion plugin.
 The only installation method is via Git.
 ```
