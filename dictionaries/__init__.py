@@ -77,7 +77,7 @@ def get_function_completions_from_file(cfc_file, hint_text):
 # *****************************************************************************************
 def _get_tag_info(view, pos):
     taginfo = view.substr(sublime.Region(0, pos)).split("<").pop()
-    return re.split('\s|\t|\n',taginfo)
+    return re.split('\s|\t|\n|>',taginfo)
 
 def _get_tag_operator_info(view, pos):
     return list(filter(None, re.split('\t|\s',view.substr(view.line(pos)))))
