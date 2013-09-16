@@ -100,6 +100,11 @@ You can also use ```sublime.log_commands(True)``` in the console (```ctrl+~```) 
 <kbd>Ctrl</kbd>+<kbd>⇧</kbd>+<kbd>=</kbd> <code>&lt;cfset SELECTION /&gt;</code>
         </td>
     </tr>
+    <tr>
+        <td colspan="2">
+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F</kbd> <code>folds all your ColdFusion functions</code> - courtesy of https://github.com/tkelley (thank you!)
+        </td>
+    </tr>
 </table>
 
 
