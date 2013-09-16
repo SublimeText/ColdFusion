@@ -115,7 +115,7 @@ class CloseCftagCommand(sublime_plugin.TextCommand):
 
         # insert the "&gt;" char
         for region in self.view.sel():
-            self.view.insert(edit, region.end(), ">")
+            self.view.insert(edit, region.b, ">")
 
         # return if disabled in ColdFusion.sublime-settings file
         if not s.get("auto_close_cfml"):
@@ -124,21 +124,33 @@ class CloseCftagCommand(sublime_plugin.TextCommand):
         # prevents triggering inside strings and other scopes that are not block tags
         # this should be taken care of in keybindings, but it's not working for cfcomponent
         # TODO ST3: use scope_selector or clean this out it may work through keybindings now
-        if self.view.match_selector(pos, "string") \
-            or self.view.match_selector(pos, "source.cfscript.embedded.cfml") \
-            or not self.view.match_selector(pos, "meta.tag.block.cf"):
-            return
 
-        # only close tag if it's a block tag
-        if self.view.match_selector(pos,"meta.tag.block.cf")  \
-            and not self.view.substr(pos - 1) == "/": # don't close an already closed tag
+        # cursor position
+        # pos = self.view.sel()[0].b
+        # if self.view.match_selector(pos, "string") \
+        #     or self.view.match_selector(pos, "source.cfscript.embedded.cfml") \
+        #     or not self.view.match_selector(pos, "meta.tag.block.cf"):
+        #     return
 
-            tagname = dic.get_tag_name(self.view, pos) + ">"
+        if self.view.match_selector(region.b - 1,"meta.tag.block.cf")  \
+            and not self.view.substr(region.b - 2) == "/": # don't close an already closed tag
 
-            if not s.get("auto_indent_on_close") or tagname == "cfoutput>":
-                self.view.run_command("insert_snippet", {"contents": "$0</" + tagname})
-            else:
-                self.view.run_command("insert_snippet", {"contents": "\n\t$0\n</" + tagname})
+
+            for temp in self.view.sel():
+                tag_name = dic.get_tag_name(self.view, temp.b)
+                indent = not s.get("auto_indent_on_close") or tag_name == "cfoutput"
+                if not indent:
+                    self.view.insert(edit,temp.b,"\n\t\n</" + tag_name + ">")
+                else:
+                    self.view.insert(edit, temp.b, "</" + tag_name + ">")
+
+            self.view.run_command("move", {"by": "lines", "forward": False})
+
+        # if not s.get("auto_indent_on_close") or tag_name == "cfoutput":
+            # self.view.run_command("insert_snippet", {"contents": "$0</" + tag_name + ">"})
+        # else:
+            # self.view.run_command("insert_snippet", {"contents": "\n\t$0\n</" + get_current_name() + ">"})
+
         return None
 
 # *****************************************************************************************
