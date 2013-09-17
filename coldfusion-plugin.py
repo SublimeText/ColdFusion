@@ -160,6 +160,7 @@ class ShowCflibCommand(sublime_plugin.WindowCommand):
     cflib_category_url = r"http://www.cflib.org/api/api.cfc?method=getlibraries&returnformat=json"
     cflib_udfs_url = r"http://www.cflib.org/api/api.cfc?method=getudfs&returnformat=json&libraryid="
     cflib_udf_url = r"http://www.cflib.org/api/api.cfc?method=getudf&returnFormat=json&udfid="
+    libIndex = -1
 
     def run(self):
         global libs, udfs
@@ -169,6 +170,7 @@ class ShowCflibCommand(sublime_plugin.WindowCommand):
         sublime.set_timeout(lambda:self.window.show_quick_panel([[v] for k, v in (libs)], self.on_select_library), 10)
 
     def on_select_library(self, index):
+        self.libIndex = index
         if index == -1:
             return
         if not index in udfs:
@@ -179,7 +181,7 @@ class ShowCflibCommand(sublime_plugin.WindowCommand):
         if index == -1:
             self.run()
         else:
-            code = str(self.fetch_json(self.cflib_udf_url + str(udfs[index][0][0]))['CODE'])
+            code = str(self.fetch_json(self.cflib_udf_url + str(udfs[self.libIndex][index][0]))['CODE'])
             self.window.active_view().run_command("insert_udf", {"code":code})
 
     def fetch_json(self,url):
@@ -190,7 +192,7 @@ class ShowCflibCommand(sublime_plugin.WindowCommand):
 class InsertUdfCommand(sublime_plugin.TextCommand):
     def run(self, edit, code):
         for region in self.view.sel():
-            self.view.replace(edit, region, code)
+            self.view.replace(edit, region, code.replace("\r",""))
 
 
 # *****************************************************************************************
