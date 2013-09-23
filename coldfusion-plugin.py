@@ -186,7 +186,6 @@ class ShowCflibCommand(sublime_plugin.WindowCommand):
 
     def fetch_json(self,url):
         req = urlopen(url)
-        enc = req.headers.get_content_charset()
         return json.loads(req.read().decode('UTF-8'))
 
 class InsertUdfCommand(sublime_plugin.TextCommand):
