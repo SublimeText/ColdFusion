@@ -139,8 +139,16 @@ class CloseCftagCommand(sublime_plugin.TextCommand):
             for temp in self.view.sel():
                 tag_name = dic.get_tag_name(self.view, temp.b)
                 indent = not s.get("auto_indent_on_close") or tag_name == "cfoutput"
+                
+                (row, col) = self.view.rowcol(temp.begin())
+                indent_region = self.view.find('^\s+', self.view.text_point(row, 0))
+                if self.view.rowcol(indent_region.begin())[0] == row:
+                    indent_space = self.view.substr(indent_region)
+                else:
+                    indent_space = ''
+
                 if not indent:
-                    self.view.insert(edit,temp.b,"\n\t\n</" + tag_name + ">")
+                    self.view.insert(edit,temp.b,"\n\t" + indent_space + "\n" + indent_space + "</" + tag_name + ">")
                 else:
                     self.view.insert(edit, temp.b, "</" + tag_name + ">")
 
