@@ -135,30 +135,24 @@ class CloseCftagCommand(sublime_plugin.TextCommand):
         if self.view.match_selector(region.b - 1,"meta.tag.block.cf")  \
             and not self.view.substr(region.b - 2) == "/": # don't close an already closed tag
 
-
             for temp in self.view.sel():
                 tag_name = dic.get_tag_name(self.view, temp.b)
-                indent = not s.get("auto_indent_on_close") or tag_name == "cfoutput"
-                
-                (row, col) = self.view.rowcol(temp.begin())
-                indent_region = self.view.find('^\s+', self.view.text_point(row, 0))
-                if self.view.rowcol(indent_region.begin())[0] == row:
-                    indent_space = self.view.substr(indent_region)
+                indent = s.get("auto_indent_on_close")
+
+                if indent and tag_name != "cfoutput":
+                    (row, col) = self.view.rowcol(temp.begin())
+                    indent_region = self.view.find('^\s+', self.view.text_point(row, 0))
+
+                    if self.view.rowcol(indent_region.begin())[0] == row:
+                        indent_space = self.view.substr(indent_region)
+                    else:
+                        indent_space = ''
+
+                    self.view.insert(edit, temp.b, "\n\t" + indent_space + "\n" + indent_space + "</" + tag_name + ">")
+                    # we're using view.insert() so this returns the cursor to the previous line
+                    self.view.run_command("move", {"by": "lines", "forward": False})
                 else:
-                    indent_space = ''
-
-                if not indent:
-                    self.view.insert(edit,temp.b,"\n\t" + indent_space + "\n" + indent_space + "</" + tag_name + ">")
-                else:
-                    self.view.insert(edit, temp.b, "</" + tag_name + ">")
-
-            self.view.run_command("move", {"by": "lines", "forward": False})
-
-        # if not s.get("auto_indent_on_close") or tag_name == "cfoutput":
-            # self.view.run_command("insert_snippet", {"contents": "$0</" + tag_name + ">"})
-        # else:
-            # self.view.run_command("insert_snippet", {"contents": "\n\t$0\n</" + get_current_name() + ">"})
-
+                    self.view.run_command("insert_snippet", {"contents": "$0</" + tag_name + ">"})
         return None
 
 # *****************************************************************************************
