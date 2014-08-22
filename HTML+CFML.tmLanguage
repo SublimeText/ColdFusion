@@ -1095,6 +1095,127 @@
 			<key>name</key>
 			<string>entity.other.attribute-name.html</string>
 		</dict>
+		<key>tag-href-attribute</key>
+		<dict>
+			<key>begin</key>
+			<string>\b(href)\b\s*(=)</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.other.attribute-name.href.html</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.key-value.html</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?&lt;='|")</string>
+			<key>name</key>
+			<string>meta.href.attribute-name.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>"</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.html</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>"</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.double.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#embedded-code</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#entities</string>
+						</dict>
+						<!-- single hash is very common in href so adding an exception here -->
+						<dict>
+							<key>match</key>
+							<string>#</string>
+							<key>name</key>
+							<string>string.escaped.hash.html</string>
+						</dict>
+						<!-- highlights hashes in html single quoted id attributes -->
+						<dict>
+							<key>include</key>
+							<string>#nest-hash</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>'</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.html</string>
+						</dict>
+					</dict>
+					<key>contentName</key>
+					<string>meta.toc-list.id.html</string>
+					<key>end</key>
+					<string>'</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.html</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.single.html</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#embedded-code</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#entities</string>
+						</dict>
+						<!-- single hash is very common in href so adding an exception here -->
+						<dict>
+							<key>match</key>
+							<string>#</string>
+							<key>name</key>
+							<string>string.escaped.hash.html</string>
+						</dict>
+						<!-- highlights hashes in html single quoted id attributes -->
+						<dict>
+							<key>include</key>
+							<string>#nest-hash</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
 		<key>tag-id-attribute</key>
 		<dict>
 			<key>begin</key>
@@ -1254,6 +1375,10 @@
 				<dict>
 					<key>include</key>
 					<string>text.cfml.basic</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#tag-href-attribute</string>
 				</dict>
 				<dict>
 					<key>include</key>
