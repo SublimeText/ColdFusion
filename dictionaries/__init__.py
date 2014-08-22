@@ -31,7 +31,7 @@ CFSCRIPT_VARIABLES_SCOPE = 'variable.other.dot.cfscript'
 # scopes that trigger auto complete on spacebar key press // meta.tag.inline.cf.other excludes cfset/cfreturn
 AC_ON_SPACE_SCOPE = 'meta.function-call.cfscript -meta.tag.inline.cf.other, meta.tag -meta.tag.inline.cf.other, meta.operator'
 # scopes that trigger on dot auto completions
-AC_ON_DOT_SCOPE = 'source.cfscript'
+AC_ON_DOT_SCOPE = 'source.cfscript source.cfscript.embedded.cfml'
 
 def get_tag_name(view, pos):
     return _get_tag_info(view, pos).pop(0)
