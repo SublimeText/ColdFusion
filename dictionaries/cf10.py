@@ -6973,49 +6973,49 @@ FUNCTIONS = {
 ('input','$0'),
 ('filepath','"$0"')
 ],
-'oRMExecuteQuery()':
+'ORMExecuteQuery()':
 [
 ('hql','"$0"'),
 ('paramsOrUnique','$0'),
 ('uniqueOrQueryOptions','$0'),
 ('queryOptions','$0')
 ],
-'oRMClearSession()':
+'ORMClearSession()':
 [
 
 ],
-'oRMCloseSession()':
+'ORMCloseSession()':
 [
 
 ],
-'oRMEvictCollection()':
+'ORMEvictCollection()':
 [
 ('entityName','$0'),
 ('collectionName','$0'),
 ('primaryKey','$0')
 ],
-'oRMEvictEntity()':
+'ORMEvictEntity()':
 [
 ('entityName','$0'),
 ('primaryKey','$0')
 ],
-'oRMEvictQueries(${1:cacheName})':
+'ORMEvictQueries(${1:cacheName})':
 [
 
 ],
-'oRMFlush()':
+'ORMFlush()':
 [
 
 ],
-'oRMGetSession()':
+'ORMGetSession()':
 [
 
 ],
-'oRMGetSessionFactory()':
+'ORMGetSessionFactory()':
 [
 
 ],
-'oRMReload()':
+'ORMReload()':
 [
 
 ],
