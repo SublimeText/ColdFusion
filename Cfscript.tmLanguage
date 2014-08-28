@@ -256,7 +256,7 @@
                         </dict>
                         <dict>
                             <key>match</key>
-                            <string>(?i:false|true|no|yes)</string>
+                            <string>(?i)\b(false|true|no|yes)\b</string>
                             <key>name</key>
                             <string>constant.language.boolean.argument.cfscript</string>
                         </dict>
