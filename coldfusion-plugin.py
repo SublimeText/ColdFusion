@@ -112,7 +112,8 @@ class CloseCftagCommand(sublime_plugin.TextCommand):
         s = sublime.load_settings('ColdFusion.sublime-settings')
         # current carat position
         pos = self.view.sel()[0].end()
-
+        
+        self.view.run_command("hide_auto_complete")
         # insert the "&gt;" char
         for region in self.view.sel():
             self.view.insert(edit, region.b, ">")
