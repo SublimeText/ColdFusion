@@ -12,6 +12,7 @@
     <string>^\s*\}</string>
     <key>name</key>
     <string>CFScript (do not use)</string>
+    <hidden>
     <key>patterns</key>
     <array>
 

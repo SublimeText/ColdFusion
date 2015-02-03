@@ -4,6 +4,7 @@
 <dict>
 	<key>name</key>
 	<string>CFML (do not use)</string>
+	<hidden>
 
 	<key>patterns</key>
 	<array>
