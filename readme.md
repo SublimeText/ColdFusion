@@ -35,7 +35,7 @@ The recommended method of installation is via Package Control.
 
 ### Package Control
 
-* Follow instructions on http://wbond.net/sublime_packages/package_control
+* Follow instructions on https://packagecontrol.io/installation
 * Install using Package Control: Install > ColdFusion package
 
 ### Using Git
