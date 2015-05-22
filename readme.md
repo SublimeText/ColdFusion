@@ -1,8 +1,7 @@
 # ColdFusion Package for Sublime Text
 
-### Sublime Text 3
-The development branch contains a rewrite of the ColdFusion plugin.
-The only installation method is via Git.
+### Sublime Text 3 (or: [OMG bugs in ST3!](https://github.com/SublimeText/ColdFusion/issues?q=is%3Aissue+sort%3Acomments-desc))
+The only way to get a (mostly) functional install with Sublime Text 3 is to use the development branch, which contains a rewrite of the ColdFusion plugin. **You can not get the development branch via Package Control: the only installation method is via Git.**
 ```
 cd Packages/
 git clone https://github.com/SublimeText/ColdFusion.git
