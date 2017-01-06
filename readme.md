@@ -1,6 +1,6 @@
 # ColdFusion Package for Sublime Text
 
-This package is no longer maintained.   
+### This package is no longer maintained.   
 
 Please use jcberquist's excellent package:        
 
