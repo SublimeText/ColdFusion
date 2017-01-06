@@ -1,5 +1,12 @@
 # ColdFusion Package for Sublime Text
 
+This package is no longer maintained.   
+
+Please use jcberquist's excellent package:        
+
+https://github.com/jcberquist/sublimetext-cfml
+
+
 ### Sublime Text 3
 The development branch contains a rewrite of the ColdFusion plugin.
 The only installation method is via Git.
